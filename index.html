@@ -1,48 +1,420 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Portifólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Portfólio - Lucas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
+    <!-- Cursor personalizado -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    
+    <!-- Botão de modo escuro/claro -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+        <i class="fas fa-moon"></i>
+    </button>
+    
     <header>
         <nav class="navbar">
-            <ul>
-                <a href="#home-section" id="navbar-home">Home</a>
-                <a href="#sobremim-section" id="navbar-sobre">Sobre Mim</a>
-                <a href="#habilidades-section" id="navbar-habilidades">Habilidades</a>
-                <a href="#projetos-section" id="navbar-projetos">Projetos</a>
+            <div class="nav-brand">
+                <span class="logo">L</span>
+                <span class="logo-text">Lucas</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home-section" class="nav-link nav-home" data-key="nav-home">Home</a></li>
+                <li><a href="#about-section" class="nav-link nav-sobre" data-key="nav-sobre">Sobre Mim</a></li>
+                <li><a href="#skills-section" class="nav-link nav-skills" data-key="nav-skills">Skills</a></li>
+                <li><a href="#projects-section" class="nav-link nav-projetos" data-key="nav-projetos">Meus Projetos</a></li>
+                <li><a href="#contact-section" class="nav-link nav-contatos" data-key="nav-contatos">Contatos</a></li>
             </ul>
+            
+            <div class="nav-controls">
+                <select name="idioma" id="idiomaSite" class="language-select">
+                    <option value="pt-br">PT-BR</option>
+                    <option value="en-us">EN-US</option>
+                </select>
+                
+                <button class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </nav>
     </header>
-
-    <div id="home-section">
-        <div class="home-texto">
-            <h2>Fala rapaziada, me chamo 
-                <span
-                    style="color:rgb(44, 182, 39);" 
-                    class="nome">
-                    Lucas Freitas
-                </span>
-            </h2>
-        <p>
-            Atualmente, estou estagiando na Caesb (Companhia de Saneamento Ambiental do Distrito Federal).
-            Buscando sempre aprender constantemente e sempre buscando oportunidades para eu
-            conseguir evoluir profissionalmente!
-        </p>
+    
+    <main>
+        <section id="home-section" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title" data-key="welcome">
+                        <span class="gradient-text">Bem-vindo</span> ao meu portfólio
+                    </h1>
+                    <p class="hero-subtitle" data-key="hero-subtitle">
+                        Desenvolvedor Full Stack | Java | Python | Ruby | SQL
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects-section" class="btn btn-primary" data-key="view-projects">Ver Projetos</a>
+                        <a href="#contact-section" class="btn btn-secondary" data-key="contact-me">Contate-me</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="code-animation">
+                        <div class="code-line"><span class="code-keyword">public class</span> DevLucasaf {</div>
+                        <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">public static void</span> main() {</div>
+                        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">System.out.println("Hello World!");</span></div>
+                        <div class="code-line">&nbsp;&nbsp;}</div>
+                        <div class="code-line">}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <p data-key="scroll-down">Role para baixo</p>
+            </div>
+        </section>
+        
+        <section id="about-section" class="section about">
+            <div class="container">
+                <h2 class="section-title" data-key="about-title">Sobre <span class="highlight">Mim</span></h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p data-key="about-text">
+                            Estudante de Ciência da Computação apaixonado por desenvolvimento de software back-end. Tenho experiência com linguagens como Java, Python e Ruby, além de conhecimentos em HTML, CSS e SQL.
+                        </p>
+                        <p data-key="about-text-2">
+                            Meu objetivo é concluir o curso de Ciência da Computação e me tornar um desenvolvedor back-end, e futuramente me tornar um Segurança da Informação.
+                        </p>
+                        <p data-key="about-text-3">
+                            Atualmente sou estagiário na área de desenvolvimento de software, onde eu estou estagiano na Caesb.
+                        </p>
+                        <p data-key="about-text-4">
+                            Apaixonado por música, onde meu gênero musical favorito é o rock! Minha banda favorita é o Green Day. 
+                        </p>
+                        <p data-key="about-text-5">
+                            Torcedor apaixonado do Fluminense. 
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <h3>2</h3>
+                                <p data-key="projects-completed">Projetos Concluídos</p>
+                            </div>
+                            <div class="stat">
+                                <h3>4</h3>
+                                <p data-key="languages">Linguagens Dominadas</p>
+                            </div>
+                            <div class="stat">
+                                <h3>4</h3>
+                                <p data-key="courses">Cursos em Andamento</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills-section" class="section skills">
+            <div class="container">
+                <h2 class="section-title" data-key="skills-title">Minhas <span class="highlight">Skills</span></h2>
+                
+                <div class="skills-categories">
+                    <div class="category">
+                        <h3 class="category-title" data-key="programming-languages">Linguagens de Programação</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card" data-tech="python">
+                                <div class="skill-icon">
+                                    <img src="assets/icons/python-icon.png" alt="Python">
+                                </div>
+                                <h4 class="skill-name" data-key="python">Python</h4>
+                            </div>
+                            
+                            <div class="skill-card" data-tech="java">
+                                <div class="skill-icon">
+                                    <img src="assets/icons/java-icon.png" alt="Java">
+                                </div>
+                                <h4 class="skill-name" data-key="java">Java</h4>
+                            </div>
+                            
+                            <div class="skill-card" data-tech="ruby">
+                                <div class="skill-icon">
+                                    <img src="assets/icons/ruby-icon.png" alt="Ruby">
+                                </div>
+                                <h4 class="skill-name" data-key="ruby">Ruby</h4>
+                            </div>
+                            
+                            <div class="skill-card" data-tech="javascript">
+                                <div class="skill-icon">
+                                    <img src="assets/icons/js-icon.png" alt="JavaScript">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category">
+                        <h3 class="category-title" data-key="web-technologies">Tecnologias Web</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card" data-tech="html">
+                                <div class="skill-icon">
+                                    <img src="assets/icons/html-icon.png" alt="HTML">
+                                </div>
+                                <h4 class="skill-name" data-key="html">HTML</h4>
+                            </div>
+                            
+                            <div class="skill-card" data-tech="css">
+                                <div class="skill-icon">
+                                    <img src="assets/icons/css-icon.png" alt="CSS">
+                                </div>
+                                <h4 class="skill-name" data-key="css">CSS</h4>
+                            </div>
+                            
+                            <div class="skill-card" data-tech="sql">
+                                <div class="skill-icon">
+                                    <img src="assets/icons/sql-icon.png" alt="SQL">
+                                </div>
+                                <h4 class="skill-name" data-key="sql">SQL</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category">
+                        <h3 class="category-title" data-key="tools-technologies">Ferramentas & Tecnologias</h3>
+                        <div class="skills-grid compact">
+                            <div class="tool-card" data-tool="git">
+                                <div class="tool-icon">
+                                    <img src="assets/icons/git-icon.png" alt="Git">
+                                </div>
+                                <span class="tool-name" data-key="git">Git</span>
+                            </div>
+                            
+                            <div class="tool-card" data-tool="github">
+                                <div class="tool-icon">
+                                    <img src="assets/icons/github-icon.png" alt="GitHub">
+                                </div>
+                                <span class="tool-name" data-key="github">GitHub</span>
+                            </div>
+                            
+                            <div class="tool-card" data-tool="vs-code">
+                                <div class="tool-icon">
+                                    <img src="assets/icons/vs-icon.png" alt="VS Code">
+                                </div>
+                                <span class="tool-name" data-key="vs-code">VS Code</span>
+                            </div>
+                            
+                            <div class="tool-card" data-tool="intellij">
+                                <div class="tool-icon">
+                                    <img src="assets/icons/intellij-icon.png" alt="IntelliJ">
+                                </div>
+                                <span class="tool-name" data-key="intellij">IntelliJ</span>
+                            </div>
+                            
+                            <div class="tool-card" data-tool="pycharm">
+                                <div class="tool-icon">
+                                    <img src="assets/icons/pycharm-icon.png" alt="PyCharm">
+                                </div>
+                                <span class="tool-name" data-key="pycharm">PyCharm</span>
+                            </div>
+                            
+                            <div class="tool-card" data-tool="rubymine">
+                                <div class="tool-icon">
+                                    <img src="assets/icons/rubymine-icon.png" alt="RubyMine">
+                                </div>
+                                <span class="tool-name" data-key="rubymine">RubyMine</span>
+                            </div>
+                            
+                            <div class="tool-card" data-tool="visual-studio">
+                                <div class="tool-icon">
+                                    <img src="assets/icons/visual-studio-icon.png" alt="Visual Studio">
+                                </div>
+                                <span class="tool-name" data-key="visual-studio">Visual Studio</span>
+                            </div>
+                            
+                            <div class="tool-card" data-tool="pgadmin4">
+                                <div class="tool-icon">
+                                    <img src="assets/icons/pgadmin4-icon.png" alt="PGAdmin4">
+                                </div>
+                                <span class="tool-name" data-key="pgadmin4">PGAdmin4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects-section" class="section projects">
+            <div class="container">
+                <h2 class="section-title" data-key="projects-title">Meus <span class="highlight">Projetos</span></h2>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <h3 class="project-title" data-key="java-project-title">Estudos em Java</h3>
+                        </div>
+                        <p class="project-description" data-key="java-project-desc">
+                            Repositório com exercícios e projetos do curso de Java, incluindo programação orientada a objetos e estruturas de dados.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">OOP</span>
+                            <span class="tech-tag">Git</span>
+                        </div>
+                        <a href="https://github.com/devlucasaf/Java" target="_blank" class="project-link">
+                            <span data-key="view-project">Ver Projeto</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="project-title" data-key="portfolio-project-title">Portfólio Online</h3>
+                        </div>
+                        <p class="project-description" data-key="portfolio-project-desc">
+                            Este portfólio responsivo desenvolvido com HTML, CSS e JavaScript, com suporte a múltiplos idiomas.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            <span data-key="view-project">Ver Projeto</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3 class="project-title" data-key="coming-soon-title">Em Breve</h3>
+                        </div>
+                        <p class="project-description" data-key="coming-soon-desc">
+                            Novo projeto em desenvolvimento utilizando tecnologias modernas e melhores práticas de desenvolvimento.
+                        </p>
+                        <a href="#" class="project-link disabled">
+                            <span data-key="coming-soon">Em Breve</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact-section" class="section contact">
+            <div class="container">
+                <h2 class="section-title" data-key="contact-title">Entre em <span class="highlight">Contato</span></h2>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <p class="contact-text" data-key="contact-text">
+                            Estou sempre aberto a colaborações e feedback!
+                        </p>
+                        
+                        <div class="contact-methods">
+                            <a href="mailto:seuemail@exemplo.com" class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4 data-key="email">E-mail</h4>
+                                    <p>freitas.lucasaf@gmail.com</p>
+                                </div>
+                            </a>
+                            
+                            <a href="https://github.com/devlucasaf" target="_blank" class="contact-method">
+                                <i class="fab fa-github"></i>
+                                <div>
+                                    <h4 data-key="github">GitHub</h4>
+                                    <p>github.com/devlucasaf</p>
+                                </div>
+                            </a>
+                            
+                            <div class="contact-method">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4 data-key="location">Localização</h4>
+                                    <p data-key="brazil">Brasil</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name" data-key="name-label">Nome</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" data-key="email-label">E-mail</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" data-key="message-label">Mensagem</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" data-key="send-message">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo">L</span>
+                    <span class="logo-text">Lucas</span>
+                </div>
+                
+                <p class="footer-text" data-key="footer-text">
+                    Desenvolvido com ❤️ e muito código
+                </p>
+                
+                <p class="copyright" data-key="copyright">
+                    © 2024 Lucas. Todos os direitos reservados.
+                </p>
+            </div>
         </div>
-    </div>
-
-    <div id="sobremim-section">
-        <h1>Quem é o Lucas?</h1>
-    </div>
-
-    <div class=""
-
-<script src="js/script.js"></script>
+    </footer>
+    
+    <script src="js/translations.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
