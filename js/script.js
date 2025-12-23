@@ -1,4 +1,36 @@
 // translations.js atualizado com todas as novas chaves
+// Adicione esta função
+function initLanguageButtons() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    
+    if (!langButtons.length) return; // Só executa se existir botões
+    
+    langButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            
+            // Atualizar botões ativos
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Aplicar tradução
+            applyTranslation(lang);
+            
+            // Sincronizar com select (se existir)
+            const select = document.getElementById('idiomaSite');
+            if (select) select.value = lang;
+        });
+    });
+}
+
+// E chame no DOMContentLoaded, junto com outras inicializações:
+document.addEventListener('DOMContentLoaded', () => {
+    // ... outras inicializações que você já tem ...
+    
+    initLanguageButtons(); // ← Adicione esta linha
+    
+    // ... resto do código ...
+});
 
 const translations = {
     'pt-br': {
