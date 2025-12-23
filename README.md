@@ -3,63 +3,96 @@
     src="https://capsule-render.vercel.app/api?type=waving&color=A020F0&height=120&section=header"
 />
 
-<div align="center">
-    <h1>💼Meu Portifólio💼
-</div>
+# 💻 Sobre
 
-<table width="100%">
-    <tr>
-        <td width="40%" valign="top">
-            ⚪ Portifólio desenvolvido por Lucas Freitas<br>
-            ⚪ Feito para mostrar quem eu sou, as minhas habilidades e projetos pessoais<br>
-            ⚪ Desenvolvido no foco de me desenvolver e me aprofudar na área de desenvolvimento e para projeto pessoal
+Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
 
----
+# 🗃️ Estrutura
 
-🛠️ Tecnologias utilizadas
+```
+/portfolio
+  ├── index.html
+  ├── css/
+  │   └── style.css
+  ├── js/
+  │   ├── translations.js
+  │   └── script.js
+  └── assets/
+      └── icons/
+          ├── python-icon.png
+          ├── java-icon.png
+          ├── ruby-icon.png
+          ├── sql-icon.png
+          ├── html-icon.png
+          ├── css-icon.png
+          ├── javascript-icon.png
+          ├── pycharm-icon.png
+          ├── intellij-icon.png
+          ├── rubymine-icon.png
+          ├── vs-icon.png
+          ├── visual-studio-icon.png
+          ├── pgadmin4-icon.png
+          ├── git-icon.png
+          ├── github-icon.png
+          └── lucas-freitas-foto.jpeg
+```
 
-<div align="center">
-    <img
+# 🤯 Composição do site
+
+- Home: Minha apresentação.
+- Sobre mim: abordo uma pequena apresentação sobre mim e a minha trajetória.
+- Skills: liguagens e ferramentas que eu utilizo.
+- Meus Projetos: alguns projetos desenvolvidos recentemente por mim.
+- Contatos: minhas redes sociais e formas de entrar em contato comigo.
+
+# 🛠️ Tecnologias utilizadas
+
+<div align="left">
+    <img 
         align="center"
         alt="JavaScript"
         tittle="JavaScript"
-        height="60" 
+        height="40" 
         style="padding-right: 10px;"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" 
+        src="https://skillicons.dev/icons?i=javascript" 
     />
     <img
-        align="center"
-        alt="HTML"
-        tittle="HTML"
-        height="60" 
-        style="padding-right: 10px;"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" 
+        align="center" 
+        alt="HTML" 
+        title="HTML"
+        height="40" 
+        style="padding-right: 10px;" 
+        src="https://skillicons.dev/icons?i=html"
     />
     <img
-        align="center"
-        alt="CSS"
-        tittle="CSS"
-        height="60" 
-        style="padding-right: 10px;"
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" 
+        align="center" 
+        alt="CSS" 
+        title="CSS"
+        height="40" 
+        style="padding-right: 10px;" 
+        src="https://skillicons.dev/icons?i=css"
     />
     <img
         align="center"
         alt="VsCode"
         tittle="VsCode"
-        height="60" 
+        height="40" 
         style="padding-right: 10px;" 
-        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+        src="https://skillicons.dev/icons?i=vscode"
     />
     <img
         align="center"
         alt="VsCode"
         tittle="VsCode"
-        height="60" 
+        height="40" 
         style="padding-right: 10px;" 
-        src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+        src="https://skillicons.dev/icons?i=github"
     />
 </div>
+
+## 🏆 Licença
+
+The [MIT License](./LICENSE).
 
 <img 
     width=100% 
