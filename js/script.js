@@ -1,9 +1,7 @@
-// translations.js atualizado com todas as novas chaves
-// Adicione esta função
 function initLanguageButtons() {
     const langButtons = document.querySelectorAll('.lang-btn');
     
-    if (!langButtons.length) return; // Só executa se existir botões
+    if (!langButtons.length) return; 
     
     langButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -23,13 +21,9 @@ function initLanguageButtons() {
     });
 }
 
-// E chame no DOMContentLoaded, junto com outras inicializações:
 document.addEventListener('DOMContentLoaded', () => {
-    // ... outras inicializações que você já tem ...
     
-    initLanguageButtons(); // ← Adicione esta linha
-    
-    // ... resto do código ...
+    initLanguageButtons(); 
 });
 
 const translations = {
@@ -191,6 +185,3 @@ const translations = {
         'copyright': '© 2024 Lucas. All rights reserved.'
     }
 };
-
-// (O restante do código do translations.js permanece igual ao anterior)
-// ... [o resto do código do translations.js que você já tem]
