@@ -1,5 +1,3 @@
-// js/translations.js - VERSÃO CORRIGIDA E COMPLETA
-
 const translations = {
     'pt-br': {
         // Meta informações
@@ -166,37 +164,28 @@ const translations = {
     }
 };
 
-// Função para aplicar tradução - VERSÃO MELHORADA
 function applyTranslation(language) {
     console.log('Aplicando tradução para:', language);
     
-    // 1. Atualizar título da página
     if (translations[language] && translations[language]['title']) {
         document.title = translations[language]['title'];
     }
     
-    // 2. Atualizar TODOS os elementos com data-key (MÉTODO PRINCIPAL)
     document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
         if (translations[language] && translations[language][key]) {
-            // Verifica se é input ou textarea (placeholders)
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translations[language][key];
             } 
-            // Verifica se é um elemento com filhos (como o hero-title)
             else if (element.children.length > 0 && !element.classList.contains('skill-name') && !element.classList.contains('tool-name')) {
-                // Para elementos com filhos, atualiza apenas o texto dos filhos que não são spans com classes
                 const childSpans = element.querySelectorAll('span[class*="gradient"], span.highlight');
                 if (childSpans.length > 0) {
-                    // Mantém os spans especiais e atualiza o resto
                     let tempElement = document.createElement('div');
                     tempElement.innerHTML = translations[language][key];
                     
-                    // Copia os spans especiais do original
                     childSpans.forEach(span => {
                         const spanClass = span.className;
                         const spanText = span.textContent;
-                        // Encontra span equivalente na tradução
                         const tempSpans = tempElement.querySelectorAll('span');
                         tempSpans.forEach(tempSpan => {
                             if (tempSpan.textContent === spanText || tempSpan.className === spanClass) {
@@ -207,11 +196,9 @@ function applyTranslation(language) {
                     
                     element.innerHTML = tempElement.innerHTML;
                 } else {
-                    // Elemento normal, atualiza tudo
                     element.innerHTML = translations[language][key];
                 }
             }
-            // Elementos normais (h1, h2, h3, h4, p, span, a, etc.)
             else {
                 element.textContent = translations[language][key];
             }
@@ -220,20 +207,15 @@ function applyTranslation(language) {
         }
     });
     
-    // 3. Atualizar elementos por classe (fallback para navegação)
     updateElementsByClass(language);
     
-    // 4. Atualizar elementos específicos que podem ter sido perdidos
     updateSpecificElements(language);
     
-    // 5. Salvar preferência
     localStorage.setItem('preferredLanguage', language);
     console.log('Tradução aplicada com sucesso!');
 }
 
-// Função auxiliar para elementos por classe
 function updateElementsByClass(language) {
-    // Navegação
     const navClasses = ['nav-home', 'nav-sobre', 'nav-skills', 'nav-projetos', 'nav-contatos'];
     
     navClasses.forEach(className => {
@@ -246,9 +228,7 @@ function updateElementsByClass(language) {
     });
 }
 
-// Função para elementos específicos que podem precisar de tratamento especial
 function updateSpecificElements(language) {
-    // Atualizar botões e links que podem ter ícones
     const buttonsWithIcons = document.querySelectorAll('.btn, .project-link');
     buttonsWithIcons.forEach(button => {
         const span = button.querySelector('span[data-key]');
@@ -260,7 +240,6 @@ function updateSpecificElements(language) {
         }
     });
     
-    // Atualizar tech tags
     const techTags = document.querySelectorAll('.tech-tag');
     techTags.forEach(tag => {
         const text = tag.textContent;
@@ -270,11 +249,9 @@ function updateSpecificElements(language) {
     });
 }
 
-// Inicializar quando a página carregar - VERSÃO MELHORADA
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM carregado, inicializando traduções...');
     
-    // Configurar evento no select
     const languageSelect = document.getElementById('idiomaSite');
     if (languageSelect) {
         languageSelect.addEventListener('change', function() {
@@ -285,7 +262,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Elemento idiomaSite não encontrado!');
     }
     
-    // Carregar idioma salvo ou usar padrão
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'pt-br';
     console.log('Idioma salvo:', savedLanguage);
     
@@ -294,14 +270,11 @@ document.addEventListener('DOMContentLoaded', () => {
         languageSelectElement.value = savedLanguage;
     }
     
-    // Aplicar tradução inicial
     applyTranslation(savedLanguage);
     
-    // Debug: verificar chaves
     console.log('Chaves disponíveis em pt-br:', Object.keys(translations['pt-br']).length);
     console.log('Chaves disponíveis em en-us:', Object.keys(translations['en-us']).length);
 });
 
-// Exportar para uso global
 window.translations = translations;
 window.applyTranslation = applyTranslation;
