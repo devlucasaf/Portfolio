@@ -13,14 +13,8 @@
 </head>
 
 <body>
-    <!-- Cursor personalizado -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
-    
-    <!-- Botão de modo escuro/claro -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
-        <i class="fas fa-moon"></i>
-    </button>
     
     <header>
         <nav class="navbar">
@@ -58,7 +52,7 @@
                         <span class="gradient-text">Bem-vindo</span> ao meu portfólio
                     </h1>
                     <p class="hero-subtitle" data-key="hero-subtitle">
-                        Desenvolvedor Full Stack | Java | Python | Ruby | SQL
+                        Desenvolvedor Back-End | Java | Python | Ruby | SQL
                     </p>
                     <div class="hero-cta">
                         <a href="#projects-section" class="btn btn-primary" data-key="view-projects">Ver Projetos</a>
@@ -120,12 +114,19 @@
                         </div>
                     </div>
                     <div class="about-image">
-                        <div class="image-placeholder">
-                            <i class="fas fa-user-circle"></i>
+                        <div class="photo-fix">
+                            <div class="photo-backdrop"></div>
+                            <div class="photo-clip">
+                                <img 
+                                    src="assets/icons/lucas-freitas-foto.jpeg" 
+                                    alt="Lucas Freitas - Desenvolvedor"
+                                    class="real-photo"
+                                />
+                            </div>
+                            <div class="photo-aura"></div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
         
         <section id="skills-section" class="section skills">
@@ -138,21 +139,30 @@
                         <div class="skills-grid">
                             <div class="skill-card" data-tech="python">
                                 <div class="skill-icon">
-                                    <img src="assets/icons/python-icon.png" alt="Python">
+                                    <img 
+                                        src="assets/icons/python-icon.png" 
+                                        alt="Python"
+                                    />
                                 </div>
                                 <h4 class="skill-name" data-key="python">Python</h4>
                             </div>
                             
                             <div class="skill-card" data-tech="java">
                                 <div class="skill-icon">
-                                    <img src="assets/icons/java-icon.png" alt="Java">
+                                    <img 
+                                        src="assets/icons/java-icon.png" 
+                                        alt="Java"
+                                    />
                                 </div>
                                 <h4 class="skill-name" data-key="java">Java</h4>
                             </div>
                             
                             <div class="skill-card" data-tech="ruby">
                                 <div class="skill-icon">
-                                    <img src="assets/icons/ruby-icon.png" alt="Ruby">
+                                    <img 
+                                        src="assets/icons/ruby-icon.png" 
+                                        alt="Ruby"
+                                    />
                                 </div>
                                 <h4 class="skill-name" data-key="ruby">Ruby</h4>
                             </div>
@@ -170,21 +180,30 @@
                         <div class="skills-grid">
                             <div class="skill-card" data-tech="html">
                                 <div class="skill-icon">
-                                    <img src="assets/icons/html-icon.png" alt="HTML">
+                                    <img 
+                                        src="assets/icons/html-icon.png" 
+                                        alt="HTML"
+                                    />
                                 </div>
                                 <h4 class="skill-name" data-key="html">HTML</h4>
                             </div>
                             
                             <div class="skill-card" data-tech="css">
                                 <div class="skill-icon">
-                                    <img src="assets/icons/css-icon.png" alt="CSS">
+                                    <img 
+                                        src="assets/icons/css-icon.png" 
+                                        alt="CSS"
+                                    />
                                 </div>
                                 <h4 class="skill-name" data-key="css">CSS</h4>
                             </div>
                             
                             <div class="skill-card" data-tech="sql">
                                 <div class="skill-icon">
-                                    <img src="assets/icons/sql-icon.png" alt="SQL">
+                                    <img 
+                                        src="assets/icons/sql-icon.png" 
+                                        alt="SQL"
+                                    />
                                 </div>
                                 <h4 class="skill-name" data-key="sql">SQL</h4>
                                 </div>
@@ -197,42 +216,60 @@
                         <div class="skills-grid compact">
                             <div class="tool-card" data-tool="git">
                                 <div class="tool-icon">
-                                    <img src="assets/icons/git-icon.png" alt="Git">
+                                    <img 
+                                        src="assets/icons/git-icon.png" 
+                                        alt="Git"
+                                    />
                                 </div>
                                 <span class="tool-name" data-key="git">Git</span>
                             </div>
                             
                             <div class="tool-card" data-tool="github">
                                 <div class="tool-icon">
-                                    <img src="assets/icons/github-icon.png" alt="GitHub">
+                                    <img 
+                                        src="assets/icons/github-icon.png" 
+                                        alt="GitHub"
+                                    />
                                 </div>
                                 <span class="tool-name" data-key="github">GitHub</span>
                             </div>
                             
                             <div class="tool-card" data-tool="vs-code">
                                 <div class="tool-icon">
-                                    <img src="assets/icons/vs-icon.png" alt="VS Code">
+                                    <img 
+                                        src="assets/icons/vs-icon.png" 
+                                        alt="VS Code"
+                                    />
                                 </div>
                                 <span class="tool-name" data-key="vs-code">VS Code</span>
                             </div>
                             
                             <div class="tool-card" data-tool="intellij">
                                 <div class="tool-icon">
-                                    <img src="assets/icons/intellij-icon.png" alt="IntelliJ">
+                                    <img 
+                                        src="assets/icons/intellij-icon.png" 
+                                        alt="IntelliJ"
+                                    />
                                 </div>
                                 <span class="tool-name" data-key="intellij">IntelliJ</span>
                             </div>
                             
                             <div class="tool-card" data-tool="pycharm">
                                 <div class="tool-icon">
-                                    <img src="assets/icons/pycharm-icon.png" alt="PyCharm">
+                                    <img 
+                                        src="assets/icons/pycharm-icon.png" 
+                                        alt="PyCharm"
+                                    />
                                 </div>
                                 <span class="tool-name" data-key="pycharm">PyCharm</span>
                             </div>
                             
                             <div class="tool-card" data-tool="rubymine">
                                 <div class="tool-icon">
-                                    <img src="assets/icons/rubymine-icon.png" alt="RubyMine">
+                                    <img 
+                                        src="assets/icons/rubymine-icon.png" 
+                                        alt="RubyMine"
+                                    />
                                 </div>
                                 <span class="tool-name" data-key="rubymine">RubyMine</span>
                             </div>
@@ -246,7 +283,10 @@
                             
                             <div class="tool-card" data-tool="pgadmin4">
                                 <div class="tool-icon">
-                                    <img src="assets/icons/pgadmin4-icon.png" alt="PGAdmin4">
+                                    <img 
+                                        src="assets/icons/pgadmin4-icon.png" 
+                                        alt="PGAdmin4"
+                                    />
                                 </div>
                                 <span class="tool-name" data-key="pgadmin4">PGAdmin4</span>
                             </div>
@@ -358,13 +398,13 @@
                         </div>
                         
                         <div class="social-links">
-                            <a href="#" class="social-link">
+                            <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-link">
                                 <i class="fab fa-linkedin"></i>
                             </a>
                             <a href="#" class="social-link">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#" class="social-link">
+                            <a href="https://www.instagram.com/__.fr3it4s.__/" class="social-link">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
