@@ -3,9 +3,10 @@ const translations = {
         // Meta informações
         'title': 'Portfólio - Lucas',
         
-        // Navegação
+        // Navegação - NOVA CHAVE ADICIONADA
         'nav-home': 'Home',
         'nav-sobre': 'Sobre Mim',
+        'nav-musica': 'Música',  // ← NOVA CHAVE
         'nav-skills': 'Skills',
         'nav-projetos': 'Meus Projetos',
         'nav-contatos': 'Contatos',
@@ -17,7 +18,7 @@ const translations = {
         'contact-me': 'Contate-me',
         'scroll-down': 'Role para baixo',
         
-        // About Section - NOVAS CHAVES QUE VOCÊ USA
+        // About Section
         'about-title': 'Sobre Mim',
         'about-text': 'Estudante de Ciência da Computação apaixonado por desenvolvimento de software back-end. Tenho experiência com linguagens como Java, Python e Ruby, além de conhecimentos em HTML, CSS e SQL.',
         'about-text-2': 'Meu objetivo é concluir o curso de Ciência da Computação e me tornar um desenvolvedor back-end, e futuramente me tornar um Segurança da Informação.',
@@ -28,13 +29,17 @@ const translations = {
         'languages': 'Linguagens Dominadas',
         'courses': 'Cursos em Andamento',
         
+        // Music Section - NOVAS CHAVES
+        'music-title': 'Ouvindo Agora',  // ← NOVA CHAVE (título da seção)
+        'music-description': 'Música é minha paixão!',  // ← NOVA CHAVE (opcional)
+        
         // Skills Section
         'skills-title': 'Minhas Skills',
         'programming-languages': 'Linguagens de Programação',
         'web-technologies': 'Tecnologias Web',
         'tools-technologies': 'Ferramentas & Tecnologias',
         
-        // Tecnologias - ADICIONE TODAS QUE VOCÊ USA
+        // Tecnologias
         'python': 'Python',
         'java': 'Java',
         'ruby': 'Ruby',
@@ -57,9 +62,7 @@ const translations = {
         'projects-title': 'Meus Projetos',
         'java-project-title': 'Estudos em Java',
         'java-project-desc': 'Repositório com exercícios e projetos do curso de Java, incluindo programação orientada a objetos e estruturas de dados.',
-        'portfolio-project-title': 'Portfólio Online',
-        'portfolio-project-desc': 'Este portfólio responsivo desenvolvido com HTML, CSS e JavaScript, com suporte a múltiplos idiomas.',
-        'coming-soon-title': 'Em Breve',
+        'coming-soon-title': 'Em Breve',  // ← JÁ EXISTE
         'coming-soon-desc': 'Novo projeto em desenvolvimento utilizando tecnologias modernas e melhores práticas de desenvolvimento.',
         'view-project': 'Ver Projeto',
         'coming-soon': 'Em Breve',
@@ -78,16 +81,17 @@ const translations = {
         
         // Footer
         'footer-text': 'Desenvolvido com ❤️ e muito código',
-        'copyright': '© 2024 Lucas. Todos os direitos reservados.'
+        'copyright': '© 2025 Lucas. Todos os direitos reservados.'  // ← ATUALIZADO ANO
     },
     
     'en-us': {
         // Meta information
         'title': 'Portfolio - Lucas',
         
-        // Navigation
+        // Navigation - NEW KEY ADDED
         'nav-home': 'Home',
         'nav-sobre': 'About Me',
+        'nav-musica': 'Music',  // ← NEW KEY
         'nav-skills': 'Skills',
         'nav-projetos': 'My Projects',
         'nav-contatos': 'Contact',
@@ -109,6 +113,10 @@ const translations = {
         'projects-completed': 'Projects Completed',
         'languages': 'Languages Mastered',
         'courses': 'Courses in Progress',
+        
+        // Music Section - NEW KEYS
+        'music-title': 'Now Listening',  // ← NEW KEY
+        'music-description': 'Music is my passion!',  // ← NEW KEY (optional)
         
         // Skills Section
         'skills-title': 'My Skills',
@@ -139,8 +147,6 @@ const translations = {
         'projects-title': 'My Projects',
         'java-project-title': 'Java Studies',
         'java-project-desc': 'Repository with exercises and projects from the Java course, including object-oriented programming and data structures.',
-        'portfolio-project-title': 'Online Portfolio',
-        'portfolio-project-desc': 'This responsive portfolio developed with HTML, CSS and JavaScript, with support for multiple languages.',
         'coming-soon-title': 'Coming Soon',
         'coming-soon-desc': 'New project under development using modern technologies and best development practices.',
         'view-project': 'View Project',
@@ -160,63 +166,61 @@ const translations = {
         
         // Footer
         'footer-text': 'Built with ❤️ and lots of code',
-        'copyright': '© 2024 Lucas. All rights reserved.'
+        'copyright': '© 2025 Lucas. All rights reserved.'  // ← YEAR UPDATED
     }
 };
 
+// Função para aplicar tradução
 function applyTranslation(language) {
     console.log('Aplicando tradução para:', language);
     
+    // 1. Atualizar título da página
     if (translations[language] && translations[language]['title']) {
         document.title = translations[language]['title'];
     }
     
+    // 2. Atualizar TODOS os elementos com data-key
     document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
         if (translations[language] && translations[language][key]) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translations[language][key];
-            } 
-            else if (element.children.length > 0 && !element.classList.contains('skill-name') && !element.classList.contains('tool-name')) {
-                const childSpans = element.querySelectorAll('span[class*="gradient"], span.highlight');
-                if (childSpans.length > 0) {
-                    let tempElement = document.createElement('div');
-                    tempElement.innerHTML = translations[language][key];
-                    
-                    childSpans.forEach(span => {
-                        const spanClass = span.className;
-                        const spanText = span.textContent;
-                        const tempSpans = tempElement.querySelectorAll('span');
-                        tempSpans.forEach(tempSpan => {
-                            if (tempSpan.textContent === spanText || tempSpan.className === spanClass) {
-                                tempSpan.className = spanClass;
-                            }
-                        });
-                    });
-                    
-                    element.innerHTML = tempElement.innerHTML;
-                } else {
-                    element.innerHTML = translations[language][key];
-                }
-            }
-            else {
+            } else {
                 element.textContent = translations[language][key];
             }
-        } else if (translations[language]) {
-            console.warn('Chave de tradução não encontrada:', key, 'para idioma:', language);
         }
     });
     
+    // 3. Atualizar títulos das seções que não têm data-key
+    updateSectionTitles(language);
+    
+    // 4. Atualizar elementos por classe
     updateElementsByClass(language);
     
-    updateSpecificElements(language);
-    
+    // 5. Salvar preferência
     localStorage.setItem('preferredLanguage', language);
     console.log('Tradução aplicada com sucesso!');
 }
 
+// Função para atualizar títulos de seções que não usam data-key
+function updateSectionTitles(language) {
+    // Título da seção de música (h2 dentro de #music-section)
+    const musicSectionTitle = document.querySelector('#music-section .section-title');
+    if (musicSectionTitle && translations[language] && translations[language]['music-title']) {
+        // Preserva o span com classe "highlight"
+        const highlightSpan = musicSectionTitle.querySelector('.highlight');
+        if (highlightSpan) {
+            musicSectionTitle.innerHTML = translations[language]['music-title'].replace('Agora', '<span class="highlight">Agora</span>');
+        } else {
+            musicSectionTitle.textContent = translations[language]['music-title'];
+        }
+    }
+}
+
+// Função auxiliar para elementos por classe
 function updateElementsByClass(language) {
-    const navClasses = ['nav-home', 'nav-sobre', 'nav-skills', 'nav-projetos', 'nav-contatos'];
+    // Navegação - ATUALIZADO COM NOVA CHAVE
+    const navClasses = ['nav-home', 'nav-sobre', 'nav-musica', 'nav-skills', 'nav-projetos', 'nav-contatos'];
     
     navClasses.forEach(className => {
         const elements = document.getElementsByClassName(className);
@@ -228,30 +232,11 @@ function updateElementsByClass(language) {
     });
 }
 
-function updateSpecificElements(language) {
-    const buttonsWithIcons = document.querySelectorAll('.btn, .project-link');
-    buttonsWithIcons.forEach(button => {
-        const span = button.querySelector('span[data-key]');
-        if (span) {
-            const key = span.getAttribute('data-key');
-            if (translations[language] && translations[language][key]) {
-                span.textContent = translations[language][key];
-            }
-        }
-    });
-    
-    const techTags = document.querySelectorAll('.tech-tag');
-    techTags.forEach(tag => {
-        const text = tag.textContent;
-        if (translations[language] && translations[language][text.toLowerCase()]) {
-            tag.textContent = translations[language][text.toLowerCase()];
-        }
-    });
-}
-
+// Inicializar quando a página carregar
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM carregado, inicializando traduções...');
     
+    // Configurar evento no select
     const languageSelect = document.getElementById('idiomaSite');
     if (languageSelect) {
         languageSelect.addEventListener('change', function() {
@@ -262,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Elemento idiomaSite não encontrado!');
     }
     
+    // Carregar idioma salvo ou usar padrão
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'pt-br';
     console.log('Idioma salvo:', savedLanguage);
     
@@ -270,11 +256,14 @@ document.addEventListener('DOMContentLoaded', () => {
         languageSelectElement.value = savedLanguage;
     }
     
+    // Aplicar tradução inicial
     applyTranslation(savedLanguage);
     
+    // Debug: verificar chaves
     console.log('Chaves disponíveis em pt-br:', Object.keys(translations['pt-br']).length);
     console.log('Chaves disponíveis em en-us:', Object.keys(translations['en-us']).length);
 });
 
+// Exportar para uso global
 window.translations = translations;
 window.applyTranslation = applyTranslation;
