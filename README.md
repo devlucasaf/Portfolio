@@ -3,6 +3,10 @@
     src="https://capsule-render.vercel.app/api?type=waving&color=A020F0&height=120&section=header"
 />
 
+# Portifólio
+
+![Preview of the current progress](./assets/portifolio.png)
+
 # 💻 Sobre
 
 Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
