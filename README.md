@@ -3,17 +3,27 @@
     src="https://capsule-render.vercel.app/api?type=waving&color=A020F0&height=120&section=header"
 />
 
+
+<div align="right">
+    <a href="README.md">
+        <img 
+            src="./assets/flags/us_flag.png" 
+            width="17px"
+        />
+        English
+    </a>
+    | 
+    <a href="https://github.com/devlucasaf/Portifolio/README.ing-us.md">
+        <img 
+            src="./assets/flags/br_flag.png" 
+            width="17px">
+        Português
+    </a>
+</div>
+
 # Portifólio
 
 ![Preview of the current progress](./assets/portifolio.png)
-
-<div align="right">
-  <a href="README.md"><img src="./assets/flags/us_flag.png" width="17px"> English</a> | 
-  <a href="README.pt-br.md"><img src="./assets/flags/br_flag.png" width="17px"> Português</a>
-</div>
-
-# 💻 Sobre
-Projeto feito no intuito de me apresentar como desenvolvedor back-end.
 
 # 💻 Sobre
 
