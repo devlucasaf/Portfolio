@@ -6,15 +6,12 @@ function initLanguageButtons() {
     langButtons.forEach(button => {
         button.addEventListener('click', function() {
             const lang = this.getAttribute('data-lang');
-            
-            // Atualizar botões ativos
+
             langButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
-            // Aplicar tradução
+
             applyTranslation(lang);
-            
-            // Sincronizar com select (se existir)
+
             const select = document.getElementById('idiomaSite');
             if (select) select.value = lang;
         });

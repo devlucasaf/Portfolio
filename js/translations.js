@@ -3,10 +3,10 @@ const translations = {
         // Meta informações
         'title': 'Portfólio - Lucas',
         
-        // Navegação - NOVA CHAVE ADICIONADA
+        // Navegação 
         'nav-home': 'Home',
         'nav-sobre': 'Sobre Mim',
-        'nav-musica': 'Música',  // ← NOVA CHAVE
+        'nav-musica': 'Música',  
         'nav-skills': 'Skills',
         'nav-projetos': 'Meus Projetos',
         'nav-contatos': 'Contatos',
@@ -29,9 +29,9 @@ const translations = {
         'languages': 'Linguagens Dominadas',
         'courses': 'Cursos em Andamento',
         
-        // Music Section - NOVAS CHAVES
-        'music-title': 'Ouvindo Agora',  // ← NOVA CHAVE (título da seção)
-        'music-description': 'Música é minha paixão!',  // ← NOVA CHAVE (opcional)
+        // Music Section 
+        'music-title': 'Ouvindo Agora',  
+        'music-description': 'Música é minha paixão!',  
         
         // Skills Section
         'skills-title': 'Minhas Skills',
@@ -62,7 +62,7 @@ const translations = {
         'projects-title': 'Meus Projetos',
         'java-project-title': 'Estudos em Java',
         'java-project-desc': 'Repositório com exercícios e projetos do curso de Java, incluindo programação orientada a objetos e estruturas de dados.',
-        'coming-soon-title': 'Em Breve',  // ← JÁ EXISTE
+        'coming-soon-title': 'Em Breve',  
         'coming-soon-desc': 'Novo projeto em desenvolvimento utilizando tecnologias modernas e melhores práticas de desenvolvimento.',
         'view-project': 'Ver Projeto',
         'coming-soon': 'Em Breve',
@@ -81,17 +81,17 @@ const translations = {
         
         // Footer
         'footer-text': 'Desenvolvido com ❤️ e muito código',
-        'copyright': '© 2025 Lucas. Todos os direitos reservados.'  // ← ATUALIZADO ANO
+        'copyright': '© 2025 Lucas. Todos os direitos reservados.'  
     },
     
     'en-us': {
         // Meta information
         'title': 'Portfolio - Lucas',
         
-        // Navigation - NEW KEY ADDED
+        // Navigation 
         'nav-home': 'Home',
         'nav-sobre': 'About Me',
-        'nav-musica': 'Music',  // ← NEW KEY
+        'nav-musica': 'Music',  
         'nav-skills': 'Skills',
         'nav-projetos': 'My Projects',
         'nav-contatos': 'Contact',
@@ -115,8 +115,8 @@ const translations = {
         'courses': 'Courses in Progress',
         
         // Music Section - NEW KEYS
-        'music-title': 'Now Listening',  // ← NEW KEY
-        'music-description': 'Music is my passion!',  // ← NEW KEY (optional)
+        'music-title': 'Now Listening',  
+        'music-description': 'Music is my passion!',  
         
         // Skills Section
         'skills-title': 'My Skills',
@@ -166,48 +166,40 @@ const translations = {
         
         // Footer
         'footer-text': 'Built with ❤️ and lots of code',
-        'copyright': '© 2025 Lucas. All rights reserved.'  // ← YEAR UPDATED
+        'copyright': '© 2025 Lucas. All rights reserved.'  
     }
 };
 
-// Função para aplicar tradução
 function applyTranslation(language) {
     console.log('Aplicando tradução para:', language);
-    
-    // 1. Atualizar título da página
+
     if (translations[language] && translations[language]['title']) {
         document.title = translations[language]['title'];
     }
-    
-    // 2. Atualizar TODOS os elementos com data-key
+
     document.querySelectorAll('[data-key]').forEach(element => {
         const key = element.getAttribute('data-key');
         if (translations[language] && translations[language][key]) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translations[language][key];
-            } else {
+            } 
+            else {
                 element.textContent = translations[language][key];
             }
         }
     });
-    
-    // 3. Atualizar títulos das seções que não têm data-key
+
     updateSectionTitles(language);
-    
-    // 4. Atualizar elementos por classe
+
     updateElementsByClass(language);
-    
-    // 5. Salvar preferência
+
     localStorage.setItem('preferredLanguage', language);
     console.log('Tradução aplicada com sucesso!');
 }
 
-// Função para atualizar títulos de seções que não usam data-key
 function updateSectionTitles(language) {
-    // Título da seção de música (h2 dentro de #music-section)
     const musicSectionTitle = document.querySelector('#music-section .section-title');
     if (musicSectionTitle && translations[language] && translations[language]['music-title']) {
-        // Preserva o span com classe "highlight"
         const highlightSpan = musicSectionTitle.querySelector('.highlight');
         if (highlightSpan) {
             musicSectionTitle.innerHTML = translations[language]['music-title'].replace('Agora', '<span class="highlight">Agora</span>');
@@ -217,9 +209,7 @@ function updateSectionTitles(language) {
     }
 }
 
-// Função auxiliar para elementos por classe
 function updateElementsByClass(language) {
-    // Navegação - ATUALIZADO COM NOVA CHAVE
     const navClasses = ['nav-home', 'nav-sobre', 'nav-musica', 'nav-skills', 'nav-projetos', 'nav-contatos'];
     
     navClasses.forEach(className => {
@@ -232,22 +222,20 @@ function updateElementsByClass(language) {
     });
 }
 
-// Inicializar quando a página carregar
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM carregado, inicializando traduções...');
-    
-    // Configurar evento no select
+
     const languageSelect = document.getElementById('idiomaSite');
     if (languageSelect) {
         languageSelect.addEventListener('change', function() {
             console.log('Idioma alterado para:', this.value);
             applyTranslation(this.value);
         });
-    } else {
+    } 
+    else {
         console.error('Elemento idiomaSite não encontrado!');
     }
-    
-    // Carregar idioma salvo ou usar padrão
+
     const savedLanguage = localStorage.getItem('preferredLanguage') || 'pt-br';
     console.log('Idioma salvo:', savedLanguage);
     
@@ -255,15 +243,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (languageSelectElement) {
         languageSelectElement.value = savedLanguage;
     }
-    
-    // Aplicar tradução inicial
+
     applyTranslation(savedLanguage);
-    
-    // Debug: verificar chaves
+
     console.log('Chaves disponíveis em pt-br:', Object.keys(translations['pt-br']).length);
     console.log('Chaves disponíveis em en-us:', Object.keys(translations['en-us']).length);
 });
 
-// Exportar para uso global
 window.translations = translations;
 window.applyTranslation = applyTranslation;
