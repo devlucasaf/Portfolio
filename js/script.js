@@ -78,9 +78,9 @@ const translations = {
         // Projects Section
         'projects-title': 'Meus Projetos',
         'java-project-title': 'Estudos em Java',
-        'java-project-desc': 'Repositório com exercícios e projetos do curso de Java, incluindo programação orientada a objetos e estruturas de dados.',
-        'portfolio-project-title': 'Portfólio Online',
-        'portfolio-project-desc': 'Este portfólio responsivo desenvolvido com HTML, CSS e JavaScript, com suporte a múltiplos idiomas e tema escuro/claro.',
+        'java-project-desc': 'Repositório com estudos e projetos em Java, buscando mostrar a minha evolução na linguagem.',
+        'python-project-tittle': 'BSB Compute',
+        'python-project-desc': 'Repositório de sistema de orquestração de tarefas em python desenvolvido para o projeto da matéria Sistemas Operacionais. Trabalho desenvolvido em grupo.',
         'coming-soon-title': 'Em Breve',
         'coming-soon-desc': 'Novo projeto em desenvolvimento utilizando tecnologias modernas e melhores práticas de desenvolvimento.',
         'view-project': 'Ver Projeto',

@@ -61,9 +61,11 @@ const translations = {
         // Projects Section
         'projects-title': 'Meus Projetos',
         'java-project-title': 'Estudos em Java',
-        'java-project-desc': 'Repositório com exercícios e projetos do curso de Java, incluindo programação orientada a objetos e estruturas de dados.',
-        'coming-soon-title': 'Em Breve',  
+        'java-project-desc': 'Repositório com estudos e projetos em Java, buscando mostrar a minha evolução na linguagem.',
+        'python-project-tittle': 'BSB Compute',
+        'python-project-desc': 'Repositório de sistema de orquestração de tarefas em python desenvolvido para o projeto da matéria Sistemas Operacionais. Trabalho desenvolvido em grupo.',
         'coming-soon-desc': 'Novo projeto em desenvolvimento utilizando tecnologias modernas e melhores práticas de desenvolvimento.',
+        'coming-soon-title': 'Em Breve',
         'view-project': 'Ver Projeto',
         'coming-soon': 'Em Breve',
         
@@ -114,7 +116,7 @@ const translations = {
         'languages': 'Languages Mastered',
         'courses': 'Courses in Progress',
         
-        // Music Section - NEW KEYS
+        // Music Section 
         'music-title': 'Now Listening',  
         'music-description': 'Music is my passion!',  
         
@@ -146,7 +148,9 @@ const translations = {
         // Projects Section
         'projects-title': 'My Projects',
         'java-project-title': 'Java Studies',
-        'java-project-desc': 'Repository with exercises and projects from the Java course, including object-oriented programming and data structures.',
+        'java-project-desc': 'Repository featuring Java studies and projects, showcasing my evolution in the language.',
+        'python-project-tittle': 'BSB Compute',
+        'python-project-desc': 'Python-based task orchestration system developed for an Operating Systems course project. Collaborative group work.',
         'coming-soon-title': 'Coming Soon',
         'coming-soon-desc': 'New project under development using modern technologies and best development practices.',
         'view-project': 'View Project',
