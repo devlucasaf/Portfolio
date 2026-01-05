@@ -5,7 +5,7 @@
 
 
 <div align="right">
-    <a href="README.md">
+    <a href="README-ing-us.md">
         <img 
             src="./assets/flags/us_flag.png" 
             width="17px"
@@ -13,7 +13,7 @@
         English
     </a>
     | 
-    <a href="https://github.com/devlucasaf/Portifolio/README.ing-us.md">
+    <a href="README.md">
         <img 
             src="./assets/flags/br_flag.png" 
             width="17px">
