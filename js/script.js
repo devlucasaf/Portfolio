@@ -103,7 +103,7 @@ const translations = {
         
         // Footer
         'footer-text': 'Desenvolvido com ❤️ e muito código',
-        'copyright': '© 2024 Lucas. Todos os direitos reservados.'
+        'copyright': '© 2025 Lucas. Todos os direitos reservados.'
     },
     
     'en-us': {
@@ -182,6 +182,6 @@ const translations = {
         
         // Footer
         'footer-text': 'Built with ❤️ and lots of code',
-        'copyright': '© 2024 Lucas. All rights reserved.'
+        'copyright': '© 2025 Lucas. All rights reserved.'
     }
 };
