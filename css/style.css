@@ -663,23 +663,6 @@ appearance: none;
     transform: scale(1);
 }
 
-/* Tema light mode */
-[data-theme="light"] .language-select {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-color: var(--roxo-suave);
-    color: var(--preto-puro);
-}
-
-[data-theme="light"] .language-select:hover {
-    background-color: rgba(123, 44, 191, 0.1);
-    border-color: var(--roxo-neon);
-}
-
-[data-theme="light"] .language-select option {
-    background-color: var(--branco-puro);
-    color: var(--preto-puro);
-}
-
 .language-select {
     padding: 0.6rem 1.2rem;
     border-radius: var(--border-radius-md);
