@@ -22,6 +22,9 @@ Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
   │   ├── translations.js
   │   └── script.js
   └── assets/
+      ├── flags/
+      │   ├── br_flag.png
+      │   └── us_flag.png
       └── icons/
           ├── python-icon.png
           ├── java-icon.png
