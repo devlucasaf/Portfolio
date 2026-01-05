@@ -3,7 +3,6 @@
     src="https://capsule-render.vercel.app/api?type=waving&color=A020F0&height=120&section=header"
 />
 
-
 <div align="right">
     <a href="README-ing-us.md">
         <img 
@@ -21,11 +20,11 @@
     </a>
 </div>
 
-# Portifólio
+# Portfolio
 
 ![Preview of the current progress](./assets/portifolio.png)
 
-# 💻 Sobre
+# 💻 About
 
 Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
 

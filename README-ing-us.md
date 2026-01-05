@@ -3,36 +3,26 @@
     src="https://capsule-render.vercel.app/api?type=waving&color=A020F0&height=120&section=header"
 />
 
+<div align="right">
+    <a href="README-ing-us.md">
+        <img 
+            src="./assets/flags/us_flag.png" 
+            width="17px"
+        />
+        English
+    </a>
+    | 
+    <a href="README.md">
+        <img 
+            src="./assets/flags/br_flag.png" 
+            width="17px">
+        Português
+    </a>
+</div>
+
 # Portifólio
 
 ![Preview of the current progress](./assets/portifolio.png)
-
-<table align="right">
-    <tr>
-        <td>
-            <a href="https://github.com/devlucasaf/Portifolio/README.md">
-                <img 
-                    src="./assets/flags/us_flag.png" 
-                    alt="US flag" 
-                    width="17px"
-                /> 
-                English
-            </a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href="https://github.com/devlucasaf/Portifolio/README-ing-us.md">
-                <img 
-                    src="./assets/flags/br_flag.png" 
-                    alt="Brazil flag" 
-                    width="17px"
-                />  
-                Português
-            </a>
-        </td>
-    </tr>
-</table>
 
 # 💻 Sobre
 
