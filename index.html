@@ -33,10 +33,43 @@
             </ul>
             
             <div class="nav-controls">
-                <select name="idioma" id="idiomaSite" class="language-select">
-                    <option value="pt-br">PT-BR</option>
-                    <option value="en-us">EN-US</option>
-                </select>
+                <div class="language-selector-wrapper">
+                    <div class="language-selector-custom">
+                        <div class="current-language">
+                            <img 
+                                src="./assets/flags/br_flag.png" 
+                                alt="Brazil flag" 
+                                class="flag-img"
+                            />
+                            <span class="language-text">Português</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+
+                        <div class="language-dropdown">
+                            <div class="language-option" data-value="pt-br">
+                                <img 
+                                    src="./assets/flags/br_flag.png" 
+                                    alt="Brazil flag" 
+                                    class="flag-img"
+                                />
+                                <span class="language-text">Português (BR)</span>
+                            </div>
+                            <div class="language-option" data-value="en-us">
+                                <img 
+                                    src="./assets/flags/us_flag.png" 
+                                    alt="US flag" 
+                                    class="flag-img"
+                                />
+                                <span class="language-text">English (US)</span>
+                            </div>
+                        </div>
+
+                        <select name="idioma" id="idiomaSite" class="language-select-hidden">
+                            <option value="pt-br">PT-BR</option>
+                            <option value="en-us">EN-US</option>
+                        </select>
+                    </div>
+                </div>
                 
                 <button class="menu-toggle" id="menu-toggle">
                     <i class="fas fa-bars"></i>

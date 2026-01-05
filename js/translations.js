@@ -207,7 +207,8 @@ function updateSectionTitles(language) {
         const highlightSpan = musicSectionTitle.querySelector('.highlight');
         if (highlightSpan) {
             musicSectionTitle.innerHTML = translations[language]['music-title'].replace('Agora', '<span class="highlight">Agora</span>');
-        } else {
+        } 
+        else {
             musicSectionTitle.textContent = translations[language]['music-title'];
         }
     }
@@ -226,33 +227,7 @@ function updateElementsByClass(language) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM carregado, inicializando traduções...');
-
-    const languageSelect = document.getElementById('idiomaSite');
-    if (languageSelect) {
-        languageSelect.addEventListener('change', function() {
-            console.log('Idioma alterado para:', this.value);
-            applyTranslation(this.value);
-        });
-    } 
-    else {
-        console.error('Elemento idiomaSite não encontrado!');
-    }
-
-    const savedLanguage = localStorage.getItem('preferredLanguage') || 'pt-br';
-    console.log('Idioma salvo:', savedLanguage);
-    
-    const languageSelectElement = document.getElementById('idiomaSite');
-    if (languageSelectElement) {
-        languageSelectElement.value = savedLanguage;
-    }
-
-    applyTranslation(savedLanguage);
-
-    console.log('Chaves disponíveis em pt-br:', Object.keys(translations['pt-br']).length);
-    console.log('Chaves disponíveis em en-us:', Object.keys(translations['en-us']).length);
-});
-
 window.translations = translations;
 window.applyTranslation = applyTranslation;
+window.updateSectionTitles = updateSectionTitles;
+window.updateElementsByClass = updateElementsByClass;

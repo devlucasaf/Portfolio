@@ -1,184 +1,194 @@
-function initLanguageButtons() {
-    const langButtons = document.querySelectorAll('.lang-btn');
+function initLanguageSelector() {
+    const languageSelect = document.getElementById('idiomaSite');
+    const customSelector = document.querySelector('.language-selector-custom');
     
-    if (!langButtons.length) return; 
+    if (!customSelector) {
+        console.warn('Seletor de idiomas customizado não encontrado');
+        return;
+    }
+
+    const currentLanguage = customSelector.querySelector('.current-language');
+    const currentFlag = customSelector.querySelector('.current-language .flag-img');
+    const currentText = customSelector.querySelector('.current-language .language-text');
+    const languageOptions = customSelector.querySelectorAll('.language-option');
+    const chevronIcon = customSelector.querySelector('.current-language i');
+    const dropdown = customSelector.querySelector('.language-dropdown');
+
+    const languageData = {
+        'pt-br': {
+            flag: './assets/flags/br_flag.png',
+            name: 'Português',
+            fullName: 'Português (BR)',
+            alt: 'Brazil flag'
+        },
+        'en-us': {
+            flag: './assets/flags/us_flag.png',
+            name: 'English',
+            fullName: 'English (US)',
+            alt: 'US flag'
+        }
+    };
+
+    function updateCurrentLanguageDisplay(selectedValue) {
+        const data = languageData[selectedValue];
+        
+        if (!data) return;
+        
+        currentFlag.src = data.flag;
+        currentFlag.alt = data.alt;
+        
+        currentText.textContent = data.name;
+        
+        languageOptions.forEach(option => {
+            option.classList.remove('active');
+            if (option.dataset.value === selectedValue) {
+                option.classList.add('active');
+            }
+        });
+    }
+
+    function openDropdown() {
+        dropdown.style.opacity = '1';
+        dropdown.style.visibility = 'visible';
+        dropdown.style.transform = 'translateY(0)';
+        chevronIcon.style.transform = 'rotate(180deg)';
+    }
+
+    function closeDropdown() {
+        dropdown.style.opacity = '0';
+        dropdown.style.visibility = 'hidden';
+        dropdown.style.transform = 'translateY(-10px)';
+        chevronIcon.style.transform = 'rotate(0deg)';
+    }
+
+    function toggleDropdown() {
+        if (dropdown.style.opacity === '1') {
+            closeDropdown();
+        } else {
+            openDropdown();
+        }
+    }
+
+    function closeDropdownOnClickOutside(event) {
+        if (!customSelector.contains(event.target)) {
+            closeDropdown();
+        }
+    }
+
+    function setupEventListeners() {
+        currentLanguage.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleDropdown();
+        });
+
+        languageOptions.forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const selectedValue = this.dataset.value;
+                
+                if (languageSelect) {
+                    languageSelect.value = selectedValue;
+                    
+                    const changeEvent = new Event('change');
+                    languageSelect.dispatchEvent(changeEvent);
+                }
+                
+                updateCurrentLanguageDisplay(selectedValue);
+                
+                closeDropdown();
+            });
+        });
+
+        document.addEventListener('click', closeDropdownOnClickOutside);
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeDropdown();
+            }
+        });
+    }
+
+    function init() {
+        const savedLanguage = localStorage.getItem('preferredLanguage') || 'pt-br';
+        updateCurrentLanguageDisplay(savedLanguage);
+        
+        setupEventListeners();
+        
+        closeDropdown();
+        
+        console.log('✅ Seletor de idiomas customizado inicializado');
+    }
+
+    init();
+}
+
+function initializePage() {
+    console.log('🚀 Inicializando página...');
+
+    initLanguageSelector();
+
+    const languageSelect = document.getElementById('idiomaSite');
+    if (languageSelect) {
+        languageSelect.addEventListener('change', function() {
+            console.log('🌐 Idioma alterado para:', this.value);
+            
+            if (typeof applyTranslation === 'function') {
+                applyTranslation(this.value);
+            } else {
+                console.error('❌ Função applyTranslation não encontrada');
+            }
+        });
+    } 
+    else {
+        console.error('❌ Select de idioma não encontrado');
+    }
+
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'pt-br';
+    console.log('💾 Idioma salvo:', savedLanguage);
     
-    langButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const lang = this.getAttribute('data-lang');
+    if (languageSelect) {
+        languageSelect.value = savedLanguage;
+    }
 
-            langButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
+    if (typeof applyTranslation === 'function') {
+        applyTranslation(savedLanguage);
+    }
 
-            applyTranslation(lang);
+    if (typeof translations !== 'undefined') {
+        console.log(`📚 Traduções disponíveis: pt-br (${Object.keys(translations['pt-br']).length} itens), en-us (${Object.keys(translations['en-us']).length} itens)`);
+    }
 
-            const select = document.getElementById('idiomaSite');
-            if (select) select.value = lang;
+    console.log('✅ Página inicializada com sucesso!');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('📄 DOM completamente carregado');
+    
+    setTimeout(() => {
+        initializePage();
+    }, 100);
+});
+
+function checkFileExists(url) {
+    return fetch(url, { method: 'HEAD' })
+        .then(response => response.ok)
+        .catch(() => false);
+}
+
+function verifyFlags() {
+    const flags = ['./assets/flags/br_flag.png', './assets/flags/us_flag.png'];
+    
+    flags.forEach(flag => {
+        checkFileExists(flag).then(exists => {
+            if (!exists) {
+                console.warn(`⚠️  Bandeira não encontrada: ${flag}`);
+            } else {
+                console.log(`✅ Bandeira encontrada: ${flag}`);
+            }
         });
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    initLanguageButtons(); 
+window.addEventListener('load', function() {
+    setTimeout(verifyFlags, 500);
 });
-
-const translations = {
-    'pt-br': {
-        // Meta informações
-        'title': 'Portfólio - Lucas',
-        
-        // Navegação
-        'nav-home': 'Home',
-        'nav-sobre': 'Sobre Mim',
-        'nav-skills': 'Skills',
-        'nav-projetos': 'Meus Projetos',
-        'nav-contatos': 'Contatos',
-        
-        // Hero Section
-        'welcome': 'Bem-vindo ao meu portfólio',
-        'hero-subtitle': 'Desenvolvedor Full Stack | Java | Python | Ruby',
-        'view-projects': 'Ver Projetos',
-        'contact-me': 'Contate-me',
-        'scroll-down': 'Role para baixo',
-        
-        // About Section
-        'about-title': 'Sobre Mim',
-        'about-text': 'Sou um desenvolvedor apaixonado por tecnologia, com foco em criar soluções inovadoras e eficientes. Atualmente estou aprofundando meus conhecimentos em Java, Python e desenvolvimento web.',
-        'about-text-2': 'Meu objetivo é me tornar um desenvolvedor full stack de excelência, contribuindo para projetos desafiadores que impactem positivamente a vida das pessoas.',
-        'projects-completed': 'Projetos Concluídos',
-        'languages': 'Linguagens Dominadas',
-        'courses': 'Cursos em Andamento',
-        
-        // Skills Section
-        'skills-title': 'Minhas Skills',
-        'programming-languages': 'Linguagens de Programação',
-        'web-technologies': 'Tecnologias Web',
-        'tools-technologies': 'Ferramentas & Tecnologias',
-        
-        // Tecnologias
-        'python': 'Python',
-        'java': 'Java',
-        'ruby': 'Ruby',
-        'javascript': 'JavaScript',
-        'html': 'HTML',
-        'css': 'CSS',
-        'sql': 'SQL',
-        
-        // Ferramentas
-        'git': 'Git',
-        'github': 'GitHub',
-        'vs-code': 'VS Code',
-        'intellij': 'IntelliJ',
-        'pycharm': 'PyCharm',
-        'rubymine': 'RubyMine',
-        'visual-studio': 'Visual Studio',
-        'pgadmin4': 'PGAdmin4',
-        
-        // Projects Section
-        'projects-title': 'Meus Projetos',
-        'java-project-title': 'Estudos em Java',
-        'java-project-desc': 'Repositório com estudos e projetos em Java, buscando mostrar a minha evolução na linguagem.',
-        'python-project-tittle': 'BSB Compute',
-        'python-project-desc': 'Repositório de sistema de orquestração de tarefas em python desenvolvido para o projeto da matéria Sistemas Operacionais. Trabalho desenvolvido em grupo.',
-        'coming-soon-title': 'Em Breve',
-        'coming-soon-desc': 'Novo projeto em desenvolvimento utilizando tecnologias modernas e melhores práticas de desenvolvimento.',
-        'view-project': 'Ver Projeto',
-        'coming-soon': 'Em Breve',
-        
-        // Contact Section
-        'contact-title': 'Entre em Contato',
-        'contact-text': 'Estou sempre aberto a novas oportunidades e conversas sobre tecnologia. Vamos construir algo incrível juntos!',
-        'email': 'E-mail',
-        'github': 'GitHub',
-        'location': 'Localização',
-        'brazil': 'Brasil',
-        'name-label': 'Nome',
-        'email-label': 'E-mail',
-        'message-label': 'Mensagem',
-        'send-message': 'Enviar Mensagem',
-        
-        // Footer
-        'footer-text': 'Desenvolvido com ❤️ e muito código',
-        'copyright': '© 2025 Lucas. Todos os direitos reservados.'
-    },
-    
-    'en-us': {
-        // Meta information
-        'title': 'Portfolio - Lucas',
-        
-        // Navigation
-        'nav-home': 'Home',
-        'nav-sobre': 'About Me',
-        'nav-skills': 'Skills',
-        'nav-projetos': 'My Projects',
-        'nav-contatos': 'Contact',
-        
-        // Hero Section
-        'welcome': 'Welcome to my portfolio',
-        'hero-subtitle': 'Full Stack Developer | Java | Python | Ruby',
-        'view-projects': 'View Projects',
-        'contact-me': 'Contact Me',
-        'scroll-down': 'Scroll Down',
-        
-        // About Section
-        'about-title': 'About Me',
-        'about-text': 'I am a developer passionate about technology, focused on creating innovative and efficient solutions. I am currently deepening my knowledge in Java, Python and web development.',
-        'about-text-2': 'My goal is to become an excellent full stack developer, contributing to challenging projects that positively impact people\'s lives.',
-        'projects-completed': 'Projects Completed',
-        'languages': 'Languages Mastered',
-        'courses': 'Courses in Progress',
-        
-        // Skills Section
-        'skills-title': 'My Skills',
-        'programming-languages': 'Programming Languages',
-        'web-technologies': 'Web Technologies',
-        'tools-technologies': 'Tools & Technologies',
-        
-        // Technologies
-        'python': 'Python',
-        'java': 'Java',
-        'ruby': 'Ruby',
-        'javascript': 'JavaScript',
-        'html': 'HTML',
-        'css': 'CSS',
-        'sql': 'SQL',
-        
-        // Tools
-        'git': 'Git',
-        'github': 'GitHub',
-        'vs-code': 'VS Code',
-        'intellij': 'IntelliJ',
-        'pycharm': 'PyCharm',
-        'rubymine': 'RubyMine',
-        'visual-studio': 'Visual Studio',
-        'pgadmin4': 'PGAdmin4',
-        
-        // Projects Section
-        'projects-title': 'My Projects',
-        'java-project-title': 'Java Studies',
-        'java-project-desc': 'Repository with exercises and projects from the Java course, including object-oriented programming and data structures.',
-        'portfolio-project-title': 'Online Portfolio',
-        'portfolio-project-desc': 'This responsive portfolio developed with HTML, CSS and JavaScript, with support for multiple languages and dark/light theme.',
-        'coming-soon-title': 'Coming Soon',
-        'coming-soon-desc': 'New project under development using modern technologies and best development practices.',
-        'view-project': 'View Project',
-        'coming-soon': 'Coming Soon',
-        
-        // Contact Section
-        'contact-title': 'Get in Touch',
-        'contact-text': 'I am always open to new opportunities and conversations about technology. Let\'s build something amazing together!',
-        'email': 'Email',
-        'github': 'GitHub',
-        'location': 'Location',
-        'brazil': 'Brazil',
-        'name-label': 'Name',
-        'email-label': 'Email',
-        'message-label': 'Message',
-        'send-message': 'Send Message',
-        
-        // Footer
-        'footer-text': 'Built with ❤️ and lots of code',
-        'copyright': '© 2025 Lucas. All rights reserved.'
-    }
-};
