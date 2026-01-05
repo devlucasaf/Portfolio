@@ -20,11 +20,11 @@
     </a>
 </div>
 
-# Portifólio
+# Portfolio
 
 ![Preview of the current progress](./assets/portifolio.png)
 
-# 💻 Sobre
+# 💻 About
 
 Project created with the purpose of introducing myself as a back-end developer.
 
