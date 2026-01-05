@@ -63,11 +63,11 @@ Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
 
 # 🤯 Composição do site
 
-- Home: Minha apresentação.
-- Sobre mim: abordo uma pequena apresentação sobre mim e a minha trajetória.
-- Skills: liguagens e ferramentas que eu utilizo.
-- Meus Projetos: alguns projetos desenvolvidos recentemente por mim.
-- Contatos: minhas redes sociais e formas de entrar em contato comigo.
+- **Home:** Minha apresentação.
+- **Sobre mim:** abordo uma pequena apresentação sobre mim e a minha trajetória.
+- **Skills:** liguagens e ferramentas que eu utilizo.
+- **Meus Projetos:** alguns projetos desenvolvidos recentemente por mim.
+- **Contatos:** minhas redes sociais e formas de entrar em contato comigo.
 
 # 🛠️ Tecnologias utilizadas
 
