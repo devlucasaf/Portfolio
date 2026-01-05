@@ -114,7 +114,7 @@ Project created with the purpose of introducing myself as a back-end developer.
     />
 </div>
 
-## 🏆 Licença
+## 🏆 License
 
 The [MIT License](./LICENSE).
 
