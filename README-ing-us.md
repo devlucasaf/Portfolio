@@ -36,9 +36,9 @@
 
 # 💻 Sobre
 
-Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
+Project created with the purpose of introducing myself as a back-end developer.
 
-# 🗃️ Estrutura
+# 🗃️ Structure
 
 ```
 /portfolio
@@ -71,15 +71,15 @@ Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
           └── lucas-freitas-foto.jpeg
 ```
 
-# 🤯 Composição do site
+# 🤯 Site Composition
 
-- Home: Minha apresentação.
-- Sobre mim: abordo uma pequena apresentação sobre mim e a minha trajetória.
-- Skills: liguagens e ferramentas que eu utilizo.
-- Meus Projetos: alguns projetos desenvolvidos recentemente por mim.
-- Contatos: minhas redes sociais e formas de entrar em contato comigo.
+- **Home:** My introduction/presentation.
+- **About Me:** A brief overview of who I am and my career path.
+- **Skills:** Languages and tools that I use.
+- **My Projects:** Some of my recently developed projects.
+- **Contacts:** My social networks and ways to get in touch with me.
 
-# 🛠️ Tecnologias utilizadas
+# 🛠️ Technologies used
 
 <div align="left">
     <img 
