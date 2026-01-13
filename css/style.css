@@ -50,18 +50,6 @@
     --transition-slow: 0.5s ease;
 }
 
-[data-theme="light"] {
-    --bg-color: var(--branco-puro);
-    --bg-secondary: var(--branco-fumaca);
-    --bg-tertiary: #E9ECEF;
-    --text-color: var(--preto-puro);
-    --text-light: var(--cinza-metal);
-    --card-bg: var(--branco-puro);
-    --border-color: var(--roxo-suave);
-    --shadow: 0 10px 30px rgba(123, 44, 191, 0.1);
-    --shadow-hover: 0 20px 40px rgba(123, 44, 191, 0.2);
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
@@ -98,31 +86,6 @@ body {
     mix-blend-mode: difference;
     transition: transform 0.2s, opacity 0.2s;
     opacity: 0.7;
-}
-
-.theme-toggle {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--gradiente-roxo);
-    color: white;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    z-index: 100;
-    box-shadow: var(--shadow-neon);
-    transition: all var(--transition-normal);
-}
-
-.theme-toggle:hover {
-    transform: scale(1.1) rotate(30deg);
-    box-shadow: 0 0 30px var(--roxo-neon);
 }
 
 .navbar {
@@ -487,25 +450,6 @@ body {
 
 .language-selector-wrapper:hover::before {
     opacity: 0.5;
-}
-
-[data-theme="light"] .current-language {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: var(--roxo-suave);
-    color: var(--preto-puro);
-}
-
-[data-theme="light"] .language-dropdown {
-    background: rgba(255, 255, 255, 0.95);
-    border-color: var(--roxo-suave);
-}
-
-[data-theme="light"] .language-option:hover {
-    background: rgba(123, 44, 191, 0.1);
-}
-
-[data-theme="light"] .language-text {
-    color: var(--preto-puro);
 }
 
 @media (max-width: 768px) {
