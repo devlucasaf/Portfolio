@@ -64,7 +64,8 @@ function initLanguageSelector() {
     function toggleDropdown() {
         if (dropdown.style.opacity === '1') {
             closeDropdown();
-        } else {
+        } 
+        else {
             openDropdown();
         }
     }
@@ -182,7 +183,8 @@ function verifyFlags() {
         checkFileExists(flag).then(exists => {
             if (!exists) {
                 console.warn(`⚠️  Bandeira não encontrada: ${flag}`);
-            } else {
+            } 
+            else {
                 console.log(`✅ Bandeira encontrada: ${flag}`);
             }
         });
