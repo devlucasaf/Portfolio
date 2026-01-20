@@ -64,7 +64,7 @@ const translations = {
         'java-project-desc': 'Repositório com estudos e projetos em Java, buscando mostrar a minha evolução na linguagem.',
         'python-project-tittle': 'BSB Compute',
         'python-project-desc': 'Repositório de sistema de orquestração de tarefas em python desenvolvido para o projeto da matéria Sistemas Operacionais. Trabalho desenvolvido em grupo.',
-        'burger-project-title': 'Drr Burger',
+        'burger-project-title': 'Durrr Burger',
         'burger-project-desc': 'Cardápio digital de uma Hamburgueria',
         'coming-soon-desc': 'Novo projeto em desenvolvimento utilizando tecnologias modernas e melhores práticas de desenvolvimento.',
         'coming-soon-title': 'Em Breve',
