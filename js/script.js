@@ -194,3 +194,33 @@ function verifyFlags() {
 window.addEventListener('load', function() {
     setTimeout(verifyFlags, 500);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    function activateLink(sectionId) {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    activateLink(entry.target.id);
+                }
+            });
+        },
+        {
+            root: null,
+            threshold: 0.6
+        }
+    );
+
+    sections.forEach(section => observer.observe(section));
+});
