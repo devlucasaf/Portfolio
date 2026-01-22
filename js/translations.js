@@ -60,8 +60,8 @@ const translations = {
         
         // Projects Section
         'projects-title': 'Meus Projetos',
-        'java-project-title': 'Estudos em Java',
-        'java-project-desc': 'Repositório com estudos e projetos em Java, buscando mostrar a minha evolução na linguagem.',
+        'java-project-title': 'SGC - Sistema de Condomínio',
+        'java-project-desc': 'Repositório de Sistema de Gestão de Condomínios desenvolvido em Java. Projeto em desenvolvimento a fins de estudos pessoais.',
         'python-project-tittle': 'BSB Compute',
         'python-project-desc': 'Repositório de sistema de orquestração de tarefas em python desenvolvido para o projeto da matéria Sistemas Operacionais. Trabalho desenvolvido em grupo.',
         'burger-project-title': 'Durrr Burger',
@@ -149,8 +149,8 @@ const translations = {
         
         // Projects Section
         'projects-title': 'My Projects',
-        'java-project-title': 'Java Studies',
-        'java-project-desc': 'Repository featuring Java studies and projects, showcasing my evolution in the language.',
+        'java-project-title': 'CMS – Condominium Management System',
+        'java-project-desc': 'Condominium Management System repository developed in Java. This project is currently under development for personal study purposes.',
         'python-project-tittle': 'BSB Compute',
         'python-project-desc': 'Python-based task orchestration system developed for an Operating Systems course project. Collaborative group work.',
         'burger-project-title': 'Drr Burger',
