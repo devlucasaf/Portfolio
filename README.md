@@ -4,7 +4,7 @@
 />
 
 <div align="right">
-    <a href="README-ing-us.md">
+    <a href="README.md">
         <img 
             src="./assets/flags/us_flag.png" 
             width="17px"
@@ -12,7 +12,7 @@
         English
     </a>
     | 
-    <a href="README.md">
+    <a href="README-pt-br.md">
         <img 
             src="./assets/flags/br_flag.png" 
             width="17px">
