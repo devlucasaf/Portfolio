@@ -32,7 +32,9 @@ function initLanguageSelector() {
     function updateCurrentLanguageDisplay(selectedValue) {
         const data = languageData[selectedValue];
         
-        if (!data) return;
+        if (!data) {
+            return;
+        }
         
         currentFlag.src = data.flag;
         currentFlag.alt = data.alt;
