@@ -13,7 +13,7 @@ const translations = {
         
         // Hero Section
         'welcome': 'Bem-vindo ao meu portfólio',
-        'hero-subtitle': 'Desenvolvedor Back-End | Java | Python | Ruby | SQL',
+        'hero-subtitle': 'Desenvolvedor Back-End | Java | JavaScript | Python | Ruby | SQL',
         'view-projects': 'Ver Projetos',
         'contact-me': 'Contate-me',
         'scroll-down': 'Role para baixo',
@@ -47,10 +47,14 @@ const translations = {
         'html': 'HTML',
         'css': 'CSS',
         'javascript': 'JavaScript',
+        'django': 'Django',
+        'spring-boot': 'Spring Boot',
+        'react': 'React',
         
         // Ferramentas
         'git': 'Git',
         'github': 'GitHub',
+        'gitlab': 'GitLab',
         'vs-code': 'VS Code',
         'intellij': 'IntelliJ',
         'pycharm': 'PyCharm',
@@ -103,7 +107,7 @@ const translations = {
         
         // Hero Section
         'welcome': 'Welcome to my portfolio',
-        'hero-subtitle': 'Back-End Developer | Java | Python | Ruby | SQL',
+        'hero-subtitle': 'Back-End Developer | Java | JavaScript | Python | Ruby | SQL',
         'view-projects': 'View Projects',
         'contact-me': 'Contact Me',
         'scroll-down': 'Scroll Down',
@@ -137,10 +141,14 @@ const translations = {
         'html': 'HTML',
         'css': 'CSS',
         'javascript': 'JavaScript',
+        'django': 'Django',
+        'spring-boot': 'Spring Boot',
+        'react': 'React',
         
         // Tools
         'git': 'Git',
         'github': 'GitHub',
+        'gitlab': 'GitLab',
         'vs-code': 'VS Code',
         'intellij': 'IntelliJ',
         'pycharm': 'PyCharm',
