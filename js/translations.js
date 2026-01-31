@@ -20,7 +20,7 @@ const translations = {
         
         // About Section
         'about-title': 'Sobre Mim',
-        'about-text': 'Estudante de Ciência da Computação apaixonado por desenvolvimento de software back-end. Tenho experiência com linguagens como Java, Python e Ruby, além de conhecimentos em HTML, CSS e SQL.',
+        'about-text': 'Estudante de Ciência da Computação apaixonado por desenvolvimento de software back-end. Tenho experiência com linguagens como Java, JavaScript, Python e Ruby, além de conhecimentos em HTML, CSS e SQL.',
         'about-text-2': 'Meu objetivo é concluir o curso de Ciência da Computação e me tornar um desenvolvedor back-end, e futuramente me tornar um Segurança da Informação.',
         'about-text-3': 'Atualmente sou estagiário na área de desenvolvimento de software, onde eu estou estagiano na Caesb.',
         'about-text-4': 'Apaixonado por música, onde meu gênero musical favorito é o rock! Minha banda favorita é o Green Day.',
@@ -55,12 +55,18 @@ const translations = {
         'git': 'Git',
         'github': 'GitHub',
         'gitlab': 'GitLab',
+        'windows': 'Windows',
         'vs-code': 'VS Code',
-        'intellij': 'IntelliJ',
-        'pycharm': 'PyCharm',
-        'rubymine': 'RubyMine',
         'visual-studio': 'Visual Studio',
+        'jet-brains': 'JetBrains',
+        'pycharm': 'PyCharm',
+        'intellij': 'IntelliJ',
+        'rubymine': 'RubyMine',
         'pgadmin4': 'PGAdmin4',
+        'power-bi': 'Power BI',
+        'word': 'Word',
+        'power-point': 'Power Point',
+        'exceç': 'Excel',
         
         // Projects Section
         'projects-title': 'Meus Projetos',
@@ -114,7 +120,7 @@ const translations = {
         
         // About Section
         'about-title': 'About Me',
-        'about-text': 'Computer Science student passionate about back-end software development. I have experience with languages like Java, Python and Ruby, as well as knowledge in HTML, CSS and SQL.',
+        'about-text': 'Computer Science student passionate about back-end software development. I have experience with languages like Java, JavaScript, Python and Ruby, as well as knowledge in HTML, CSS and SQL.',
         'about-text-2': 'My goal is to complete the Computer Science course and become a back-end developer, and eventually become an Information Security professional.',
         'about-text-3': 'I am currently an intern in software development, where I am interning at Caesb.',
         'about-text-4': 'Music lover, where my favorite music genre is rock! My favorite band is Green Day.',
@@ -149,12 +155,18 @@ const translations = {
         'git': 'Git',
         'github': 'GitHub',
         'gitlab': 'GitLab',
+        'windows': 'Windows',
         'vs-code': 'VS Code',
-        'intellij': 'IntelliJ',
-        'pycharm': 'PyCharm',
-        'rubymine': 'RubyMine',
         'visual-studio': 'Visual Studio',
+        'jet-brains': 'JetBrains',
+        'pycharm': 'PyCharm',
+        'intellij': 'IntelliJ',
+        'rubymine': 'RubyMine',
         'pgadmin4': 'PGAdmin4',
+        'power-bi': 'Power BI',
+        'word': 'Word',
+        'power-point': 'Power Point',
+        'exceç': 'Excel',
         
         // Projects Section
         'projects-title': 'My Projects',
