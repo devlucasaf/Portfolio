@@ -1029,6 +1029,21 @@ appearance: none;
     gap: 2rem;
 }
 
+.skills-grid .tool-card {
+    background: var(--gradiente-roxo-preto);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem; /* Mais padding para ficar igual às skill-cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--roxo-escuro);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    height: 100%; /* Para todas terem a mesma altura */
+}
+
 .skill-card {
     background: linear-gradient(145deg, var(--preto-fumaca), var(--cinza-metal));
     border-radius: var(--border-radius-lg);
@@ -1111,10 +1126,6 @@ appearance: none;
     min-width: 45px;
 }
 
-.skills-grid.compact {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-}
-
 .tool-card {
     background: var(--gradiente-roxo-preto);
     border-radius: var(--border-radius-lg);
@@ -1125,12 +1136,31 @@ appearance: none;
     gap: 1rem;
     border: 1px solid var(--roxo-escuro);
     transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradiente-neon);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-normal);
+}
+
+.tool-card:hover::before {
+    transform: scaleX(1);
 }
 
 .tool-card:hover {
-    transform: translateY(-10px) rotate(5deg);
-    border-color: var(--azul-elétrico);
-    box-shadow: 0 0 30px var(--azul-elétrico);
+    transform: translateY(-15px) scale(1.02);
+    border-color: var(--roxo-neon);
+    box-shadow: var(--shadow-neon);
 }
 
 .tool-icon {
@@ -1143,6 +1173,8 @@ appearance: none;
     border-radius: 50%;
     padding: 15px;
     border: 2px solid var(--roxo-escuro);
+    transition: all var(--transition-normal);
+    border: 2px solid var(--roxo-escuro);
 }
 
 .tool-icon img {
@@ -1150,6 +1182,7 @@ appearance: none;
     height: 100%;
     object-fit: contain;
     filter: brightness(1.2);
+    transition: all var(--transition-normal);
 }
 
 .tool-name {
