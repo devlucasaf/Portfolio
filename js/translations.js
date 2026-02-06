@@ -55,14 +55,15 @@ const translations = {
         'git': 'Git',
         'github': 'GitHub',
         'gitlab': 'GitLab',
-        'windows': 'Windows',
-        'vs-code': 'VS Code',
-        'visual-studio': 'Visual Studio',
+        'pgadmin4': 'PGAdmin4',
         'jet-brains': 'JetBrains',
         'pycharm': 'PyCharm',
         'intellij': 'IntelliJ',
         'rubymine': 'RubyMine',
-        'pgadmin4': 'PGAdmin4',
+        'windows': 'Windows',
+        'ssms': 'SSMS',
+        'vs-code': 'VS Code',
+        'visual-studio': 'Visual Studio',
         'power-bi': 'Power BI',
         'word': 'Word',
         'power-point': 'Power Point',
@@ -155,14 +156,15 @@ const translations = {
         'git': 'Git',
         'github': 'GitHub',
         'gitlab': 'GitLab',
-        'windows': 'Windows',
-        'vs-code': 'VS Code',
-        'visual-studio': 'Visual Studio',
+        'pgadmin4': 'PGAdmin4',
         'jet-brains': 'JetBrains',
         'pycharm': 'PyCharm',
         'intellij': 'IntelliJ',
         'rubymine': 'RubyMine',
-        'pgadmin4': 'PGAdmin4',
+        'windows': 'Windows',
+        'ssms': 'SSMS',
+        'vs-code': 'VS Code',
+        'visual-studio': 'Visual Studio',
         'power-bi': 'Power BI',
         'word': 'Word',
         'power-point': 'Power Point',
@@ -241,7 +243,7 @@ function updateSectionTitles(language) {
 }
 
 function updateElementsByClass(language) {
-    const navClasses = ['nav-home', 'nav-sobre', 'nav-musica', 'nav-skills', 'nav-projetos', 'nav-contatos'];
+    const navClasses = ["nav-home", "nav-sobre", "nav-musica", "nav-skills", "nav-projetos", "nav-contatos"];
     
     navClasses.forEach(className => {
         const elements = document.getElementsByClassName(className);
