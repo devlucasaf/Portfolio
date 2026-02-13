@@ -995,7 +995,7 @@ appearance: none;
     animation: shine 3s infinite linear;
 }
 
-.skills-categories {
+.-categories {
     display: flex;
     flex-direction: column;
     gap: 4rem;
