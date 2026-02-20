@@ -32,33 +32,17 @@ Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
 
 ```
 /Portifolio
-  ├── index.html
-  ├── css/
-  │   └── style.css
-  ├── js/
-  │   ├── translations.js
-  │   └── script.js
-  └── assets/
-	  ├── lucas-freitas-foto.jpeg
-      ├── flags/
-      │   ├── br_flag.png
-      │   └── us_flag.png
-      └── icons/
-          ├── python-icon.png
-          ├── java-icon.png
-          ├── ruby-icon.png
-          ├── sql-icon.png
-          ├── html-icon.png
-          ├── css-icon.png
-          ├── javascript-icon.png
-          ├── pycharm-icon.png
-          ├── intellij-icon.png
-          ├── rubymine-icon.png
-          ├── vs-icon.png
-          ├── visual-studio-icon.png
-          ├── pgadmin4-icon.png
-          ├── github-icon.png
-          └── git-icon.png
+ ├── index.html
+ ├── css/
+ │   └── style.css
+ ├── js/
+ │   ├── translations.js
+ │   └── script.js
+ ├── assets/
+ │   ├── flags/
+ │   └── icons/
+ ├── README-pt-br.md
+ └── README.md
 ```
 
 # 🤯 Composição do site
@@ -106,11 +90,27 @@ Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
     />
     <img
         align="center"
-        alt="VsCode"
-        tittle="VsCode"
+        alt="Git"
+        tittle="Git"
+        height="40" 
+        style="padding-right: 10px;" 
+        src="https://skillicons.dev/icons?i=git"
+    />
+    <img
+        align="center"
+        alt="GitHub"
+        tittle="GitHub"
         height="40" 
         style="padding-right: 10px;" 
         src="https://skillicons.dev/icons?i=github"
+    />
+    <img
+        align="center"
+        alt="GitLab"
+        tittle="GitLab"
+        height="40" 
+        style="padding-right: 10px;" 
+        src="https://skillicons.dev/icons?i=gitlab"
     />
 </div>
 
