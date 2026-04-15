@@ -119,31 +119,33 @@ function initLanguageSelector() {
         
         closeDropdown();
         
-        console.log("✅ Seletor de idiomas customizado inicializado");
+        console.log("Seletor de idiomas customizado inicializado");
     }
 
     init();
 }
 
 function initializePage() {
-    console.log("🚀 Inicializando página...");
+    console.log("Inicializando página...");
 
     initLanguageSelector();
 
     const languageSelect = document.getElementById("idiomaSite");
     if (languageSelect) {
         languageSelect.addEventListener("change", function() {
-            console.log("🌐 Idioma alterado para:", this.value);
+            console.log("Idioma alterado para:", this.value);
             
             if (typeof applyTranslation === "function") {
                 applyTranslation(this.value);
-            } else {
-                console.error("❌ Função applyTranslation não encontrada");
+            } 
+            
+            else {
+                console.error("Função applyTranslation não encontrada");
             }
         });
     } 
     else {
-        console.error("❌ Select de idioma não encontrado");
+        console.error("Select de idioma não encontrado");
     }
 
     const savedLanguage = localStorage.getItem("preferredLanguage") || "pt-br";
@@ -158,10 +160,10 @@ function initializePage() {
     }
 
     if (typeof translations !== "undefined") {
-        console.log(`📚 Traduções disponíveis: pt-br (${Object.keys(translations["pt-br"]).length} itens), en-us (${Object.keys(translations["en-us"]).length} itens)`);
+        console.log(`Traduções disponíveis: pt-br (${Object.keys(translations["pt-br"]).length} itens), en-us (${Object.keys(translations["en-us"]).length} itens)`);
     }
 
-    console.log("✅ Página inicializada com sucesso!");
+    console.log("Página inicializada com sucesso!");
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -184,10 +186,10 @@ function verifyFlags() {
     flags.forEach(flag => {
         checkFileExists(flag).then(exists => {
             if (!exists) {
-                console.warn(`⚠️  Bandeira não encontrada: ${flag}`);
+                console.warn(`Bandeira não encontrada: ${flag}`);
             } 
             else {
-                console.log(`✅ Bandeira encontrada: ${flag}`);
+                console.log(`Bandeira encontrada: ${flag}`);
             }
         });
     });
@@ -227,3 +229,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach(section => observer.observe(section));
 });
+
+// Contact Form Handler with EmailJS
+document.addEventListener("DOMContentLoaded", () => {
+    // Inicializar EmailJS
+    emailjs.init("Ky9cHPuZRfL3lS1jY");
+    
+    const contactForm = document.getElementById("contact-form");
+    
+    if (contactForm) {
+        contactForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const messageInput = document.getElementById("message");
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            
+            // Validação
+            if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
+                alert("Por favor, preencha todos os campos!");
+                return;
+            }
+            
+            // Validação de email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                alert("Por favor, insira um email válido!");
+                return;
+            }
+            
+            // Desabilitar botão durante envio
+            const originalText = submitButton.textContent;
+            submitButton.disabled = true;
+            submitButton.textContent = "Enviando...";
+            
+            try {
+                // Enviar email usando EmailJS
+                const response = await emailjs.send("service_portifolio_lucas", "template_contact_form", {
+                    from_name: nameInput.value,
+                    from_email: emailInput.value,
+                    message: messageInput.value,
+                    to_email: "freitas.lucasaf@gmail.com"
+                });
+                
+                if (response.status === 200) {
+                    alert("Mensagem enviada com sucesso! Obrigado pelo contato!");
+                    contactForm.reset();
+                    submitButton.textContent = "Mensagem Enviada! ✓";
+                    
+                    setTimeout(() => {
+                        submitButton.textContent = originalText;
+                        submitButton.disabled = false;
+                    }, 3000);
+                } 
+                else {
+                    throw new Error("Erro ao enviar mensagem");
+                }
+            } 
+            catch (error) {
+                console.error("Erro:", error);
+                alert("Erro ao enviar mensagem. Por favor, tente novamente!");
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        });
+    }
+});
+
+
