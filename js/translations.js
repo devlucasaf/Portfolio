@@ -8,6 +8,7 @@ const translations = {
         'nav-sobre': 'Sobre Mim',
         'nav-musica': 'Música',  
         'nav-skills': 'Skills',
+        'nav-certifications': 'Certificados',
         'nav-projetos': 'Meus Projetos',
         'nav-contatos': 'Contatos',
         
@@ -82,6 +83,23 @@ const translations = {
         'view-project': 'Ver Projeto',
         'coming-soon': 'Em Breve',
         
+        // Certifications Section
+        'certifications-title': 'Meus Certificados',
+        'nav-certifications': 'Certificados',
+        'cert-1-title': 'Curso de Informática',
+        'cert-1-desc': 'Curso de Informática onde aprendi a mexer com o Pacote Office, além de aprender a usar o Windows e o Power BI.',
+        'cert-1-issuer': 'Escola BestMinds',
+        'cert-1-date': '2024',
+        'cert-2-title': 'Programação Python',
+        'cert-2-desc': 'Curso de Programação em Python.',
+        'cert-2-issuer': 'Escola BestMinds',
+        'cert-2-date': '2024',
+        'cert-3-title': 'Programação Java',
+        'cert-3-desc': 'Curso de Programação em Java.',
+        'cert-3-issuer': 'Escola BestMinds',
+        'cert-3-date': '2025',
+        'view-certificate': 'Ver Certificado',
+        
         // Contact Section
         'contact-title': 'Entre em Contato',
         'contact-text': 'Estou sempre aberto a colaborações e feedback!',
@@ -109,6 +127,7 @@ const translations = {
         'nav-sobre': 'About Me',
         'nav-musica': 'Music',  
         'nav-skills': 'Skills',
+        'nav-certifications': 'Certifications',
         'nav-projetos': 'My Projects',
         'nav-contatos': 'Contact',
         
@@ -183,6 +202,23 @@ const translations = {
         'view-project': 'View Project',
         'coming-soon': 'Coming Soon',
         
+        // Certifications Section
+        'certifications-title': 'My Certifications',
+        'nav-certifications': 'Certifications',
+        'cert-1-title': 'Computer Science Course',
+        'cert-1-desc': 'Computer Science course where I learned to work with the Office Suite, as well as learning to use Windows and Power BI.',
+        'cert-1-issuer': 'BestMinds School',
+        'cert-1-date': '2024',
+        'cert-2-title': 'Python Programming',
+        'cert-2-desc': 'Python Programming Course.',
+        'cert-2-issuer': 'BestMinds School',
+        'cert-2-date': '2024',
+        'cert-3-title': 'Java Programming',
+        'cert-3-desc': 'Java Programming Course.',
+        'cert-3-issuer': 'BestMinds School',
+        'cert-3-date': '2025',
+        'view-certificate': 'View Certificate',
+        
         // Contact Section
         'contact-title': 'Get in Touch',
         'contact-text': 'I am always open to collaborations and feedback!',
@@ -243,7 +279,7 @@ function updateSectionTitles(language) {
 }
 
 function updateElementsByClass(language) {
-    const navClasses = ["nav-home", "nav-sobre", "nav-musica", "nav-skills", "nav-projetos", "nav-contatos"];
+    const navClasses = ["nav-home", "nav-sobre", "nav-musica", "nav-skills", "nav-certifications", "nav-projetos", "nav-contatos"];
     
     navClasses.forEach(className => {
         const elements = document.getElementsByClassName(className);
