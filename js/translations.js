@@ -43,6 +43,7 @@ const translations = {
         // Tecnologias
         'python': 'Python',
         'java': 'Java',
+        'csharp': 'C#',
         'ruby': 'Ruby',
         'sql': 'SQL',
         'html': 'HTML',
@@ -68,7 +69,7 @@ const translations = {
         'power-bi': 'Power BI',
         'word': 'Word',
         'power-point': 'Power Point',
-        'exceç': 'Excel',
+        'excel': 'Excel',
         
         // Projects Section
         'projects-title': 'Meus Projetos',
@@ -98,7 +99,10 @@ const translations = {
         'cert-3-desc': 'Curso de Programação em Java.',
         'cert-3-issuer': 'Escola BestMinds',
         'cert-3-date': '2025',
-        'view-certificate': 'Ver Certificado',
+        'cert-4-title': 'Modelagem de Dados em Banco de Dados',
+        'cert-4-desc': 'Aprendendo a modelar dados em banco de dados relacionais, utilizando o MySQL Workbench.',
+        'cert-4-issuer': 'Udemy',
+        'cert-4-date': '2025',
         
         // Contact Section
         'contact-title': 'Entre em Contato',
@@ -162,6 +166,7 @@ const translations = {
         // Technologies
         'python': 'Python',
         'java': 'Java',
+        'csharp': 'C#',
         'ruby': 'Ruby',
         'sql': 'SQL',
         'html': 'HTML',
@@ -187,7 +192,7 @@ const translations = {
         'power-bi': 'Power BI',
         'word': 'Word',
         'power-point': 'Power Point',
-        'exceç': 'Excel',
+        'excel': 'Excel',
         
         // Projects Section
         'projects-title': 'My Projects',
@@ -217,7 +222,10 @@ const translations = {
         'cert-3-desc': 'Java Programming Course.',
         'cert-3-issuer': 'BestMinds School',
         'cert-3-date': '2025',
-        'view-certificate': 'View Certificate',
+        'cert-4-title': 'Database Modeling in Relational Databases',
+        'cert-4-desc': 'Learning to model data in relational databases, using MySQL Workbench.',
+        'cert-4-issuer': 'Udemy',
+        'cert-4-date': '2025',
         
         // Contact Section
         'contact-title': 'Get in Touch',
