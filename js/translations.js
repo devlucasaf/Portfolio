@@ -49,9 +49,9 @@ const translations = {
         'html': 'HTML',
         'css': 'CSS',
         'javascript': 'JavaScript',
-        'django': 'Django',
         'spring-boot': 'Spring Boot',
         'react': 'React',
+        'sqlserver': 'SQL Server',
         
         // Ferramentas
         'git': 'Git',
@@ -79,6 +79,8 @@ const translations = {
         'soccer-project-desc': 'Projeto de minigames de futebol.',
         'burger-project-title': 'Durrr Burger',
         'burger-project-desc': 'Cardápio digital de uma Hamburgueria',
+        'money-tracker-title': 'Money Tracker Control',
+        'money-tracker-desc': 'Projeto de controle de finanças pessoais.',
         'coming-soon-desc': 'Novo projeto em desenvolvimento utilizando tecnologias modernas e melhores práticas de desenvolvimento.',
         'coming-soon-title': 'Em Breve',
         'view-project': 'Ver Projeto',
@@ -172,9 +174,9 @@ const translations = {
         'html': 'HTML',
         'css': 'CSS',
         'javascript': 'JavaScript',
-        'django': 'Django',
         'spring-boot': 'Spring Boot',
         'react': 'React',
+        'sqlserver': 'SQL Server',
         
         // Tools
         'git': 'Git',
@@ -202,6 +204,8 @@ const translations = {
         'soccer-project-desc': 'Football minigames project',
         'burger-project-title': 'Drr Burger',
         'burger-project-desc': 'Digital Menu for a Fictitious Burger Joint',
+        'money-tracker-title': 'Money Tracker Control',
+        'money-tracker-desc': 'Personal finance control project.',
         'coming-soon-title': 'Coming Soon',
         'coming-soon-desc': 'New project under development using modern technologies and best development practices.',
         'view-project': 'View Project',
