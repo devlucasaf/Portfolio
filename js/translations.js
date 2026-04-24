@@ -32,7 +32,27 @@ const translations = {
         
         // Music Section 
         'music-title': 'Ouvindo Agora',  
-        'music-description': 'Música é minha paixão!',  
+        'music-description': 'Música é minha paixão!',
+        'my-playlists': 'Minhas Playlists Favoritas',
+        'recent-tracks': 'Últimas Músicas Ouvidas',
+        'playlist-1-name': 'Rock Clássico',
+        'playlist-1-desc': 'As melhores músicas do rock clássico de todos os tempos',
+        'playlist-1-songs': '45 músicas',
+        'playlist-1-duration': '3h 12min',
+        'playlist-2-name': 'Indie & Alt',
+        'playlist-2-desc': 'Bandas indie e alternativas que define meu estilo',
+        'playlist-2-songs': '38 músicas',
+        'playlist-2-duration': '2h 58min',
+        'playlist-3-name': 'Focus & Code',
+        'playlist-3-desc': 'Músicas perfeitas para programar e focar no trabalho',
+        'playlist-3-songs': '52 músicas',
+        'playlist-3-duration': '4h 23min',
+        'open-spotify': 'Abrir no Spotify',
+        'track-number': '#',
+        'track-name': 'Música',
+        'artist-name': 'Artista',
+        'album-name': 'Álbum',
+        'track-duration': 'Duração',
         
         // Skills Section
         'skills-title': 'Minhas Skills',
@@ -73,7 +93,7 @@ const translations = {
         
         // Projects Section
         'projects-title': 'Meus Projetos',
-        'java-project-title': 'SGC - Sistema de Condomínio',
+        'java-project-title': 'SGC',
         'java-project-desc': 'Repositório de Sistema de Gestão de Condomínios desenvolvido em Java. Projeto em desenvolvimento a fins de estudos pessoais.',
         'soccer-project-tittle': 'Football Games 11',
         'soccer-project-desc': 'Projeto de minigames de futebol.',
@@ -85,6 +105,7 @@ const translations = {
         'coming-soon-title': 'Em Breve',
         'view-project': 'Ver Projeto',
         'coming-soon': 'Em Breve',
+        'other-projects-text': 'Meus outros projetos/estudos',
         
         // Certifications Section
         'certifications-title': 'Meus Certificados',
@@ -120,7 +141,7 @@ const translations = {
         'send-message': 'Enviar Mensagem',
         
         // Footer
-        'footer-text': 'Desenvolvido com ❤️ e muito código',
+        'footer-text': 'Desenvolvido com HTML, CSS e JavaScript e muito código',
         'copyright': '© 2025 Lucas. Todos os direitos reservados.'  
     },
     
@@ -157,7 +178,27 @@ const translations = {
         
         // Music Section 
         'music-title': 'Now Listening',  
-        'music-description': 'Music is my passion!',  
+        'music-description': 'Music is my passion!',
+        'my-playlists': 'My Favorite Playlists',
+        'recent-tracks': 'Recently Played Tracks',
+        'playlist-1-name': 'Classic Rock',
+        'playlist-1-desc': 'The best classic rock songs of all time',
+        'playlist-1-songs': '45 songs',
+        'playlist-1-duration': '3h 12min',
+        'playlist-2-name': 'Indie & Alt',
+        'playlist-2-desc': 'Indie and alternative bands that define my style',
+        'playlist-2-songs': '38 songs',
+        'playlist-2-duration': '2h 58min',
+        'playlist-3-name': 'Focus & Code',
+        'playlist-3-desc': 'Perfect songs for programming and focusing on work',
+        'playlist-3-songs': '52 songs',
+        'playlist-3-duration': '4h 23min',
+        'open-spotify': 'Open in Spotify',
+        'track-number': '#',
+        'track-name': 'Track',
+        'artist-name': 'Artist',
+        'album-name': 'Album',
+        'track-duration': 'Duration',
         
         // Skills Section
         'skills-title': 'My Skills',
@@ -198,7 +239,7 @@ const translations = {
         
         // Projects Section
         'projects-title': 'My Projects',
-        'java-project-title': 'CMS – Condominium Management System',
+        'java-project-title': 'CMS',
         'java-project-desc': 'Condominium Management System repository developed in Java. This project is currently under development for personal study purposes.',
         'soccer-project-tittle': 'Football Games 11',
         'soccer-project-desc': 'Football minigames project',
@@ -210,6 +251,7 @@ const translations = {
         'coming-soon-desc': 'New project under development using modern technologies and best development practices.',
         'view-project': 'View Project',
         'coming-soon': 'Coming Soon',
+        'other-projects-text': 'My other projects/studies',
         
         // Certifications Section
         'certifications-title': 'My Certifications',
@@ -245,7 +287,7 @@ const translations = {
         'send-message': 'Send Message',
         
         // Footer
-        'footer-text': 'Built with ❤️ and lots of code',
+        'footer-text': 'Built with HTML, CSS and JavaScript and lots of code',
         'copyright': '© 2025 Lucas. All rights reserved.'  
     }
 };
@@ -262,8 +304,7 @@ function applyTranslation(language) {
         if (translations[language] && translations[language][key]) {
             if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                 element.placeholder = translations[language][key];
-            } 
-            else {
+            } else {
                 element.textContent = translations[language][key];
             }
         }
@@ -283,8 +324,7 @@ function updateSectionTitles(language) {
         const highlightSpan = musicSectionTitle.querySelector('.highlight');
         if (highlightSpan) {
             musicSectionTitle.innerHTML = translations[language]['music-title'].replace('Agora', '<span class="highlight">Agora</span>');
-        } 
-        else {
+        } else {
             musicSectionTitle.textContent = translations[language]['music-title'];
         }
     }

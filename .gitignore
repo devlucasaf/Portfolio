@@ -1,0 +1,31 @@
+# Variáveis de ambiente
+.env
+.env.local
+.env.*.local
+
+# Arquivos de configuração sensível
+config.js
+config.local.js
+
+# Node modules
+node_modules/
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Temporários
+temp/
+tmp/
+*.tmp

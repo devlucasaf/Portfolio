@@ -180,8 +180,9 @@
             <!-- Music Section -->
             <section id="music-section" class="section music">
                 <div class="container">
-                    <h2 class="section-title">Ouvindo <span class="highlight">Agora</span></h2>
+                    <h2 class="section-title" data-key="music-title">Ouvindo <span class="highlight">Agora</span></h2>
                     
+                    <!-- Spotify Real-time Widget -->
                     <div class="spotify-realtime">
                         <div class="spotify-embed">
                             <a href="https://github.com/kittinan/spotify-github-profile" target="_blank">
@@ -198,6 +199,92 @@
                             Atualizado em tempo real via 
                             <a href="https://github.com/kittinan/spotify-github-profile" target="_blank">Spotify GitHub Profile</a>
                         </p>
+                    </div>
+
+                    <!-- Playlists Section -->
+                    <div class="music-content">
+                        <h3 class="music-subtitle" data-key="my-playlists">Minhas Playlists</h3>
+                        
+                        <div class="playlists-grid">
+                            <!-- Playlist 1 -->
+                            <div class="playlist-card">
+                                <div class="playlist-header">
+                                    <i class="fas fa-music"></i>
+                                    <h4 class="playlist-name" data-key="playlist-1-name">Rock Clássico</h4>
+                                </div>
+                                <p class="playlist-description" data-key="playlist-1-desc">
+                                    As melhores músicas do rock clássico de todos os tempos
+                                </p>
+                                <div class="playlist-info">
+                                    <span class="playlist-songs" data-key="playlist-1-songs">45 músicas</span>
+                                    <span class="playlist-duration" data-key="playlist-1-duration">3h 12min</span>
+                                </div>
+                                <a href="https://open.spotify.com/playlist" target="_blank" class="playlist-link">
+                                    <i class="fab fa-spotify"></i>
+                                    <span data-key="open-spotify">Abrir no Spotify</span>
+                                </a>
+                            </div>
+
+                            <!-- Playlist 2 -->
+                            <div class="playlist-card">
+                                <div class="playlist-header">
+                                    <i class="fas fa-music"></i>
+                                    <h4 class="playlist-name" data-key="playlist-2-name">Indie & Alt</h4>
+                                </div>
+                                <p class="playlist-description" data-key="playlist-2-desc">
+                                    Bandas indie e alternativas que define meu estilo
+                                </p>
+                                <div class="playlist-info">
+                                    <span class="playlist-songs" data-key="playlist-2-songs">38 músicas</span>
+                                    <span class="playlist-duration" data-key="playlist-2-duration">2h 58min</span>
+                                </div>
+                                <a href="https://open.spotify.com/playlist" target="_blank" class="playlist-link">
+                                    <i class="fab fa-spotify"></i>
+                                    <span data-key="open-spotify">Abrir no Spotify</span>
+                                </a>
+                            </div>
+
+                            <!-- Playlist 3 -->
+                            <div class="playlist-card">
+                                <div class="playlist-header">
+                                    <i class="fas fa-music"></i>
+                                    <h4 class="playlist-name" data-key="playlist-3-name">Focus & Code</h4>
+                                </div>
+                                <p class="playlist-description" data-key="playlist-3-desc">
+                                    Músicas perfeitas para programar e focar no trabalho
+                                </p>
+                                <div class="playlist-info">
+                                    <span class="playlist-songs" data-key="playlist-3-songs">52 músicas</span>
+                                    <span class="playlist-duration" data-key="playlist-3-duration">4h 23min</span>
+                                </div>
+                                <a href="https://open.spotify.com/playlist" target="_blank" class="playlist-link">
+                                    <i class="fab fa-spotify"></i>
+                                    <span data-key="open-spotify">Abrir no Spotify</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Tracks Table -->
+                    <div class="recent-tracks-section">
+                        <h3 class="music-subtitle" data-key="recent-tracks">Últimas Músicas Ouvidas</h3>
+                        
+                        <div class="tracks-table-wrapper">
+                            <table class="tracks-table">
+                                <thead>
+                                    <tr>
+                                        <th data-key="track-number">#</th>
+                                        <th data-key="track-name">Música</th>
+                                        <th data-key="artist-name">Artista</th>
+                                        <th data-key="album-name">Álbum</th>
+                                        <th data-key="track-duration">Duração</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="spotify-tracks-tbody">
+                                    <!-- Preenchido dinamicamente pelo JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -570,7 +657,7 @@
                         <div class="certification-card">
                             <div class="certification-header">
                                 <div class="certification-icon">
-                                    <i class="fab fa-sql"></i>
+                                    <i class="fa-solid fa-database"></i>
                                 </div>
                                 <h3 class="certification-title" data-key="cert-4-title">Modelagem de Dados em Banco de Dados</h3>
                             </div>
@@ -595,9 +682,9 @@
                         <div class="project-card">
                             <div class="project-header">
                                 <div class="project-icon">
-                                    <i class="fab fa-java"></i>
+                                    <i class="fa-solid fa-building-user"></i>
                                 </div>
-                                <h3 class="project-title" data-key="java-project-title">SGC - Gestão de Condomínio</h3>
+                                <h3 class="project-title" data-key="java-project-title">SGC</h3>
                             </div>
                             <p class="project-description" data-key="java-project-desc">
                                 Repositório de sistema de gestão de condomínio em java.
@@ -616,7 +703,7 @@
                         <div class="project-card">
                             <div class="project-header">
                                 <div class="project-icon">
-                                    <i class="fab fa-js-square"></i>
+                                    <i class="fa-regular fa-futbol"></i>
                                 </div>
                                 <h3 class="project-title" data-key="soccer-project-title">Football Games 11</h3>
                             </div>
@@ -658,7 +745,7 @@
                         <div class="project-card">
                             <div class="project-header">
                                 <div class="project-icon">
-                                    <i class="fab fa-react"></i>
+                                    <i class="fa-solid fa-piggy-bank"></i>
                                 </div>
                                 <h3 class="project-title" data-key="money-tracker-title">Money Tracker Control</h3>
                             </div>
@@ -675,6 +762,13 @@
                                 <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
+                    </div>
+                    
+                    <div class="other-projects-section">
+                        <a href="https://github.com/devlucasaf?tab=repositories" target="_blank" class="other-projects-link">
+                            <span data-key="other-projects-text">Meus outros projetos/estudos</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -774,7 +868,7 @@
                     </div>
 
                     <p class="footer-text" data-key="footer-text">
-                        Desenvolvido com ❤️ e muito código
+                        Desenvolvido com HTML, CSS e JavaScript e muito código
                     </p>
                     
                     <p class="copyright" data-key="copyright">
@@ -787,5 +881,6 @@
         <script src="js/translations.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script src="js/script.js"></script>
+        <script src="js/spotify-loader.js"></script>
     </body>
 </html>
