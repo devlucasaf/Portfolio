@@ -22,7 +22,7 @@
 
 # Portifólio
 
-![Preview of the current progress](./assets/portifolio-pt-br.png)
+![Preview of the current progress](./assets/portfolio-pt-br.png)
 
 # 💻 Sobre
 

@@ -31,7 +31,7 @@ Project created with the purpose of introducing myself as a back-end developer.
 # 🗃️ Structure
 
 ```
-/Portifolio
+/Portfolio
  ├── index.html
  ├── css/
  │   └── style.css
