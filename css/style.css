@@ -927,6 +927,50 @@ appearance: none;
     line-height: 1.8;
 }
 
+.about-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.about-data-item {
+    padding: 1rem 0;
+}
+
+.about-data-item:nth-child(1) {
+    order: 1;
+}
+
+.about-data-item:nth-child(2) {
+    order: 3;
+}
+
+.about-data-item:nth-child(3) {
+    order: 2;
+}
+
+.about-data-item:nth-child(4) {
+    order: 4;
+}
+
+.about-data-title {
+    display: block;
+    font-weight: 600;
+    color: var(--roxo-neon);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-data-desc,
+.about-data-desc {
+    display: block;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
