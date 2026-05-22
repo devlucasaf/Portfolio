@@ -150,7 +150,7 @@ const translations = {
         
         // Footer
         'footer-text': 'Desenvolvido com HTML, CSS e JavaScript e muito código',
-        'copyright': '© 2025 Lucas. Todos os direitos reservados.'  
+        'copyright': '© 2026 Lucas. Todos os direitos reservados.'  
     },
     
     'en-us': {
@@ -196,7 +196,7 @@ const translations = {
         'recent-tracks': 'Recently Played Tracks',
         'playlist-1-name': 'é do rock🤟🏻',
         'playlist-1-desc': 'All the rock songs I"ve ever heard',
-        'playlist-1-songs': '8419 músicas',
+        'playlist-1-songs': '8577 músicas',
         'playlist-1-duration': '573h 56min',
         'playlist-2-name': 'quem vai ser rainha?',
         'playlist-2-desc': 'Brazilian rock bands that I listen to once in a blue moon.',
@@ -359,7 +359,7 @@ function updateElementsByClass(language) {
     });
 }
 
-window.translations = translations;
-window.applyTranslation = applyTranslation;
-window.updateSectionTitles = updateSectionTitles;
-window.updateElementsByClass = updateElementsByClass;
+window.translations             = translations;
+window.applyTranslation         = applyTranslation;
+window.updateSectionTitles      = updateSectionTitles;
+window.updateElementsByClass    = updateElementsByClass;
