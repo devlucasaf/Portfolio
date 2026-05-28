@@ -498,7 +498,7 @@ body {
 }
 
 .language-select {
-appearance: none;
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 100%;
@@ -675,8 +675,16 @@ appearance: none;
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 80%, rgba(157, 78, 221, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 0, 92, 0.1) 0%, transparent 50%);
+        radial-gradient(
+            circle at 20% 80%, 
+            rgba(157, 78, 221, 0.15) 0%, 
+            transparent 50%
+        ),
+        radial-gradient(
+            circle at 80% 20%, 
+            rgba(255, 0, 92, 0.1) 0%, 
+            transparent 50%
+        );
     z-index: 1;
 }
 
@@ -1076,7 +1084,7 @@ appearance: none;
 .skills-grid .tool-card {
     background: var(--gradiente-roxo-preto);
     border-radius: var(--border-radius-lg);
-    padding: 2rem; /* Mais padding para ficar igual às skill-cards */
+    padding: 2rem; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1085,7 +1093,7 @@ appearance: none;
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
-    height: 100%; /* Para todas terem a mesma altura */
+    height: 100%; 
 }
 
 .skill-card {
@@ -1354,7 +1362,6 @@ appearance: none;
     color: var(--roxo-suave);
 }
 
-/* Other Projects Section */
 .other-projects-section {
     display: flex;
     justify-content: center;
@@ -1397,7 +1404,6 @@ appearance: none;
     transform: translateX(5px);
 }
 
-/* Certifications Section Styles */
 .certifications-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -2038,7 +2044,6 @@ appearance: none;
     color: #1DB954;
 }
 
-/* Music Content - Playlists and Tracks */
 .music-content {
     margin-top: 4rem;
 }
@@ -2057,7 +2062,6 @@ appearance: none;
     letter-spacing: 1px;
 }
 
-/* Playlists Grid */
 .playlists-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -2157,7 +2161,6 @@ appearance: none;
     transform: translateX(5px);
 }
 
-/* Tracks Table */
 .tracks-table-wrapper {
     overflow-x: auto;
     border-radius: var(--border-radius-lg);
