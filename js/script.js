@@ -7,25 +7,25 @@ function initLanguageSelector() {
         return;
     }
 
-    const currentLanguage = customSelector.querySelector(".current-language");
-    const currentFlag = customSelector.querySelector(".current-language .flag-img");
-    const currentText = customSelector.querySelector(".current-language .language-text");
-    const languageOptions = customSelector.querySelectorAll(".language-option");
-    const chevronIcon = customSelector.querySelector(".current-language i");
-    const dropdown = customSelector.querySelector(".language-dropdown");
+    const currentLanguage   = customSelector.querySelector(".current-language");
+    const currentFlag       = customSelector.querySelector(".current-language .flag-img");
+    const currentText       = customSelector.querySelector(".current-language .language-text");
+    const languageOptions   = customSelector.querySelectorAll(".language-option");
+    const chevronIcon       = customSelector.querySelector(".current-language i");
+    const dropdown          = customSelector.querySelector(".language-dropdown");
 
     const languageData = {
         "pt-br": {
-            flag: "./assets/flags/br_flag.png",
-            name: "Português",
-            fullName: "Português (BR)",
-            alt: "Brazil flag"
+            flag:       "./assets/flags/br_flag.png",
+            name:       "Português",
+            fullName:   "Português (BR)",
+            alt:        "Brazil flag"
         },
         "en-us": {
-            flag: "./assets/flags/us_flag.png",
-            name: "English",
-            fullName: "English (US)",
-            alt: "US flag"
+            flag:       "./assets/flags/us_flag.png",
+            name:       "English",
+            fullName:   "English (US)",
+            alt:        "US flag"
         }
     };
 
@@ -66,8 +66,7 @@ function initLanguageSelector() {
     function toggleDropdown() {
         if (dropdown.style.opacity === "1") {
             closeDropdown();
-        } 
-        else {
+        } else {
             openDropdown();
         }
     }
@@ -137,19 +136,16 @@ function initializePage() {
             
             if (typeof applyTranslation === "function") {
                 applyTranslation(this.value);
-            } 
-            
-            else {
+            } else {
                 console.error("Função applyTranslation não encontrada");
             }
         });
-    } 
-    else {
+    } else {
         console.error("Select de idioma não encontrado");
     }
 
     const savedLanguage = localStorage.getItem("preferredLanguage") || "pt-br";
-    console.log("💾 Idioma salvo:", savedLanguage);
+    console.log("Idioma salvo:", savedLanguage);
     
     if (languageSelect) {
         languageSelect.value = savedLanguage;
@@ -167,7 +163,7 @@ function initializePage() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("📄 DOM completamente carregado");
+    console.log("DOM completamente carregado");
     
     setTimeout(() => {
         initializePage();
@@ -187,8 +183,7 @@ function verifyFlags() {
         checkFileExists(flag).then(exists => {
             if (!exists) {
                 console.warn(`Bandeira não encontrada: ${flag}`);
-            } 
-            else {
+            } else {
                 console.log(`Bandeira encontrada: ${flag}`);
             }
         });
@@ -221,8 +216,8 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         },
         {
-            root: null,
-            threshold: 0.2,
+            root:       null,
+            threshold:  0.2,
             rootMargin: "-100px 0px 0px 0px"
         }
     );
@@ -230,9 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach(section => observer.observe(section));
 });
 
-// Contact Form Handler with EmailJS
 document.addEventListener("DOMContentLoaded", () => {
-    // Inicializar EmailJS
     emailjs.init("Ky9cHPuZRfL3lS1jY");
     
     const contactForm = document.getElementById("contact-form");
@@ -241,31 +234,27 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm.addEventListener("submit", async (e) => {
             e.preventDefault();
             
-            const nameInput = document.getElementById("name");
-            const emailInput = document.getElementById("email");
-            const messageInput = document.getElementById("message");
-            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const nameInput     = document.getElementById("name");
+            const emailInput    = document.getElementById("email");
+            const messageInput  = document.getElementById("message");
+            const submitButton  = contactForm.querySelector('button[type="submit"]');
             
-            // Validação
             if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
                 alert("Por favor, preencha todos os campos!");
                 return;
             }
             
-            // Validação de email
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(emailInput.value)) {
                 alert("Por favor, insira um email válido!");
                 return;
             }
             
-            // Desabilitar botão durante envio
             const originalText = submitButton.textContent;
             submitButton.disabled = true;
             submitButton.textContent = "Enviando...";
             
             try {
-                // Enviar email usando EmailJS
                 const response = await emailjs.send("service_portifolio_lucas", "template_contact_form", {
                     from_name: nameInput.value,
                     from_email: emailInput.value,
@@ -282,12 +271,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         submitButton.textContent = originalText;
                         submitButton.disabled = false;
                     }, 3000);
-                } 
-                else {
+                } else {
                     throw new Error("Erro ao enviar mensagem");
                 }
-            } 
-            catch (error) {
+            } catch (error) {
                 console.error("Erro:", error);
                 alert("Erro ao enviar mensagem. Por favor, tente novamente!");
                 submitButton.textContent = originalText;
