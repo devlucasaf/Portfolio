@@ -7,25 +7,25 @@ function initLanguageSelector() {
         return;
     }
 
-    const currentLanguage   = customSelector.querySelector(".current-language");
-    const currentFlag       = customSelector.querySelector(".current-language .flag-img");
-    const currentText       = customSelector.querySelector(".current-language .language-text");
-    const languageOptions   = customSelector.querySelectorAll(".language-option");
-    const chevronIcon       = customSelector.querySelector(".current-language i");
-    const dropdown          = customSelector.querySelector(".language-dropdown");
+    const currentLanguage = customSelector.querySelector(".current-language");
+    const currentFlag = customSelector.querySelector(".current-language .flag-img");
+    const currentText = customSelector.querySelector(".current-language .language-text");
+    const languageOptions = customSelector.querySelectorAll(".language-option");
+    const chevronIcon = customSelector.querySelector(".current-language i");
+    const dropdown = customSelector.querySelector(".language-dropdown");
 
     const languageData = {
         "pt-br": {
-            flag:       "./assets/flags/br_flag.png",
-            name:       "Português",
-            fullName:   "Português (BR)",
-            alt:        "Brazil flag"
+            flag: "./assets/flags/br_flag.png",
+            name: "Português",
+            fullName: "Português (BR)",
+            alt: "Brazil flag"
         },
         "en-us": {
-            flag:       "./assets/flags/us_flag.png",
-            name:       "English",
-            fullName:   "English (US)",
-            alt:        "US flag"
+            flag: "./assets/flags/us_flag.png",
+            name: "English",
+            fullName: "English (US)",
+            alt: "US flag"
         }
     };
 
@@ -216,8 +216,8 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         },
         {
-            root:       null,
-            threshold:  0.2,
+            root: null,
+            threshold: 0.2,
             rootMargin: "-100px 0px 0px 0px"
         }
     );
@@ -234,10 +234,10 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm.addEventListener("submit", async (e) => {
             e.preventDefault();
             
-            const nameInput     = document.getElementById("name");
-            const emailInput    = document.getElementById("email");
-            const messageInput  = document.getElementById("message");
-            const submitButton  = contactForm.querySelector('button[type="submit"]');
+            const nameInput = document.getElementById("name");
+            const emailInput = document.getElementById("email");
+            const messageInput = document.getElementById("message");
+            const submitButton = contactForm.querySelector('button[type="submit"]');
             
             if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
                 alert("Por favor, preencha todos os campos!");
