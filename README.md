@@ -3,35 +3,18 @@
     src="https://capsule-render.vercel.app/api?type=waving&color=A020F0&height=120&section=header"
 />
 
-<div align="right">
-    <a href="README.md">
-        <img 
-            src="./assets/flags/us_flag.png" 
-            width="17px"
-        />
-        English
-    </a>
-    | 
-    <a href="README-pt-br.md">
-        <img 
-            src="./assets/flags/br_flag.png" 
-            width="17px">
-        Português
-    </a>
-</div>
+# Portifólio
 
-# Portfolio
+![Preview of the current progress](./assets/portfolio-pt-br.png)
 
-![Preview of the current progress](./assets/portfolio.png)
+# 💻 Sobre
 
-# 💻 About
+Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
 
-Project created with the purpose of introducing myself as a back-end developer.
-
-# 🗃️ Structure
+# 🗃️ Estrutura
 
 ```
-/Portfolio
+/Portifolio
  ├── index.html
  ├── css/
  │   └── style.css
@@ -45,15 +28,15 @@ Project created with the purpose of introducing myself as a back-end developer.
  └── README.md
 ```
 
-# 🤯 Site Composition
+# 🤯 Composição do site
 
-- **Home:** My introduction/presentation.
-- **About Me:** A brief overview of who I am and my career path.
-- **Skills:** Languages and tools that I use.
-- **My Projects:** Some of my recently developed projects.
-- **Contacts:** My social networks and ways to get in touch with me.
+- **Home:** Minha apresentação.
+- **Sobre mim:** abordo uma pequena apresentação sobre mim e a minha trajetória.
+- **Skills:** liguagens e ferramentas que eu utilizo.
+- **Meus Projetos:** alguns projetos desenvolvidos recentemente por mim.
+- **Contatos:** minhas redes sociais e formas de entrar em contato comigo.
 
-# 🛠️ Technologies used
+# 🛠️ Tecnologias utilizadas
 
 <div align="left">
     <img 
@@ -114,9 +97,9 @@ Project created with the purpose of introducing myself as a back-end developer.
     />
 </div>
 
-## 🏆 License
+## 🏆 Licença
 
-**The** [**MIT License**](./LICENSE).
+The [MIT License](./LICENSE).
 
 <img 
     width=100% 
