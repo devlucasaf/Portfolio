@@ -1,139 +1,149 @@
-function initLanguageSelector() {
-    const languageSelect = document.getElementById("idiomaSite");
-    const customSelector = document.querySelector(".language-selector-custom");
-    
-    if (!customSelector) {
+// --- FUNÇÃO PRINCIPAL DO SELETOR DE IDIOMAS CUSTOMIZADO ---
+function iniciarSeletorIdiomas() {
+    const seletorIdioma = document.getElementById("idiomaSite");
+    const seletorCustomizado = document.querySelector(".language-selector-custom");
+
+    if (!seletorCustomizado) {
         console.warn("Seletor de idiomas customizado não encontrado");
         return;
     }
 
-    const currentLanguage = customSelector.querySelector(".current-language");
-    const currentFlag = customSelector.querySelector(".current-language .flag-img");
-    const currentText = customSelector.querySelector(".current-language .language-text");
-    const languageOptions = customSelector.querySelectorAll(".language-option");
-    const chevronIcon = customSelector.querySelector(".current-language i");
-    const dropdown = customSelector.querySelector(".language-dropdown");
+    const idiomaAtual = seletorCustomizado.querySelector(".current-language");
+    const bandeiraAtual = seletorCustomizado.querySelector(".current-language .flag-img");
+    const textoAtual = seletorCustomizado.querySelector(".current-language .language-text");
+    const opcoesIdioma = seletorCustomizado.querySelectorAll(".language-option");
+    const iconeSeta = seletorCustomizado.querySelector(".current-language i");
+    const menuSuspenso = seletorCustomizado.querySelector(".language-dropdown");
 
-    const languageData = {
+    // --- DADOS DE CADA IDIOMA DISPONÍVEL ---
+    const dadosIdiomas = {
         "pt-br": {
             flag: "./assets/flags/br_flag.png",
             name: "Português",
             fullName: "Português (BR)",
-            alt: "Brazil flag"
+            alt: "Bandeira do Brasil"
         },
         "en-us": {
             flag: "./assets/flags/us_flag.png",
             name: "English",
             fullName: "English (US)",
-            alt: "US flag"
+            alt: "Bandeira dos EUA"
         }
     };
 
-    function updateCurrentLanguageDisplay(selectedValue) {
-        const data = languageData[selectedValue];
-        
-        if (!data) {
+    // --- ATUALIZA O IDIOMA ATUAL ---
+    function atualizarExibicaoIdiomaAtual(valorSelecionado) {
+        const dados = dadosIdiomas[valorSelecionado];
+
+        if (!dados) {
             return;
         }
-        
-        currentFlag.src = data.flag;
-        currentFlag.alt = data.alt;
-        
-        currentText.textContent = data.name;
-        
-        languageOptions.forEach(option => {
-            option.classList.remove("active");
-            if (option.dataset.value === selectedValue) {
-                option.classList.add("active");
+
+        bandeiraAtual.src = dados.flag;
+        bandeiraAtual.alt = dados.alt;
+        textoAtual.textContent = dados.name;
+
+        opcoesIdioma.forEach(opcao => {
+            opcao.classList.remove("active");
+            if (opcao.dataset.value === valorSelecionado) {
+                opcao.classList.add("active");
             }
         });
     }
 
-    function openDropdown() {
-        dropdown.style.opacity = "1";
-        dropdown.style.visibility = "visible";
-        dropdown.style.transform = "translateY(0)";
-        chevronIcon.style.transform = "rotate(180deg)";
+    // --- EXIBE O MENU SUSPENSO E GIRA A SETA PARA CIMA ---
+    function abrirMenuSuspenso() {
+        menuSuspenso.style.opacity = "1";
+        menuSuspenso.style.visibility = "visible";
+        menuSuspenso.style.transform = "translateY(0)";
+        iconeSeta.style.transform = "rotate(180deg)";
     }
 
-    function closeDropdown() {
-        dropdown.style.opacity = "0";
-        dropdown.style.visibility = "hidden";
-        dropdown.style.transform = "translateY(-10px)";
-        chevronIcon.style.transform = "rotate(0deg)";
+    // --- OCULTA O MENU SUSPENSO E RETORNA A SETA À POSIÇÃO ORIGINAL ---
+    function fecharMenuSuspenso() {
+        menuSuspenso.style.opacity = "0";
+        menuSuspenso.style.visibility = "hidden";
+        menuSuspenso.style.transform = "translateY(-10px)";
+        iconeSeta.style.transform = "rotate(0deg)";
     }
 
-    function toggleDropdown() {
-        if (dropdown.style.opacity === "1") {
-            closeDropdown();
+    // --- ALTERNA ENTRE ABRIR E FECHAR O MENU SUSPENSO ---
+    function alternarMenuSuspenso() {
+        if (menuSuspenso.style.opacity === "1") {
+            fecharMenuSuspenso();
         } else {
-            openDropdown();
+            abrirMenuSuspenso();
         }
     }
 
-    function closeDropdownOnClickOutside(event) {
-        if (!customSelector.contains(event.target)) {
-            closeDropdown();
+    // --- FECHA O MENU QUANDO O CLIQUE OCORRE FORA DO SELETOR ---
+    function fecharMenuAoClicarFora(evento) {
+        if (!seletorCustomizado.contains(evento.target)) {
+            fecharMenuSuspenso();
         }
     }
 
-    function setupEventListeners() {
-        currentLanguage.addEventListener("click", function(e) {
+    // --- REGISTRA TODOS OS OUVINTES DE EVENTOS DO SELETOR DE IDIOMAS ---
+    function configurarEventos() {
+        idiomaAtual.addEventListener("click", function (e) {
             e.stopPropagation();
-            toggleDropdown();
+            alternarMenuSuspenso();
         });
 
-        languageOptions.forEach(option => {
-            option.addEventListener("click", function(e) {
+        opcoesIdioma.forEach(opcao => {
+            opcao.addEventListener("click", function (e) {
                 e.stopPropagation();
-                const selectedValue = this.dataset.value;
-                
-                if (languageSelect) {
-                    languageSelect.value = selectedValue;
-                    
-                    const changeEvent = new Event("change");
-                    languageSelect.dispatchEvent(changeEvent);
+                const valorSelecionado = this.dataset.value;
+
+                if (seletorIdioma) {
+                    seletorIdioma.value = valorSelecionado;
+
+                    const eventoMudanca = new Event("change");
+                    seletorIdioma.dispatchEvent(eventoMudanca);
                 }
-                
-                updateCurrentLanguageDisplay(selectedValue);
-                
-                closeDropdown();
+
+                atualizarExibicaoIdiomaAtual(valorSelecionado);
+
+                fecharMenuSuspenso();
             });
         });
 
-        document.addEventListener("click", closeDropdownOnClickOutside);
+        document.addEventListener("click", fecharMenuAoClicarFora);
 
-        document.addEventListener("keydown", function(e) {
+        document.addEventListener("keydown", function (e) {
             if (e.key === "Escape") {
-                closeDropdown();
+                fecharMenuSuspenso();
             }
         });
     }
 
-    function init() {
-        const savedLanguage = localStorage.getItem("preferredLanguage") || "pt-br";
-        updateCurrentLanguageDisplay(savedLanguage);
-        
-        setupEventListeners();
-        
-        closeDropdown();
-        
+    // --- INICIALIZA O SELETOR COM O IDIOMA SALVO E CONFIGURA OS EVENTOS ---
+    function inicializar() {
+        const idiomaSalvo = localStorage.getItem("preferredLanguage") || "pt-br";
+        atualizarExibicaoIdiomaAtual(idiomaSalvo);
+
+        configurarEventos();
+
+        fecharMenuSuspenso();
+
         console.log("Seletor de idiomas customizado inicializado");
     }
 
-    init();
+    inicializar();
 }
 
-function initializePage() {
+// --- FUNÇÃO RESPONSÁVEL POR INICIALIZAR TODA A PÁGINA ---
+function inicializarPagina() {
     console.log("Inicializando página...");
 
-    initLanguageSelector();
+    iniciarSeletorIdiomas();
 
-    const languageSelect = document.getElementById("idiomaSite");
-    if (languageSelect) {
-        languageSelect.addEventListener("change", function() {
+    // --- CONFIGURA O EVENTO DE MUDANÇA DO SELECT DE IDIOMA ---
+    const seletorIdioma = document.getElementById("idiomaSite");
+    if (seletorIdioma) {
+        seletorIdioma.addEventListener("change", function () {
             console.log("Idioma alterado para:", this.value);
-            
+
             if (typeof applyTranslation === "function") {
                 applyTranslation(this.value);
             } else {
@@ -144,17 +154,18 @@ function initializePage() {
         console.error("Select de idioma não encontrado");
     }
 
-    const savedLanguage = localStorage.getItem("preferredLanguage") || "pt-br";
-    console.log("Idioma salvo:", savedLanguage);
-    
-    if (languageSelect) {
-        languageSelect.value = savedLanguage;
+    const idiomaSalvo = localStorage.getItem("preferredLanguage") || "pt-br";
+    console.log("Idioma salvo:", idiomaSalvo);
+
+    if (seletorIdioma) {
+        seletorIdioma.value = idiomaSalvo;
     }
 
     if (typeof applyTranslation === "function") {
-        applyTranslation(savedLanguage);
+        applyTranslation(idiomaSalvo);
     }
 
+    // --- EXIBE NO CONSOLE A QUANTIDADE DE TRADUÇÕES DISPONÍVEIS ---
     if (typeof translations !== "undefined") {
         console.log(`Traduções disponíveis: pt-br (${Object.keys(translations["pt-br"]).length} itens), en-us (${Object.keys(translations["en-us"]).length} itens)`);
     }
@@ -162,56 +173,65 @@ function initializePage() {
     console.log("Página inicializada com sucesso!");
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+// --- AGUARDA O CARREGAMENTO DO DOM PARA INICIALIZAR A PÁGINA ---
+document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM completamente carregado");
-    
+
     setTimeout(() => {
-        initializePage();
+        inicializarPagina();
     }, 100);
 });
 
-function checkFileExists(url) {
+// --- VERIFICA VIA REQUISIÇÃO HEAD SE UM ARQUIVO EXISTE ---
+function verificarArquivoExiste(url) {
     return fetch(url, { method: "HEAD" })
-        .then(response => response.ok)
+        .then(resposta => resposta.ok)
         .catch(() => false);
 }
 
-function verifyFlags() {
-    const flags = ["./assets/flags/br_flag.png", "./assets/flags/us_flag.png"];
-    
-    flags.forEach(flag => {
-        checkFileExists(flag).then(exists => {
-            if (!exists) {
-                console.warn(`Bandeira não encontrada: ${flag}`);
+// --- CONFERE SE AS IMAGENS DAS BANDEIRAS ESTÃO DISPONÍVEIS ---
+function verificarBandeiras() {
+    const bandeiras = [
+        "./assets/flags/br_flag.png",
+        "./assets/flags/us_flag.png"
+    ];
+
+    bandeiras.forEach(bandeira => {
+        verificarArquivoExiste(bandeira).then(existe => {
+            if (!existe) {
+                console.warn(`Bandeira não encontrada: ${bandeira}`);
             } else {
-                console.log(`Bandeira encontrada: ${flag}`);
+                console.log(`Bandeira encontrada: ${bandeira}`);
             }
         });
     });
 }
 
-window.addEventListener("load", function() {
-    setTimeout(verifyFlags, 500);
+// --- VERIFICA AS BANDEIRAS ---
+window.addEventListener("load", function () {
+    setTimeout(verificarBandeiras, 500);
 });
 
+// --- DESTAQUE AUTOMÁTICO DO LINK DE NAVEGAÇÃO CONFORME A SEÇÃO VISÍVEL ---
 document.addEventListener("DOMContentLoaded", () => {
-    const navLinks = document.querySelectorAll(".nav-link");
-    const sections = document.querySelectorAll("section[id]");
+    const linksNavegacao = document.querySelectorAll(".nav-link");
+    const secoes = document.querySelectorAll("section[id]");
 
-    function activateLink(sectionId) {
-        navLinks.forEach(link => {
+    function ativarLink(idSecao) {
+        linksNavegacao.forEach(link => {
             link.classList.remove("active");
-            if (link.getAttribute("href") === `#${sectionId}`) {
+            if (link.getAttribute("href") === `#${idSecao}`) {
                 link.classList.add("active");
             }
         });
     }
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    activateLink(entry.target.id);
+    // --- OBSERVADOR QUE DETECTA QUAL SEÇÃO ESTÁ VISÍVEL NA TELA ---
+    const observador = new IntersectionObserver(
+        (entradas) => {
+            entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    ativarLink(entrada.target.id);
                 }
             });
         },
@@ -222,63 +242,64 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     );
 
-    sections.forEach(section => observer.observe(section));
+    secoes.forEach(secao => observador.observe(secao));
 });
 
+// --- ENVIO DO FORMULÁRIO DE CONTATO VIA EMAILJS ---
 document.addEventListener("DOMContentLoaded", () => {
     emailjs.init("Ky9cHPuZRfL3lS1jY");
-    
-    const contactForm = document.getElementById("contact-form");
-    
-    if (contactForm) {
-        contactForm.addEventListener("submit", async (e) => {
+
+    const formularioContato = document.getElementById("contact-form");
+
+    if (formularioContato) {
+        formularioContato.addEventListener("submit", async (e) => {
             e.preventDefault();
-            
-            const nameInput = document.getElementById("name");
-            const emailInput = document.getElementById("email");
-            const messageInput = document.getElementById("message");
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            
-            if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
+
+            const campoNome = document.getElementById("name");
+            const campoEmail = document.getElementById("email");
+            const campoMensagem = document.getElementById("message");
+            const botaoEnviar = formularioContato.querySelector('button[type="submit"]');
+
+            if (!campoNome.value.trim() || !campoEmail.value.trim() || !campoMensagem.value.trim()) {
                 alert("Por favor, preencha todos os campos!");
                 return;
             }
-            
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(emailInput.value)) {
+
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regexEmail.test(campoEmail.value)) {
                 alert("Por favor, insira um email válido!");
                 return;
             }
-            
-            const originalText = submitButton.textContent;
-            submitButton.disabled = true;
-            submitButton.textContent = "Enviando...";
-            
+
+            const textoOriginal = botaoEnviar.textContent;
+            botaoEnviar.disabled = true;
+            botaoEnviar.textContent = "Enviando...";
+
             try {
-                const response = await emailjs.send("service_portifolio_lucas", "template_contact_form", {
-                    from_name: nameInput.value,
-                    from_email: emailInput.value,
-                    message: messageInput.value,
+                const resposta = await emailjs.send("service_portifolio_lucas", "template_contact_form", {
+                    from_name: campoNome.value,
+                    from_email: campoEmail.value,
+                    message: campoMensagem.value,
                     to_email: "freitas.lucasaf@gmail.com"
                 });
-                
-                if (response.status === 200) {
+
+                if (resposta.status === 200) {
                     alert("Mensagem enviada com sucesso! Obrigado pelo contato!");
-                    contactForm.reset();
-                    submitButton.textContent = "Mensagem Enviada! ✓";
-                    
+                    formularioContato.reset();
+                    botaoEnviar.textContent = "Mensagem Enviada! ✓";
+
                     setTimeout(() => {
-                        submitButton.textContent = originalText;
-                        submitButton.disabled = false;
+                        botaoEnviar.textContent = textoOriginal;
+                        botaoEnviar.disabled = false;
                     }, 3000);
                 } else {
                     throw new Error("Erro ao enviar mensagem");
                 }
-            } catch (error) {
-                console.error("Erro:", error);
+            } catch (erro) {
+                console.error("Erro:", erro);
                 alert("Erro ao enviar mensagem. Por favor, tente novamente!");
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
+                botaoEnviar.textContent = textoOriginal;
+                botaoEnviar.disabled = false;
             }
         });
     }
