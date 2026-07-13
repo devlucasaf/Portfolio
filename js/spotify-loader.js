@@ -1,63 +1,63 @@
-async function loadSpotifyTracks() {
+async function carregarMusicasSpotify() {
     try {
-        const response = await fetch("spotify_data.json?t=" + new Date().getTime());
+        const resposta = await fetch("spotify_data.json?t=" + new Date().getTime());
         
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+        if (!resposta.ok) {
+            throw new Error(`HTTP error! status: ${resposta.status}`);
         }
         
-        const tracks = await response.json();
-        const tbody = document.getElementById("spotify-tracks-tbody");
+        const musicas = await resposta.json();
+        const corpoTabela = document.getElementById("spotify-tracks-tbody");
         
-        if (!tbody) {
+        if (!corpoTabela) {
             console.warn("Elemento #spotify-tracks-tbody não encontrado");
             return;
         }
         
-        tbody.innerHTML = ""; 
+        corpoTabela.innerHTML = ""; 
         
-        tracks.forEach(track => {
-            const row = document.createElement("tr");
+        musicas.forEach(musica => {
+            const linha = document.createElement("tr");
             
-            const trackNumber = String(track.number).padStart(2, "0");
+            const numeroMusica = String(musica.number).padStart(2, "0");
             
-            row.innerHTML = `
+            linha.innerHTML = `
                 <td>
-                    ${trackNumber}
+                    ${numeroMusica}
                 </td>
 
                 <td>
-                    <a href="${track.url}" target="_blank" class="spotify-track-link" title="Abrir no Spotify">
-                        ${escapeHtml(track.name)}
+                    <a href="${musica.url}" target="_blank" class="spotify-track-link" title="Abrir no Spotify">
+                        ${escaparHtml(musica.name)}
                     </a>
                 </td>
 
                 <td>
-                    ${escapeHtml(track.artist)}
+                    ${escaparHtml(musica.artist)}
                 </td>
 
                 <td>
-                    ${escapeHtml(track.album)}
+                    ${escaparHtml(musica.album)}
                 </td>
 
                 <td>    
-                    ${track.duration}
+                    ${musica.duration}
                 </td>
             `;
             
-            tbody.appendChild(row);
+            corpoTabela.appendChild(linha);
         });
         
-        console.log(`Carregadas ${tracks.length} músicas do Spotify`);
+        console.log(`Carregadas ${musicas.length} músicas do Spotify`);
         
-        updateLastSync();
+        atualizarUltimaSincronizacao();
         
-    } catch (error) {
-        console.error("Erro ao carregar Spotify:", error);
+    } catch (erro) {
+        console.error("Erro ao carregar Spotify:", erro);
         
-        const tbody = document.getElementById("spotify-tracks-tbody");
-        if (tbody) {
-            tbody.innerHTML = `
+        const corpoTabela = document.getElementById("spotify-tracks-tbody");
+        if (corpoTabela) {
+            corpoTabela.innerHTML = `
                 <tr>
                     <td colspan="5" class="error-message">
                         Erro ao carregar dados do Spotify. 
@@ -69,40 +69,40 @@ async function loadSpotifyTracks() {
     }
 }
 
-function escapeHtml(text) {
-    const map = {
+function escaparHtml(texto) {
+    const mapa = {
         "&": "&amp;",
         "<": "&lt;",
         ">": "&gt;",
         "'": "&quot;",
         "'": "&#039;"
     };
-    return text.replace(/[&<>""]/g, m => map[m]);
+    return texto.replace(/[&<>""]/g, caractere => mapa[caractere]);
 }
 
-function updateLastSync() {
-    const syncElement = document.getElementById("spotify-last-sync");
-    if (syncElement) {
-        const now = new Date();
-        const timeString = now.toLocaleTimeString("pt-BR", {
+function atualizarUltimaSincronizacao() {
+    const elementoSincronizacao = document.getElementById("spotify-last-sync");
+    if (elementoSincronizacao) {
+        const agora = new Date();
+        const horaFormatada = agora.toLocaleTimeString("pt-BR", {
             hour: "2-digit",
             minute: "2-digit"
         });
-        syncElement.textContent = timeString;
+        elementoSincronizacao.textContent = horaFormatada;
     }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadSpotifyTracks();
+    carregarMusicasSpotify();
     
-    const isDev = window.location.hostname === "localhost";
-    const updateInterval = isDev ? 60000 : 300000;
+    const ehDesenvolvimento = window.location.hostname === "localhost";
+    const intervaloAtualizacao = ehDesenvolvimento ? 60000 : 300000;
     
-    setInterval(loadSpotifyTracks, updateInterval);
+    setInterval(carregarMusicasSpotify, intervaloAtualizacao);
     
-    if (isDev) {
+    if (ehDesenvolvimento) {
         console.log("Atualizando Spotify a cada 1 minuto (desenvolvimento)");
     }
 });
 
-window.loadSpotifyTracks = loadSpotifyTracks;
+window.loadSpotifyTracks = carregarMusicasSpotify;
