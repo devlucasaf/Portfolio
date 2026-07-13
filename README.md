@@ -19,7 +19,11 @@ Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
  ├── css/
  │   └── style.css
  ├── js/
+ │   ├── translation
+ │   │   ├── portuguese.js
+ │   │   └── english.js
  │   ├── translations.js
+ │   ├── spotify-loader.js
  │   └── script.js
  ├── assets/
  │   ├── flags/
