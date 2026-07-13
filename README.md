@@ -3,7 +3,7 @@
     src="https://capsule-render.vercel.app/api?type=waving&color=A020F0&height=120&section=header"
 />
 
-# Portifólio
+# Portfólio
 
 ![Preview of the current progress](./assets/portfolio-pt-br.png)
 
