@@ -14,15 +14,27 @@ function aplicarTraducao(idioma) {
         document.title = traducoes[idioma]["title"];
     }
 
+    document.documentElement.lang = idioma === "en-us" ? "en-US" : "pt-BR";
+
     document.querySelectorAll("[data-key]").forEach(elemento => {
         const chave = elemento.getAttribute("data-key");
-        if (traducoes[idioma] && traducoes[idioma][chave]) {
-            if (elemento.tagName === "INPUT" || elemento.tagName === "TEXTAREA") {
-                elemento.placeholder = traducoes[idioma][chave];
-            } else {
-                elemento.textContent = traducoes[idioma][chave];
-            }
+        const texto = traducoes[idioma] ? traducoes[idioma][chave] : undefined;
+
+        if (texto === undefined) {
+            return;
         }
+
+        if (elemento.tagName === "INPUT" || elemento.tagName === "TEXTAREA") {
+            elemento.placeholder = texto;
+            return;
+        }
+
+        if (elemento.hasAttribute("data-i18n-html")) {
+            elemento.innerHTML = texto;
+            return;
+        }
+
+        elemento.textContent = texto;
     });
 
     atualizarTitulosSecao(idioma);

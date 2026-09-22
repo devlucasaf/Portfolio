@@ -12,7 +12,6 @@ function iniciarSeletorIdiomas() {
     const bandeiraAtual = seletorCustomizado.querySelector(".current-language .flag-img");
     const textoAtual = seletorCustomizado.querySelector(".current-language .language-text");
     const opcoesIdioma = seletorCustomizado.querySelectorAll(".language-option");
-    const iconeSeta = seletorCustomizado.querySelector(".current-language i");
     const menuSuspenso = seletorCustomizado.querySelector(".language-dropdown");
 
     // --- DADOS DE CADA IDIOMA DISPONÍVEL ---
@@ -40,36 +39,33 @@ function iniciarSeletorIdiomas() {
         }
 
         bandeiraAtual.src = dados.flag;
-        bandeiraAtual.alt = dados.alt;
+        bandeiraAtual.alt = "";
         textoAtual.textContent = dados.name;
 
         opcoesIdioma.forEach(opcao => {
-            opcao.classList.remove("active");
-            if (opcao.dataset.value === valorSelecionado) {
-                opcao.classList.add("active");
-            }
+            const ativo = opcao.dataset.value === valorSelecionado;
+            opcao.classList.toggle("active", ativo);
+            opcao.setAttribute("aria-selected", String(ativo));
         });
     }
 
     // --- EXIBE O MENU SUSPENSO E GIRA A SETA PARA CIMA ---
     function abrirMenuSuspenso() {
-        menuSuspenso.style.opacity = "1";
-        menuSuspenso.style.visibility = "visible";
-        menuSuspenso.style.transform = "translateY(0)";
-        iconeSeta.style.transform = "rotate(180deg)";
+        menuSuspenso.classList.add("open");
+        seletorCustomizado.classList.add("open");
+        idiomaAtual.setAttribute("aria-expanded", "true");
     }
 
     // --- OCULTA O MENU SUSPENSO E RETORNA A SETA À POSIÇÃO ORIGINAL ---
     function fecharMenuSuspenso() {
-        menuSuspenso.style.opacity = "0";
-        menuSuspenso.style.visibility = "hidden";
-        menuSuspenso.style.transform = "translateY(-10px)";
-        iconeSeta.style.transform = "rotate(0deg)";
+        menuSuspenso.classList.remove("open");
+        seletorCustomizado.classList.remove("open");
+        idiomaAtual.setAttribute("aria-expanded", "false");
     }
 
     // --- ALTERNA ENTRE ABRIR E FECHAR O MENU SUSPENSO ---
     function alternarMenuSuspenso() {
-        if (menuSuspenso.style.opacity === "1") {
+        if (menuSuspenso.classList.contains("open")) {
             fecharMenuSuspenso();
         } else {
             abrirMenuSuspenso();
@@ -90,10 +86,19 @@ function iniciarSeletorIdiomas() {
             alternarMenuSuspenso();
         });
 
+        // --- ABRE OU FECHA O MENU PELO TECLADO ---
+        idiomaAtual.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                alternarMenuSuspenso();
+            }
+        });
+
+        // --- APLICA O IDIOMA ESCOLHIDO AO CLICAR OU TECLAR NA OPÇÃO ---
         opcoesIdioma.forEach(opcao => {
-            opcao.addEventListener("click", function (e) {
+            function selecionar(e) {
                 e.stopPropagation();
-                const valorSelecionado = this.dataset.value;
+                const valorSelecionado = opcao.dataset.value;
 
                 if (seletorIdioma) {
                     seletorIdioma.value = valorSelecionado;
@@ -105,9 +110,20 @@ function iniciarSeletorIdiomas() {
                 atualizarExibicaoIdiomaAtual(valorSelecionado);
 
                 fecharMenuSuspenso();
+                idiomaAtual.focus();
+            }
+
+            opcao.addEventListener("click", selecionar);
+
+            opcao.addEventListener("keydown", function (e) {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    selecionar(e);
+                }
             });
         });
 
+        // --- FECHA O MENU AO CLICAR FORA OU PRESSIONAR ESC ---
         document.addEventListener("click", fecharMenuAoClicarFora);
 
         document.addEventListener("keydown", function (e) {
@@ -154,6 +170,7 @@ function inicializarPagina() {
         console.error("Select de idioma não encontrado");
     }
 
+    // --- RECUPERA O IDIOMA SALVO E APLICA A TRADUÇÃO ---
     const idiomaSalvo = localStorage.getItem("preferredLanguage") || "pt-br";
     console.log("Idioma salvo:", idiomaSalvo);
 
@@ -165,12 +182,10 @@ function inicializarPagina() {
         applyTranslation(idiomaSalvo);
     }
 
-    // --- EXIBE NO CONSOLE A QUANTIDADE DE TRADUÇÕES DISPONÍVEIS ---
     if (typeof translations !== "undefined") {
         console.log(`Traduções disponíveis: pt-br (${Object.keys(translations["pt-br"]).length} itens), en-us (${Object.keys(translations["en-us"]).length} itens)`);
     }
 
-    // --- INICIALIZA MODAL E BOTÕES DOS PROJETOS ---
     configurarModal();
     configurarBotoesProjetos();
 
@@ -256,6 +271,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const formularioContato = document.getElementById("contact-form");
 
     if (formularioContato) {
+        const areaStatus = document.getElementById("form-status");
+
+        // --- FEEDBACK INLINE ---
+        function mostrarStatus(mensagem, tipo) {
+            if (!areaStatus) {
+                return;
+            }
+
+            areaStatus.textContent = mensagem;
+            areaStatus.classList.remove("is-success", "is-error");
+
+            if (tipo) {
+                areaStatus.classList.add(tipo);
+            }
+        }
+
         formularioContato.addEventListener("submit", async (e) => {
             e.preventDefault();
 
@@ -265,19 +296,22 @@ document.addEventListener("DOMContentLoaded", () => {
             const botaoEnviar = formularioContato.querySelector('button[type="submit"]');
 
             if (!campoNome.value.trim() || !campoEmail.value.trim() || !campoMensagem.value.trim()) {
-                alert("Por favor, preencha todos os campos!");
+                mostrarStatus("Por favor, preencha todos os campos.", "is-error");
+                campoNome.focus();
                 return;
             }
 
             const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!regexEmail.test(campoEmail.value)) {
-                alert("Por favor, insira um email válido!");
+                mostrarStatus("Por favor, insira um e-mail válido.", "is-error");
+                campoEmail.focus();
                 return;
             }
 
             const textoOriginal = botaoEnviar.textContent;
             botaoEnviar.disabled = true;
             botaoEnviar.textContent = "Enviando...";
+            mostrarStatus("Enviando mensagem...", null);
 
             try {
                 const resposta = await emailjs.send("service_portifolio_lucas", "template_contact_form", {
@@ -288,9 +322,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
                 if (resposta.status === 200) {
-                    alert("Mensagem enviada com sucesso! Obrigado pelo contato!");
+                    mostrarStatus("Mensagem enviada com sucesso! Obrigado pelo contato.", "is-success");
                     formularioContato.reset();
-                    botaoEnviar.textContent = "Mensagem Enviada! ✓";
+                    botaoEnviar.textContent = "Mensagem enviada ✓";
 
                     setTimeout(() => {
                         botaoEnviar.textContent = textoOriginal;
@@ -301,7 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             } catch (erro) {
                 console.error("Erro:", erro);
-                alert("Erro ao enviar mensagem. Por favor, tente novamente!");
+                mostrarStatus("Não foi possível enviar a mensagem. Tente novamente.", "is-error");
                 botaoEnviar.textContent = textoOriginal;
                 botaoEnviar.disabled = false;
             }
@@ -535,6 +569,7 @@ const projetos = {
 // --- MODAL REUTILIZÁVEL ---
 let currentModalTrigger = null;
 
+// --- ABRE O MODAL PREENCHIDO COM OS DADOS DO PROJETO ---
 function abrirModalProjeto(projectId) {
     const projeto = projetos[projectId];
     if (!projeto) {
@@ -547,19 +582,21 @@ function abrirModalProjeto(projectId) {
         return;
     }
 
-    const titulo = document.getElementById("modal-title");
-    const descricao = document.getElementById("modal-description");
-    const status = document.getElementById("modal-status");
-    const tipo = document.getElementById("modal-type");
-    const features = document.getElementById("modal-features");
+    // --- REFERÊNCIAS DOS ELEMENTOS DO MODAL ---
+    const titulo        = document.getElementById("modal-title");
+    const descricao     = document.getElementById("modal-description");
+    const status        = document.getElementById("modal-status");
+    const tipo          = document.getElementById("modal-type");
+    const features      = document.getElementById("modal-features");
     const participation = document.getElementById("modal-participation");
-    const challenges = document.getElementById("modal-challenges");
+    const challenges    = document.getElementById("modal-challenges");
     const techContainer = document.getElementById("modal-tech");
-    const repoLink = document.getElementById("modal-repo-link");
-    const demoLink = document.getElementById("modal-demo-link");
-    const imageWrapper = document.getElementById("modal-image-wrapper");
-    const image = document.getElementById("modal-image");
+    const repoLink      = document.getElementById("modal-repo-link");
+    const demoLink      = document.getElementById("modal-demo-link");
+    const imageWrapper  = document.getElementById("modal-image-wrapper");
+    const image         = document.getElementById("modal-image");
 
+    // --- TÍTULO, DESCRIÇÃO, STATUS E TIPO ---
     titulo.textContent = projeto.titulo;
     descricao.textContent = projeto.descricao;
 
@@ -571,6 +608,7 @@ function abrirModalProjeto(projectId) {
     tipo.textContent = projeto.tipo;
     tipo.className = "modal-type";
 
+    // --- LISTA DE FUNCIONALIDADES ---
     features.innerHTML = "";
     if (projeto.funcionalidades && projeto.funcionalidades.length) {
         projeto.funcionalidades.forEach(f => {
@@ -582,9 +620,11 @@ function abrirModalProjeto(projectId) {
         features.innerHTML = "<li data-key='no-features'>[PREENCHER FUNCIONALIDADES]</li>";
     }
 
+    // --- PARTICIPAÇÃO E DESAFIOS TÉCNICOS ---
     participation.textContent = projeto.participacao || "[PREENCHER PARTICIPAÇÃO]";
     challenges.textContent = projeto.desafios || "[PREENCHER DESAFIOS]";
 
+    // --- TAGS DE TECNOLOGIAS ---
     techContainer.innerHTML = "";
     if (projeto.tecnologias && projeto.tecnologias.length) {
         projeto.tecnologias.forEach(tech => {
@@ -595,6 +635,7 @@ function abrirModalProjeto(projectId) {
         });
     }
 
+    // --- IMAGEM OPCIONAL DO PROJETO ---
     if (projeto.imagem && projeto.imagem.trim() !== "") {
         image.src = projeto.imagem;
         image.alt = `Imagem do projeto ${projeto.titulo}`;
@@ -603,6 +644,7 @@ function abrirModalProjeto(projectId) {
         imageWrapper.hidden = true;
     }
 
+    // --- LINKS DE REPOSITÓRIO E DEMONSTRAÇÃO ---
     repoLink.href = projeto.repositorio;
     if (projeto.demonstracao && projeto.demonstracao.trim() !== "") {
         demoLink.href = projeto.demonstracao;
@@ -611,6 +653,9 @@ function abrirModalProjeto(projectId) {
         demoLink.hidden = true;
     }
 
+    // --- GUARDA O GATILHO ANTES DE MOVER O FOCO PARA O MODAL ---
+    currentModalTrigger = document.activeElement;
+
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
@@ -618,10 +663,9 @@ function abrirModalProjeto(projectId) {
     if (firstFocusable) {
         setTimeout(() => firstFocusable.focus(), 100);
     }
-
-    currentModalTrigger = document.activeElement;
 }
 
+// --- FECHA O MODAL E DEVOLVE O FOCO AO ELEMENTO DE ORIGEM ---
 function fecharModalProjeto() {
     const modal = document.getElementById("project-modal");
     if (!modal) {
@@ -671,7 +715,7 @@ function configurarModal() {
     }
 }
 
-// --- INICIALIZAR EVENTOS DOS BOTÕES "SAIBA MAIS"
+// --- INICIALIZAR EVENTOS DOS BOTÕES "SAIBA MAIS" ---
 function configurarBotoesProjetos() {
     const botoes = document.querySelectorAll(".project-details-btn");
     botoes.forEach(btn => {
@@ -687,6 +731,7 @@ function configurarBotoesProjetos() {
     });
 }
 
+// --- ALTERNA ENTRE OS TEMAS CLARO E ESCURO ---
 function toggleTheme() {
     const body = document.body;
     const isLight = body.classList.contains('light-theme');
@@ -707,6 +752,7 @@ function toggleTheme() {
     localStorage.setItem('theme', newTheme);
 }
 
+// --- CARREGA O TEMA SALVO NO NAVEGADOR ---
 function loadTheme() {
     const savedTheme = localStorage.getItem('theme');
     const body = document.body;
@@ -727,12 +773,231 @@ function loadTheme() {
     }
 }
 
+// --- CONFIGURA O BOTÃO DE ALTERNAR TEMA ---
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
     }
     
-    // Carrega o tema salvo
     loadTheme();
+});
+
+// --- MENU MOBILE ---
+document.addEventListener("DOMContentLoaded", () => {
+    const botaoMenu = document.getElementById("menu-toggle");
+    const menu = document.getElementById("nav-menu");
+
+    if (!botaoMenu || !menu) {
+        return;
+    }
+
+    const icone = botaoMenu.querySelector("i");
+
+    // --- APLICA O ESTADO (ABERTO OU FECHADO) AO MENU ---
+    function definirEstadoMenu(aberto) {
+        menu.classList.toggle("active", aberto);
+        botaoMenu.setAttribute("aria-expanded", String(aberto));
+        botaoMenu.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
+
+        if (icone) {
+            icone.className = aberto ? "fas fa-xmark" : "fas fa-bars";
+        }
+    }
+
+    // --- ALTERNA O MENU AO CLICAR NO BOTÃO ---
+    botaoMenu.addEventListener("click", (e) => {
+        e.stopPropagation();
+        definirEstadoMenu(!menu.classList.contains("active"));
+    });
+
+    // --- FECHA O MENU AO NAVEGAR PARA UMA SEÇÃO ---
+    menu.querySelectorAll(".nav-link").forEach(link => {
+        link.addEventListener("click", () => definirEstadoMenu(false));
+    });
+
+    // --- FECHA O MENU AO CLICAR FORA DELE ---
+    document.addEventListener("click", (e) => {
+        if (menu.classList.contains("active") && !menu.contains(e.target) && !botaoMenu.contains(e.target)) {
+            definirEstadoMenu(false);
+        }
+    });
+
+    // --- FECHA O MENU COM A TECLA ESC ---
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && menu.classList.contains("active")) {
+            definirEstadoMenu(false);
+            botaoMenu.focus();
+        }
+    });
+
+    // --- FECHA O MENU AO VOLTAR PARA A LARGURA DE DESKTOP ---
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 992 && menu.classList.contains("active")) {
+            definirEstadoMenu(false);
+        }
+    }, { passive: true });
+});
+
+// --- NAVBAR COMPACTA + BARRA DE PROGRESSO DE LEITURA ---
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".navbar");
+    const progresso = document.querySelector(".scroll-progress");
+    let agendado = false;
+
+    // --- COMPACTA A NAVBAR E ATUALIZA O PROGRESSO DA LEITURA ---
+    function atualizar() {
+        const topo = window.scrollY;
+
+        if (navbar) {
+            navbar.classList.toggle("scrolled", topo > 24);
+        }
+
+        if (progresso) {
+            const alturaRolavel = document.documentElement.scrollHeight - window.innerHeight;
+            const razao = alturaRolavel > 0 ? Math.min(topo / alturaRolavel, 1) : 0;
+            progresso.style.transform = `scaleX(${razao})`;
+        }
+
+        agendado = false;
+    }
+
+    // --- LIMITA AS ATUALIZAÇÕES A UM QUADRO DE ANIMAÇÃO ---
+    window.addEventListener("scroll", () => {
+        if (!agendado) {
+            agendado = true;
+            window.requestAnimationFrame(atualizar);
+        }
+    }, { passive: true });
+
+    atualizar();
+});
+
+// --- CURSOR CUSTOMIZADO ---
+document.addEventListener("DOMContentLoaded", () => {
+    const ponto = document.querySelector(".cursor-dot");
+    const contorno = document.querySelector(".cursor-outline");
+
+    if (!ponto || !contorno || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+        return;
+    }
+
+    let destinoX = 0;
+    let destinoY = 0;
+    let atualX = 0;
+    let atualY = 0;
+
+    // --- ACOMPANHA O PONTEIRO COM O PONTO CENTRAL ---
+    document.addEventListener("mousemove", (e) => {
+        destinoX = e.clientX;
+        destinoY = e.clientY;
+
+        ponto.style.transform = `translate3d(${destinoX - 3.5}px, ${destinoY - 3.5}px, 0)`;
+        document.body.classList.add("cursor-active");
+    }, { passive: true });
+
+    // --- OCULTA O CURSOR AO SAIR DA JANELA ---
+    document.addEventListener("mouseleave", () => {
+        document.body.classList.remove("cursor-active");
+    });
+
+    // --- SUAVIZA O CONTORNO COM INTERPOLAÇÃO ---
+    function animar() {
+        atualX += (destinoX - atualX) * 0.18;
+        atualY += (destinoY - atualY) * 0.18;
+        contorno.style.transform = `translate3d(${atualX - 19}px, ${atualY - 19}px, 0)`;
+        window.requestAnimationFrame(animar);
+    }
+
+    animar();
+
+    // --- AMPLIA O CURSOR SOBRE ELEMENTOS INTERATIVOS ---
+    const interativos = "a, button, .project-card, .skill-card, .tool-card, .certification-card, .language-option, input, textarea, .current-language";
+
+    document.addEventListener("mouseover", (e) => {
+        if (e.target.closest(interativos)) {
+            document.body.classList.add("cursor-hover");
+        }
+    }, { passive: true });
+
+    document.addEventListener("mouseout", (e) => {
+        if (e.target.closest(interativos)) {
+            document.body.classList.remove("cursor-hover");
+        }
+    }, { passive: true });
+});
+
+// --- CONTAGEM ANIMADA DAS ESTATÍSTICAS ---
+document.addEventListener("DOMContentLoaded", () => {
+    const numeros = document.querySelectorAll(".stat h3[data-count]");
+
+    if (numeros.length === 0 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+    }
+
+    // --- INICIA A CONTAGEM QUANDO O NÚMERO APARECE NA TELA ---
+    const observador = new IntersectionObserver((entradas, obs) => {
+        entradas.forEach(entrada => {
+            if (!entrada.isIntersecting) {
+                return;
+            }
+
+            const elemento = entrada.target;
+            const alvo = Number(elemento.dataset.count) || 0;
+            const duracao = 1200;
+            const inicio = performance.now();
+
+            // --- INCREMENTA O NÚMERO COM DESACELERAÇÃO SUAVE ---
+            function passo(agora) {
+                const progresso = Math.min((agora - inicio) / duracao, 1);
+                const suavizado = 1 - Math.pow(1 - progresso, 3);
+                elemento.textContent = String(Math.round(alvo * suavizado));
+
+                if (progresso < 1) {
+                    window.requestAnimationFrame(passo);
+                }
+            }
+
+            window.requestAnimationFrame(passo);
+            obs.unobserve(elemento);
+        });
+    }, { threshold: 0.5 });
+
+    numeros.forEach(numero => observador.observe(numero));
+});
+
+// --- APRISIONAMENTO DE FOCO NO MODAL ---
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("project-modal");
+
+    if (!modal) {
+        return;
+    }
+
+    const seletorFocavel = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+
+    // --- MANTÉM A TECLA TAB CIRCULANDO DENTRO DO MODAL ---
+    modal.addEventListener("keydown", (e) => {
+        if (e.key !== "Tab" || modal.getAttribute("aria-hidden") !== "false") {
+            return;
+        }
+
+        const focaveis = Array.from(modal.querySelectorAll(seletorFocavel))
+            .filter(el => el.offsetParent !== null);
+
+        if (focaveis.length === 0) {
+            return;
+        }
+
+        const primeiro = focaveis[0];
+        const ultimo = focaveis[focaveis.length - 1];
+
+        if (e.shiftKey && document.activeElement === primeiro) {
+            e.preventDefault();
+            ultimo.focus();
+        } else if (!e.shiftKey && document.activeElement === ultimo) {
+            e.preventDefault();
+            primeiro.focus();
+        }
+    });
 });

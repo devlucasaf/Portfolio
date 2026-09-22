@@ -2,6 +2,15 @@
 const translationsEnUs = {
     // Meta information
     "title": "Portfolio - Lucas",
+    "skip-to-content": "Skip to content",
+
+    // Section eyebrows
+    "eyebrow-about": "Who I am",
+    "eyebrow-skills": "Tech stack",
+    "eyebrow-certifications": "Continuous learning",
+    "eyebrow-projects": "Selected work",
+    "eyebrow-contact": "Let's talk",
+    "license-link": "MIT License",
 
     // Navigation 
     "nav-home": "Home",
@@ -13,7 +22,8 @@ const translationsEnUs = {
     "nav-contatos": "Contact",
 
     // Hero Section
-    "welcome": "Welcome to my portfolio",
+    "hero-badge": "Open to opportunities",
+    "welcome": "<span class='gradient-text'>Welcome</span> to my portfolio",
     "hero-subtitle": "Back-End Developer | Java | C# | JavaScript | Python | Ruby | SQL",
     "view-projects": "View Projects",
     "contact-me": "Contact Me",
@@ -21,7 +31,7 @@ const translationsEnUs = {
     "scroll-down": "Scroll Down",
 
     // About Section
-    "about-title": "About Me",
+    "about-title": "About <span class='highlight'>Me</span>",
     "about-text-1": "Computer Science student passionate about back-end software development. I have experience with languages like Java, JavaScript, Python and Ruby, as well as knowledge in HTML, CSS and SQL.",
     "about-text-2": "I am currently an intern in software development, where I am interning at Caesb.",
     "about-location-title": "Location",
@@ -36,32 +46,8 @@ const translationsEnUs = {
     "languages": "Languages Mastered",
     "courses": "Courses in Progress",
 
-    // Music Section 
-    "music-title": "Now Listening",
-    "music-description": "Music is my passion!",
-    "my-playlists": "My Playlists",
-    "recent-tracks": "Recently Played Tracks",
-    "playlist-1-name": "é do rock🤟🏻",
-    "playlist-1-desc": "All the rock songs I've ever heard",
-    "playlist-1-songs": "8577 músicas",
-    "playlist-1-duration": "573h 56min",
-    "playlist-2-name": "quem vai ser rainha?",
-    "playlist-2-desc": "Brazilian rock bands that I listen to once in a blue moon.",
-    "playlist-2-songs": "75 músicas",
-    "playlist-2-duration": "4h 35min",
-    "playlist-3-name": "churras🤤🤟",
-    "playlist-3-desc": "Perfect songs for a barbecue.",
-    "playlist-3-songs": "190 músicas",
-    "playlist-3-duration": "13h 58min",
-    "open-spotify": "Open in Spotify",
-    "track-number": "#",
-    "track-name": "Track",
-    "artist-name": "Artist",
-    "album-name": "Album",
-    "track-duration": "Duration",
-
     // Skills Section
-    "skills-title": "My Skills",
+    "skills-title": "My <span class='highlight'>Skills</span>",
     "programming-languages": "Programming Languages",
     "web-technologies": "Web Technologies",
     "tools-technologies": "Tools & Technologies",
@@ -123,7 +109,7 @@ const translationsEnUs = {
     "windows": "Windows",
 
     // Projects Section
-    "projects-title": "My Projects",
+    "projects-title": "My <span class='highlight'>Projects</span>",
     "java-project-title": "CMS",
     "java-project-desc": "Condominium Management System repository developed in Java. This project is currently under development for personal study purposes.",
     "soccer-project-title": "Football Games 11",
@@ -145,7 +131,7 @@ const translationsEnUs = {
     "projects-empty": "No projects found for this technology.",
 
     // Certifications Section
-    "certifications-title": "My Certifications",
+    "certifications-title": "My <span class='highlight'>Certifications</span>",
     "nav-certifications": "Certifications",
     "cert-1-title": "Computer Science Course",
     "cert-1-desc": "Computer Science course where I learned to work with the Office Suite, as well as learning to use Windows and Power BI.",
@@ -165,7 +151,7 @@ const translationsEnUs = {
     "cert-4-date": "2025",
 
     // Contact Section
-    "contact-title": "Get in Touch",
+    "contact-title": "Get in <span class='highlight'>Touch</span>",
     "contact-text": "I am always open to collaborations and feedback!",
     "email": "Email",
     "github": "GitHub",

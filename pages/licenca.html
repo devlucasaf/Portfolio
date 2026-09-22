@@ -3,27 +3,43 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme" content="dark light" />
+        <meta name="theme-color" content="#08070D" />
+        <meta name="description" content="Licença MIT do portfólio de Lucas Freitas." />
         <title>Licença - Lucas</title>
-        <link rel="stylesheet" href="../css/style.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="../css/global.css" />
+        <link rel="stylesheet" href="../css/layout.css" />
+        <link rel="stylesheet" href="../css/components.css" />
+        <link rel="stylesheet" href="../css/responsive.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
     </head>
 
     <body>
         <div class="background-animated" aria-hidden="true">
             <div class="bg-layer bg-gradient"></div>
+
+            <div class="bg-layer bg-stars"></div>
+
             <div class="bg-layer bg-particles">
-                <div class="particle" data-speed="0.2"></div>
-                <div class="particle" data-speed="0.5"></div>
-                <div class="particle" data-speed="0.8"></div>
-                <div class="particle" data-speed="0.3"></div>
-                <div class="particle" data-speed="0.6"></div>
-                <div class="particle" data-speed="0.9"></div>
-                <div class="particle" data-speed="0.4"></div>
-                <div class="particle" data-speed="0.7"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+
+            <div class="bg-layer bg-shooting">
+                <span class="shooting-star"></span>
+                <span class="shooting-star"></span>
+                <span class="shooting-star"></span>
             </div>
         </div>
 
@@ -31,7 +47,9 @@
             <section class="section license-page">
                 <div class="container license-card">
                     <div class="license-header">
-                        <i class="fas fa-file-contract license-icon"></i>
+                        <span class="license-icon">
+                            <i class="fas fa-file-contract" aria-hidden="true"></i>
+                        </span>
                         <h1 class="section-title">
                             <span class="highlight">Licença</span> MIT
                         </h1>
@@ -75,7 +93,9 @@
                 <div class="footer-content">
                     <div class="footer-divider">
                         <span class="divider-line"></span>
-                        <span class="divider-icon"><i class="fas fa-code"></i></span>
+                        <span class="divider-icon">
+                            <i class="fas fa-code"></i>
+                        </span>
                         <span class="divider-line"></span>
                     </div>
                     <div class="footer-brand">

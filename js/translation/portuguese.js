@@ -2,6 +2,15 @@
 const translationsPtBr = {
     // Meta informações
     "title": "Portfólio - Lucas",
+    "skip-to-content": "Ir para o conteúdo",
+
+    // Rótulos de seção (eyebrows)
+    "eyebrow-about": "Quem sou eu",
+    "eyebrow-skills": "Stack técnica",
+    "eyebrow-certifications": "Formação contínua",
+    "eyebrow-projects": "Trabalhos selecionados",
+    "eyebrow-contact": "Vamos conversar",
+    "license-link": "Licença MIT",
 
     // Navegação 
     "nav-home": "Home",
@@ -13,7 +22,8 @@ const translationsPtBr = {
     "nav-contatos": "Contatos",
 
     // Hero Section
-    "welcome": "Bem-vindo ao meu portfólio",
+    "hero-badge": "Aberto a oportunidades",
+    "welcome": "<span class='gradient-text'>Bem-vindo</span> ao meu portfólio",
     "hero-subtitle": "Desenvolvedor Back-End | Java | C# | JavaScript | Python | Ruby | SQL",
     "view-projects": "Ver Projetos",
     "contact-me": "Contate-me",
@@ -21,7 +31,7 @@ const translationsPtBr = {
     "scroll-down": "Role para baixo",
 
     // About Section
-    "about-title": "Sobre Mim",
+    "about-title": "Sobre <span class='highlight'>Mim</span>",
     "about-text-1": "Estudante de Ciência da Computação apaixonado por desenvolvimento de software back-end. Tenho experiência com linguagens como Java, JavaScript, Python e Ruby, além de conhecimentos em HTML, CSS e SQL.",
     "about-text-2": "Atualmente sou estagiário na área de desenvolvimento de software, onde eu estou estagiano na Caesb.",
     "about-location-title": "Localização",
@@ -36,32 +46,8 @@ const translationsPtBr = {
     "languages": "Linguagens Dominadas",
     "courses": "Cursos em Andamento",
 
-    // Music Section 
-    "music-title": "Ouvindo Agora",
-    "music-description": "Música é minha paixão!",
-    "my-playlists": "Minhas Playlists",
-    "recent-tracks": "Últimas Músicas Ouvidas",
-    "playlist-1-name": "é do rock🤟🏻",
-    "playlist-1-desc": "Todas as músicas de rock que eu já escutei",
-    "playlist-1-songs": "8419 músicas",
-    "playlist-1-duration": "573h 56min",
-    "playlist-2-name": "quem vai ser rainha?",
-    "playlist-2-desc": "Bandas de rock brasileiro que eu escuto de vez em nunca",
-    "playlist-2-songs": "75 músicas",
-    "playlist-2-duration": "4h 35min",
-    "playlist-3-name": "churras🤤🤟",
-    "playlist-3-desc": "Músicas perfeitas para churrasco.",
-    "playlist-3-songs": "190 músicas",
-    "playlist-3-duration": "13h 58min",
-    "open-spotify": "Abrir no Spotify",
-    "track-number": "#",
-    "track-name": "Música",
-    "artist-name": "Artista",
-    "album-name": "Álbum",
-    "track-duration": "Duração",
-
     // Skills Section
-    "skills-title": "Minhas Skills",
+    "skills-title": "Minhas <span class='highlight'>Skills</span>",
     "programming-languages": "Linguagens de Programação",
     "web-technologies": "Tecnologias Web",
     "tools-technologies": "Ferramentas & Tecnologias",
@@ -123,7 +109,7 @@ const translationsPtBr = {
     "windows": "Windows",
 
     // Projects Section
-    "projects-title": "Meus Projetos",
+    "projects-title": "Meus <span class='highlight'>Projetos</span>",
     "java-project-title": "SGC",
     "java-project-desc": "Repositório de Sistema de Gestão de Condomínios desenvolvido em Java. Projeto em desenvolvimento a fins de estudos pessoais.",
     "soccer-project-tittle": "Football Games 11",
@@ -145,7 +131,7 @@ const translationsPtBr = {
     "projects-empty": "Nenhum projeto encontrado para essa tecnologia.",
 
     // Certifications Section
-    "certifications-title": "Meus Certificados",
+    "certifications-title": "Minha <span class='highlight'>Formação</span>",
     "nav-certifications": "Certificados",
     "cert-1-title": "Curso de Informática",
     "cert-1-desc": "Curso de Informática onde aprendi a mexer com o Pacote Office, além de aprender a usar o Windows e o Power BI.",
@@ -165,7 +151,7 @@ const translationsPtBr = {
     "cert-4-date": "2025",
 
     // Contact Section
-    "contact-title": "Entre em Contato",
+    "contact-title": "Vamos <span class='highlight'>Conversar</span>",
     "contact-text": "Estou sempre aberto a colaborações e feedback!",
     "email": "E-mail",
     "github": "GitHub",

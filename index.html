@@ -3,23 +3,42 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme" content="dark light" />
+        <meta name="theme-color" content="#08070D" />
+        <meta name="description" content="Portfólio de Lucas Freitas — desenvolvedor back-end (Java, C#, JavaScript, Python, Ruby e SQL). Projetos, certificações e formas de contato." />
+        <meta name="author" content="Lucas Freitas" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Portfólio - Lucas Freitas" />
+        <meta property="og:description" content="Desenvolvedor Back-End | Java | C# | JavaScript | Python | Ruby | SQL" />
+        <meta property="og:image" content="assets/imgs/lucas-freitas-foto.jpeg" />
+
+        <title>Portfólio - Lucas</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
         <link rel="stylesheet" href="css/global.css" />
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/components.css" />
         <link rel="stylesheet" href="css/responsive.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-        <title>Portfólio - Lucas</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
     </head>
 
     <body>
-        <div class="cursor-dot"></div>
-        <div class="cursor-outline"></div>
+        <a href="#home-section" class="skip-link" data-key="skip-to-content">Ir para o conteúdo</a>
+
+        <div class="scroll-progress" aria-hidden="true"></div>
+        <div class="cursor-dot" aria-hidden="true"></div>
+        <div class="cursor-outline" aria-hidden="true"></div>
 
         <div class="background-animated" aria-hidden="true">
             <div class="bg-layer bg-gradient"></div>
+
+            <div class="bg-layer bg-stars"></div>
+
             <div class="bg-layer bg-particles">
                 <div class="particle" data-speed="0.2"></div>
                 <div class="particle" data-speed="0.5"></div>
@@ -30,19 +49,24 @@
                 <div class="particle" data-speed="0.4"></div>
                 <div class="particle" data-speed="0.7"></div>
             </div>
+
+            <div class="bg-layer bg-shooting">
+                <span class="shooting-star"></span>
+                <span class="shooting-star"></span>
+                <span class="shooting-star"></span>
+            </div>
         </div>
 
         <header>
-            <nav class="navbar">
-                <div class="nav-brand">
-                    <span class="logo">L</span>
+            <nav class="navbar" aria-label="Navegação principal">
+                <a class="nav-brand" href="#home-section" aria-label="Lucas — início">
+                    <span class="logo" aria-hidden="true">L</span>
                     <span class="logo-text">Lucas</span>
-                </div>
+                </a>
 
-                <ul class="nav-menu">
+                <ul class="nav-menu" id="nav-menu">
                     <li><a href="#home-section" class="nav-link nav-home" data-key="nav-home">Home</a></li>
                     <li><a href="#about-section" class="nav-link nav-sobre" data-key="nav-sobre">Sobre Mim</a></li>
-                    <li><a href="#music-section" class="nav-link nav-musica" data-key="nav-musica">Música</a></li>
                     <li><a href="#skills-section" class="nav-link nav-skills" data-key="nav-skills">Skills</a></li>
                     <li><a href="#certifications-section" class="nav-link nav-certifications" data-key="nav-certifications">Certificados</a></li>
                     <li><a href="#projects-section" class="nav-link nav-projetos" data-key="nav-projetos">Meus Projetos</a></li>
@@ -52,47 +76,65 @@
                 <div class="nav-controls">
                     <div class="language-selector-wrapper">
                         <div class="language-selector-custom">
-                            <div class="current-language">
-                                <img src="./assets/flags/br_flag.png" alt="Brazil flag" class="flag-img" />
+                            <div class="current-language" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false" aria-label="Selecionar idioma">
+                                <img 
+                                    src="./assets/flags/br_flag.png" 
+                                    alt="" 
+                                    class="flag-img" 
+                                    width="22" 
+                                    height="22" 
+                                />
                                 <span class="language-text">Português</span>
-                                <i class="fas fa-chevron-down"></i>
+                                <i class="fas fa-chevron-down" aria-hidden="true"></i>
                             </div>
 
-                            <div class="language-dropdown">
-                                <div class="language-option" data-value="pt-br">
-                                    <img src="./assets/flags/br_flag.png" alt="Brazil flag" class="flag-img" />
+                            <div class="language-dropdown" role="listbox" aria-label="Idiomas disponíveis">
+                                <div class="language-option" data-value="pt-br" role="option" aria-selected="true" tabindex="0">
+                                    <img 
+                                        src="./assets/flags/br_flag.png" 
+                                        alt="" 
+                                        class="flag-img" 
+                                        width="22" 
+                                        height="22" 
+                                    />
                                     <span class="language-text">Português (BR)</span>
                                 </div>
-                                <div class="language-option" data-value="en-us">
-                                    <img src="./assets/flags/us_flag.png" alt="US flag" class="flag-img" />
+                                <div class="language-option" data-value="en-us" role="option" aria-selected="false" tabindex="0">
+                                    <img 
+                                        src="./assets/flags/us_flag.png" 
+                                        alt="" 
+                                        class="flag-img" 
+                                        width="22" 
+                                        height="22" 
+                                    />
                                     <span class="language-text">English (US)</span>
                                 </div>
                             </div>
 
-                            <select name="idioma" id="idiomaSite" class="language-select-hidden">
+                            <select name="idioma" id="idiomaSite" class="language-select-hidden" tabindex="-1" aria-hidden="true">
                                 <option value="pt-br">PT-BR</option>
                                 <option value="en-us">EN-US</option>
                             </select>
                         </div>
                     </div>
 
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
-                        <i class="fas fa-moon"></i>
+                    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Alternar tema" title="Alternar tema">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
                     </button>
 
-                    <button class="menu-toggle" id="menu-toggle">
-                        <i class="fas fa-bars"></i>
+                    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
                     </button>
                 </div>
             </nav>
         </header>
 
         <main>
-            <!-- --- HOME --- -->
             <section id="home-section" class="hero reveal">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1 class="hero-title" data-key="welcome">
+                        <p class="hero-badge" data-key="hero-badge">Aberto a oportunidades</p>
+                        <h1 class="hero-title" data-key="welcome" data-i18n-html>
                             <span class="gradient-text">Bem-vindo</span> ao meu portfólio
                         </h1>
                         <p class="hero-subtitle" data-key="hero-subtitle">
@@ -101,14 +143,14 @@
                         <div class="hero-cta">
                             <a href="#projects-section" class="btn btn-primary" data-key="view-projects">Ver Projetos</a>
                             <a href="#contact-section" class="btn btn-secondary" data-key="contact-me">Contate-me</a>
-                            <a href="assets/documents/curriculo-lucas-freitas.pdf" download class="btn btn-tertiary" data-key="download-resume">
-                                <i class="fas fa-file-pdf"></i>
+                            <a href="assets/documents/curriculo-lucas-freitas.pdf" download class="btn btn-tertiary">
+                                <i class="fas fa-file-pdf" aria-hidden="true"></i>
                                 <span data-key="download-resume">Baixar currículo</span>
                             </a>
                         </div>
                     </div>
                     <div class="hero-visual">
-                        <div class="code-animation">
+                        <div class="code-animation" aria-hidden="true">
                             <div class="code-line"><span class="code-keyword">public class</span> DevLucasaf {</div>
                             <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">public static void</span> main() {</div>
                             <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-function">System.out.println("Hello World!");</span></div>
@@ -118,7 +160,7 @@
                     </div>
                 </div>
 
-                <div class="scroll-indicator">
+                <div class="scroll-indicator" aria-hidden="true">
                     <div class="mouse">
                         <div class="wheel"></div>
                     </div>
@@ -129,7 +171,8 @@
             <!-- --- ABOUT --- -->
             <section id="about-section" class="section about reveal">
                 <div class="container">
-                    <h2 class="section-title" data-key="about-title">Sobre <span class="highlight">Mim</span></h2>
+                    <p class="section-eyebrow" data-key="eyebrow-about">Quem sou eu</p>
+                    <h2 class="section-title" data-key="about-title" data-i18n-html>Sobre <span class="highlight">Mim</span></h2>
 
                     <div class="about-content">
                         <div class="about-text">
@@ -159,130 +202,35 @@
                                 </div>
                             </div>
 
-                            <div class="about-stats">
+                            <div class="about-stats stagger">
                                 <div class="stat">
-                                    <h3>8</h3>
+                                    <h3 data-count="8">8</h3>
                                     <p data-key="projects-completed">Projetos Concluídos</p>
                                 </div>
                                 <div class="stat">
-                                    <h3>4</h3>
+                                    <h3 data-count="4">4</h3>
                                     <p data-key="languages">Linguagens Dominadas</p>
                                 </div>
                                 <div class="stat">
-                                    <h3>4</h3>
+                                    <h3 data-count="4">4</h3>
                                     <p data-key="courses">Cursos em Andamento</p>
                                 </div>
                             </div>
                         </div>
                         <div class="about-image">
                             <div class="photo-fix">
-                                <div class="photo-backdrop"></div>
+                                <div class="photo-backdrop" aria-hidden="true"></div>
                                 <div class="photo-clip">
-                                    <img src="assets/imgs/lucas-freitas-foto.jpeg" alt="Lucas Freitas - Desenvolvedor" class="real-photo" />
+                                    <img 
+                                        src="assets/imgs/lucas-freitas-foto.jpeg" 
+                                        alt="Retrato de Lucas Freitas, desenvolvedor back-end" 
+                                        class="real-photo" 
+                                        width="340" 
+                                        height="340" 
+                                    />
                                 </div>
-                                <div class="photo-aura"></div>
+                                <div class="photo-aura" aria-hidden="true"></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- --- MUSIC --- -->
-            <section id="music-section" class="section music reveal">
-                <div class="container">
-                    <h2 class="section-title" data-key="music-title">Ouvindo <span class="highlight">Agora</span></h2>
-
-                    <div class="spotify-realtime">
-                        <div class="spotify-embed">
-                            <a href="https://github.com/kittinan/spotify-github-profile" target="_blank">
-                                <img 
-                                    src="https://spotify-github-profile.kittinanx.com/api/view?uid=6atv4j3yoivc7yidi4tf3e00h&cover_image=true&theme=spotify-embed&show_offline=true&background_color=121212&interchange=false&profanity=false&bar_color=53b14f&bar_color_cover=false&mode=dark"
-                                    alt="Spotify Now Playing"
-                                    class="spotify-now-playing" 
-                                />
-                            </a>
-                        </div>
-                        <p class="realtime-text">
-                            <i class="fas fa-sync-alt fa-spin"></i>
-                            Atualizado em tempo real via
-                            <a href="https://github.com/kittinan/spotify-github-profile" target="_blank">Spotify GitHub Profile</a>
-                        </p>
-                    </div>
-
-                    <div class="music-content">
-                        <h3 class="music-subtitle" data-key="my-playlists">Minhas Playlists</h3>
-                        <div class="playlists-grid">
-                            <div class="playlist-card">
-                                <div class="playlist-header">
-                                    <i class="fas fa-music"></i>
-                                    <h4 class="playlist-name" data-key="playlist-1-name">é do rock🤟🏻</h4>
-                                </div>
-                                <p class="playlist-description" data-key="playlist-1-desc">
-                                    Todas as músicas de rock que eu já escutei
-                                </p>
-                                <div class="playlist-info">
-                                    <span class="playlist-songs" data-key="playlist-1-songs">45 músicas</span>
-                                    <span class="playlist-duration" data-key="playlist-1-duration">3h 12min</span>
-                                </div>
-                                <a href="https://open.spotify.com/playlist/6xEEDzORJAocivXfcBx2PS?si=77d39043102c4b41" target="_blank" class="playlist-link">
-                                    <i class="fab fa-spotify"></i>
-                                    <span data-key="open-spotify">Abrir no Spotify</span>
-                                </a>
-                            </div>
-
-                            <div class="playlist-card">
-                                <div class="playlist-header">
-                                    <i class="fas fa-music"></i>
-                                    <h4 class="playlist-name" data-key="playlist-2-name">quem vai ser rainha?</h4>
-                                </div>
-                                <p class="playlist-description" data-key="playlist-2-desc">
-                                    Bandas de rock brasileiro que eu escuto de vez em nunca
-                                </p>
-                                <div class="playlist-info">
-                                    <span class="playlist-songs" data-key="playlist-2-songs">38 músicas</span>
-                                    <span class="playlist-duration" data-key="playlist-2-duration">2h 58min</span>
-                                </div>
-                                <a href="https://open.spotify.com/playlist/7mP46rMjMOpcoZ2oZRVr3y?si=e25a83864ac54b0c" target="_blank" class="playlist-link">
-                                    <i class="fab fa-spotify"></i>
-                                    <span data-key="open-spotify">Abrir no Spotify</span>
-                                </a>
-                            </div>
-
-                            <div class="playlist-card">
-                                <div class="playlist-header">
-                                    <i class="fas fa-music"></i>
-                                    <h4 class="playlist-name" data-key="playlist-3-name">churras🤤🤟</h4>
-                                </div>
-                                <p class="playlist-description" data-key="playlist-3-desc">
-                                    Músicas perfeitas para programar e focar no trabalho
-                                </p>
-                                <div class="playlist-info">
-                                    <span class="playlist-songs" data-key="playlist-3-songs">52 músicas</span>
-                                    <span class="playlist-duration" data-key="playlist-3-duration">4h 23min</span>
-                                </div>
-                                <a href="https://open.spotify.com/playlist/0C3CaLELm1JfM3iMBeia4i?si=0bbdd65754a44002" target="_blank" class="playlist-link">
-                                    <i class="fab fa-spotify"></i>
-                                    <span data-key="open-spotify">Abrir no Spotify</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="recent-tracks-section">
-                        <h3 class="music-subtitle" data-key="recent-tracks">Últimas Músicas Ouvidas</h3>
-                        <div class="tracks-table-wrapper">
-                            <table class="tracks-table">
-                                <thead>
-                                    <tr>
-                                        <th data-key="track-number">#</th>
-                                        <th data-key="track-name">Música</th>
-                                        <th data-key="artist-name">Artista</th>
-                                        <th data-key="album-name">Álbum</th>
-                                        <th data-key="track-duration">Duração</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="spotify-tracks-tbody"></tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
@@ -291,10 +239,12 @@
             <!-- --- SKILLS --- -->
             <section id="skills-section" class="section skills reveal">
                 <div class="container">
-                    <h2 class="section-title" data-key="skills-title">Minhas <span class="highlight">Skills</span></h2>
+                    <p class="section-eyebrow" data-key="eyebrow-skills">Stack técnica</p>
+                    <h2 class="section-title" data-key="skills-title" data-i18n-html>
+                        Minhas <span class="highlight">Skills</span>
+                    </h2>
 
                     <div class="skills-categories">
-                        <!-- Linguagens -->
                         <div class="category">
                             <h3 class="category-title" data-key="programming-languages-title">Linguagens de Programação</h3>
 
@@ -303,34 +253,69 @@
                                     <i class="fas fa-server"></i>
                                     <span data-key="backend-title">Backend</span>
                                 </h4>
-                                <div class="skills-grid">
+                                <div class="skills-grid stagger">
                                     <div class="skill-card" data-tech="python">
                                         <div class="skill-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png" alt="Python" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="python">Python</h4>
                                     </div>
                                     <div class="skill-card" data-tech="java">
                                         <div class="skill-icon">
-                                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" alt="Java" />
+                                            <img 
+                                                src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="java">Java</h4>
                                     </div>
                                     <div class="skill-card" data-tech="csharp">
                                         <div class="skill-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/C_Sharp_Logo_2023.svg/250px-C_Sharp_Logo_2023.svg.png" alt="C#" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/C_Sharp_Logo_2023.svg/250px-C_Sharp_Logo_2023.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="csharp">C#</h4>
                                     </div>
                                     <div class="skill-card" data-tech="ruby">
                                         <div class="skill-icon">
-                                            <img src="https://images.vexels.com/media/users/3/166485/isolated/preview/d4061b653e6ba02ad0afdc79e0315a25-icone-da-linguagem-de-programacao-ruby.png" alt="Ruby" />
+                                            <img 
+                                                src="https://images.vexels.com/media/users/3/166485/isolated/preview/d4061b653e6ba02ad0afdc79e0315a25-icone-da-linguagem-de-programacao-ruby.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="ruby">Ruby</h4>
                                     </div>
                                     <div class="skill-card" data-tech="javascript">
                                         <div class="skill-icon">
-                                            <img src="https://img.icons8.com/color/512/javascript.png" alt="JavaScript" />
+                                            <img 
+                                                src="https://img.icons8.com/color/512/javascript.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="javascript">JavaScript</h4>
                                     </div>
@@ -338,17 +323,34 @@
                             </div>
 
                             <div class="subcategory">
-                                <h4 class="subcategory-title"><i class="fas fa-laptop-code"></i> <span data-key="frontend-title">Frontend</span></h4>
-                                <div class="skills-grid">
+                                <h4 class="subcategory-title">
+                                    <i class="fas fa-laptop-code"></i> 
+                                    <span data-key="frontend-title">Frontend</span>
+                                </h4>
+                                <div class="skills-grid stagger">
                                     <div class="skill-card" data-tech="html">
                                         <div class="skill-icon">
-                                            <img src="https://images.icon-icons.com/171/PNG/512/html5_23329.png" alt="HTML" />
+                                            <img 
+                                                src="https://images.icon-icons.com/171/PNG/512/html5_23329.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="html">HTML</h4>
                                     </div>
                                     <div class="skill-card" data-tech="css">
                                         <div class="skill-icon">
-                                            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/css-icon.png" alt="CSS" />
+                                            <img 
+                                                src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/css-icon.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="css">CSS</h4>
                                     </div>
@@ -360,24 +362,45 @@
                                     <i class="fas fa-database"></i>
                                     <span data-key="database-title">Banco de Dados</span>
                                 </h4>
-                                <div class="skills-grid">
+                                <div class="skills-grid stagger">
                                     <div class="skill-card" data-tech="sql">
                                         <div class="skill-icon">
-                                            <img src="https://cdn-icons-png.flaticon.com/512/528/528260.png" alt="SQL" />
+                                            <img 
+                                                src="https://cdn-icons-png.flaticon.com/512/528/528260.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="sql">SQL</h4>
                                     </div>
                                     <div class="skill-card" data-tech="sqlserver">
                                         <div class="skill-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Microsoft_SQL_Server_2025_icon.svg/3840px-Microsoft_SQL_Server_2025_icon.svg.png" alt="SQL Server" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Microsoft_SQL_Server_2025_icon.svg/3840px-Microsoft_SQL_Server_2025_icon.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="sqlserver">SQL Server</h4>
                                     </div>
                                     <div class="skill-card" data-tech="sqlite">
                                         <div class="skill-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/3840px-SQLite370.svg.png" alt="SQLite" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/3840px-SQLite370.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
-                                        <h4 class="skill-name" data-key="sqlserver">SQLite</h4>
+                                        <h4 class="skill-name" data-key="sqlite">SQLite</h4>
                                     </div>
                                 </div>
                             </div>
@@ -387,52 +410,108 @@
                                     <i class="fas fa-cubes"></i>
                                     <span data-key="frameworks-title">Frameworks</span>
                                 </h4>
-                                <div class="skills-grid">
+                                <div class="skills-grid stagger">
                                     <div class="skill-card" data-tech="spring-boot">
                                         <div class="skill-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spring_Boot.svg/960px-Spring_Boot.svg.png" alt="Spring Boot" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spring_Boot.svg/960px-Spring_Boot.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="spring-boot">Spring Boot</h4>
                                     </div>
                                     <div class="skill-card" data-tech="dotnet">
                                         <div class="skill-icon">
-                                            <img src="https://user-images.githubusercontent.com/42860908/106164530-120e5680-61b0-11eb-954c-969c7031ffd4.png" alt=".NET" />
+                                            <img 
+                                                src="https://user-images.githubusercontent.com/42860908/106164530-120e5680-61b0-11eb-954c-969c7031ffd4.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="dotnet">.NET</h4>
                                     </div>
                                     <div class="skill-card" data-tech="rails">
                                         <div class="skill-icon">
-                                            <img src="https://download.logo.wine/logo/Ruby_on_Rails/Ruby_on_Rails-Logo.wine.png" alt="Rails" />
+                                            <img 
+                                                src="https://download.logo.wine/logo/Ruby_on_Rails/Ruby_on_Rails-Logo.wine.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="rails">Rails</h4>
                                     </div>
                                     <div class="skill-card" data-tech="django">
                                         <div class="skill-icon">
-                                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/django.png" alt="Django" />
+                                            <img 
+                                                src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/django.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="django">Django</h4>
                                     </div>
                                     <div class="skill-card" data-tech="nodejs">
                                         <div class="skill-icon">
-                                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-node-js-icon-svg-download-png-1174935.png" alt="Node.js" />
+                                            <img 
+                                                src="https://cdn.iconscout.com/icon/free/png-256/free-node-js-icon-svg-download-png-1174935.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="nodejs">Node.js</h4>
                                     </div>
                                     <div class="skill-card" data-tech="react">
                                         <div class="skill-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png" alt="React" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="react">React</h4>
                                     </div>
                                     <div class="skill-card" data-tech="vite">
                                         <div class="skill-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/500px-Vitejs-logo.svg.png" alt="Vite" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/500px-Vitejs-logo.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="vite">Vite</h4>
                                     </div>
                                     <div class="skill-card" data-tech="nextjs">
                                         <div class="skill-icon">
-                                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nextjs.png" alt="NextJS" />
+                                            <img 
+                                                src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nextjs.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="48" 
+                                                height="48" 
+                                            />
                                         </div>
                                         <h4 class="skill-name" data-key="nextjs">NextJS</h4>
                                     </div>
@@ -449,70 +528,147 @@
                                     <i class="fas fa-code"></i>
                                     <span data-key="ides-title">IDEs</span>
                                 </h4>
-                                <div class="skills-grid compact">
+                                <div class="skills-grid compact stagger">
                                     <div class="tool-card" data-tool="jet-brains">
                                         <div class="tool-icon">
-                                            <img src="https://img.icons8.com/color/600/jetbrains.png" alt="JetBrains" />
+                                            <img 
+                                                src="https://img.icons8.com/color/600/jetbrains.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="jet-brains">JetBrains</span>
                                     </div>
                                     <div class="tool-card" data-tool="pycharm">
                                         <div class="tool-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/JetBrains_PyCharm_Product_Icon.svg/3840px-JetBrains_PyCharm_Product_Icon.svg.png" alt="PyCharm" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/JetBrains_PyCharm_Product_Icon.svg/3840px-JetBrains_PyCharm_Product_Icon.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="pycharm">PyCharm</span>
                                     </div>
                                     <div class="tool-card" data-tool="intellij">
                                         <div class="tool-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/960px-IntelliJ_IDEA_Icon.svg.png" alt="IntelliJ" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/960px-IntelliJ_IDEA_Icon.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="intellij">IntelliJ</span>
                                     </div>
                                     <div class="tool-card" data-tool="rubymine">
                                         <div class="tool-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/RubyMine_Icon.svg/960px-RubyMine_Icon.svg.png" alt="RubyMine" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/RubyMine_Icon.svg/960px-RubyMine_Icon.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="rubymine">RubyMine</span>
                                     </div>
                                     <div class="tool-card" data-tool="rider">
                                         <div class="tool-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/JetBrains_Rider_Icon.svg/1280px-JetBrains_Rider_Icon.svg.png" alt="Rider" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/JetBrains_Rider_Icon.svg/1280px-JetBrains_Rider_Icon.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="rider">Rider</span>
                                     </div>
                                     <div class="tool-card" data-tool="data-grip">
                                         <div class="tool-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/DataGrip.svg/1280px-DataGrip.svg.png" alt="DataGrip" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/DataGrip.svg/1280px-DataGrip.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="data-grip">DataGrip</span>
                                     </div>
                                     <div class="tool-card" data-tool="android-studio">
                                         <div class="tool-icon">
-                                            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/android-studio-icon.png" alt="Android Studio" />
+                                            <img 
+                                                src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/android-studio-icon.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="android-studio">Android Studio</span>
                                     </div>
                                     <div class="tool-card" data-tool="vs-code">
                                         <div class="tool-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/960px-Visual_Studio_Code_1.35_icon.svg.png" alt="VS Code" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/960px-Visual_Studio_Code_1.35_icon.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="vs-code">VS Code</span>
                                     </div>
                                     <div class="tool-card" data-tool="visual-studio">
                                         <div class="tool-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/250px-Visual_Studio_Icon_2022.svg.png" alt="Visual Studio" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/250px-Visual_Studio_Icon_2022.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="visual-studio">Visual Studio</span>
                                     </div>
                                     <div class="tool-card" data-tool="ssms">
                                         <div class="tool-icon">
-                                            <img src="https://datamodel.com/wp-content/uploads/2025/05/ssms_21.png" alt="SSMS" />
+                                            <img 
+                                                src="https://datamodel.com/wp-content/uploads/2025/05/ssms_21.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="ssms">SSMS</span>
                                     </div>
                                     <div class="tool-card" data-tool="pgadmin4">
                                         <div class="tool-icon">
-                                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pgadmin.svg" alt="PGAdmin4" />
+                                            <img 
+                                                src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pgadmin.svg" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="pgadmin4">PGAdmin4</span>
                                     </div>
@@ -524,34 +680,69 @@
                                     <i class="fas fa-code-branch"></i>
                                     <span data-key="version-control-title">Versionamento e Colaborações</span>
                                 </h4>
-                                <div class="skills-grid compact">
+                                <div class="skills-grid compact stagger">
                                     <div class="tool-card" data-tool="git">
                                         <div class="tool-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/3840px-Git_icon.svg.png" alt="Git" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/3840px-Git_icon.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="git">Git</span>
                                     </div>
                                     <div class="tool-card" data-tool="github">
                                         <div class="tool-icon">
-                                            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" />
+                                            <img 
+                                                src="https://cdn-icons-png.flaticon.com/512/25/25231.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="github">GitHub</span>
                                     </div>
                                     <div class="tool-card" data-tool="gitlab">
                                         <div class="tool-icon">
-                                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968853.png" alt="GitLab" />
+                                            <img 
+                                                src="https://cdn-icons-png.flaticon.com/512/5968/5968853.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="gitlab">GitLab</span>
                                     </div>
                                     <div class="tool-card" data-tool="subversion">
                                         <div class="tool-icon">
-                                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-subversion-logo-icon-svg-download-png-2945192.png" alt="Subversion" />
+                                            <img 
+                                                src="https://cdn.iconscout.com/icon/free/png-256/free-subversion-logo-icon-svg-download-png-2945192.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="subversion">Subversion</span>
                                     </div>
                                     <div class="tool-card" data-tool="tortoisesvn">
                                         <div class="tool-icon">
-                                            <img src="https://tortoisesvn.net/assets/img/logo-256x256.png" alt="TortoiseSVN" />
+                                            <img 
+                                                src="https://tortoisesvn.net/assets/img/logo-256x256.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="tortoisesvn">TortoiseSVN</span>
                                     </div>
@@ -563,28 +754,56 @@
                                     <i class="fas fa-file-alt"></i>
                                     <span data-key="office-title">Office</span>
                                 </h4>
-                                <div class="skills-grid compact">
+                                <div class="skills-grid compact stagger">
                                     <div class="tool-card" data-tool="word">
                                         <div class="tool-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Microsoft_Office_Word_%282025%E2%80%93present%29.svg/960px-Microsoft_Office_Word_%282025%E2%80%93present%29.svg.png" alt="Word" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Microsoft_Office_Word_%282025%E2%80%93present%29.svg/960px-Microsoft_Office_Word_%282025%E2%80%93present%29.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="word">Word</span>
                                     </div>
                                     <div class="tool-card" data-tool="power-point">
                                         <div class="tool-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg/960px-Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg.png" alt="PowerPoint" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg/960px-Microsoft_Office_PowerPoint_%282019%E2%80%932025%29.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="power-point">PowerPoint</span>
                                     </div>
                                     <div class="tool-card" data-tool="excel">
                                         <div class="tool-icon">
-                                            <img src="https://images.icon-icons.com/2397/PNG/512/microsoft_office_excel_logo_icon_145720.png" alt="Excel" />
+                                            <img 
+                                                src="https://images.icon-icons.com/2397/PNG/512/microsoft_office_excel_logo_icon_145720.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="excel">Excel</span>
                                     </div>
                                     <div class="tool-card" data-tool="power-bi">
                                         <div class="tool-icon">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/960px-New_Power_BI_Logo.svg.png" alt="Power BI" />
+                                            <img 
+                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/960px-New_Power_BI_Logo.svg.png" 
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="power-bi">Power BI</span>
                                     </div>
@@ -596,10 +815,10 @@
                                     <i class="fas fa-desktop"></i>
                                     <span data-key="operating-systems">Sistemas Operacionais</span>
                                 </h4>
-                                <div class="skills-grid compact">
+                                <div class="skills-grid compact stagger">
                                     <div class="tool-card" data-tool="windows">
                                         <div class="tool-icon">
-                                            <i class="fab fa-windows" style="font-size: 3rem; color: #0078D6;"></i>
+                                            <i class="fab fa-windows tool-icon-fa" aria-hidden="true"></i>
                                         </div>
                                         <span class="tool-name" data-key="windows">Windows</span>
                                     </div>
@@ -613,12 +832,15 @@
             <!-- --- CERTIFICATIONS --- -->
             <section id="certifications-section" class="section certifications reveal">
                 <div class="container">
-                    <h2 class="section-title" data-key="certifications-title">Meus <span class="highlight">Certificados</span></h2>
+                    <p class="section-eyebrow" data-key="eyebrow-certifications">Formação contínua</p>
+                    <h2 class="section-title" data-key="certifications-title" data-i18n-html>Meus <span class="highlight">Certificados</span></h2>
 
-                    <div class="certifications-grid">
+                    <div class="certifications-grid stagger">
                         <div class="certification-card">
                             <div class="certification-header">
-                                <div class="certification-icon"><i class="fab fa-windows"></i></div>
+                                <div class="certification-icon">
+                                    <i class="fab fa-windows"></i>
+                                </div>
                                 <h3 class="certification-title" data-key="cert-1-title">Curso de Informática</h3>
                             </div>
                             <p class="certification-description" data-key="cert-1-desc">
@@ -632,7 +854,9 @@
 
                         <div class="certification-card">
                             <div class="certification-header">
-                                <div class="certification-icon"><i class="fab fa-python"></i></div>
+                                <div class="certification-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
                                 <h3 class="certification-title" data-key="cert-2-title">Programação Python</h3>
                             </div>
                             <p class="certification-description" data-key="cert-2-desc">Curso de Programação em Python.</p>
@@ -644,7 +868,9 @@
 
                         <div class="certification-card">
                             <div class="certification-header">
-                                <div class="certification-icon"><i class="fab fa-java"></i></div>
+                                <div class="certification-icon">
+                                    <i class="fab fa-java"></i>
+                                </div>
                                 <h3 class="certification-title" data-key="cert-3-title">Programação Java</h3>
                             </div>
                             <p class="certification-description" data-key="cert-3-desc">Curso de Programação em Java.</p>
@@ -656,7 +882,9 @@
 
                         <div class="certification-card">
                             <div class="certification-header">
-                                <div class="certification-icon"><i class="fa-solid fa-database"></i></div>
+                                <div class="certification-icon">
+                                    <i class="fa-solid fa-database"></i>
+                                </div>
                                 <h3 class="certification-title" data-key="cert-4-title">Modelagem de Dados em Banco de Dados</h3>
                             </div>
                             <p class="certification-description" data-key="cert-4-desc">
@@ -674,7 +902,10 @@
             <!-- --- PROJECTS --- -->
             <section id="projects-section" class="section projects reveal">
                 <div class="container">
-                    <h2 class="section-title" data-key="projects-title">Meus <span class="highlight">Projetos</span></h2>
+                    <p class="section-eyebrow" data-key="eyebrow-projects">Trabalhos selecionados</p>
+                    <h2 class="section-title" data-key="projects-title" data-i18n-html>
+                        Meus <span class="highlight">Projetos</span>
+                    </h2>
 
                     <div class="projects-filter" id="projects-filter">
                         <button class="filter-btn active" data-filter="all" data-key="filter-all">Todos</button>
@@ -695,7 +926,9 @@
                                 <span class="project-type" data-key="type-personal">Projeto pessoal</span>
                             </div>
                             <div class="project-header">
-                                <div class="project-icon"><i class="fa-solid fa-building-user"></i></div>
+                                <div class="project-icon">
+                                    <i class="fa-solid fa-building-user"></i>
+                                </div>
                                 <h3 class="project-title" data-key="java-project-title">SGC</h3>
                             </div>
                             <p class="project-description" data-key="java-project-desc">
@@ -755,7 +988,9 @@
                                 <span class="project-type" data-key="type-professional">Projeto profissional</span>
                             </div>
                             <div class="project-header">
-                                <div class="project-icon"><i class="fa-solid fa-paintbrush"></i></div>
+                                <div class="project-icon">
+                                    <i class="fa-solid fa-paintbrush"></i>
+                                </div>
                                 <h3 class="project-title" data-key="naka-tattos-project-title">Naka Tattos</h3>
                             </div>
                             <p class="project-description" data-key="naka-tattos-project-desc">
@@ -785,7 +1020,9 @@
                                 <span class="project-type" data-key="type-personal">Projeto pessoal</span>
                             </div>
                             <div class="project-header">
-                                <div class="project-icon"><i class="fa-solid fa-piggy-bank"></i></div>
+                                <div class="project-icon">
+                                    <i class="fa-solid fa-piggy-bank"></i>
+                                </div>
                                 <h3 class="project-title" data-key="money-tracker-project-title">Money Tracker Control</h3>
                             </div>
                             <p class="project-description" data-key="money-tracker-project-desc">
@@ -815,7 +1052,9 @@
                                 <span class="project-type" data-key="type-academic">Projeto acadêmico</span>
                             </div>
                             <div class="project-header">
-                                <div class="project-icon"><i class="fas fa-school" aria-hidden="true"></i></div>
+                                <div class="project-icon">
+                                    <i class="fas fa-school" aria-hidden="true"></i>
+                                </div>
                                 <h3 class="project-title" data-key="academico-project-title">ERP Academic</h3>
                             </div>
                             <p class="project-description" data-key="academico-project-desc">
@@ -845,7 +1084,9 @@
                                 <span class="project-type" data-key="type-personal">Projeto pessoal</span>
                             </div>
                             <div class="project-header">
-                                <div class="project-icon"><i class="fas fa-ticket"></i></div>
+                                <div class="project-icon">
+                                    <i class="fas fa-ticket"></i>
+                                </div>
                                 <h3 class="project-title" data-key="liveevents-project-title">LiveEvents-Ticket</h3>
                             </div>
                             <p class="project-description" data-key="liveevents-project-desc">
@@ -885,7 +1126,10 @@
             <!-- --- CONTATOS --- -->
             <section id="contact-section" class="section contact reveal">
                 <div class="container">
-                    <h2 class="section-title" data-key="contact-title">Entre em <span class="highlight">Contato</span></h2>
+                    <p class="section-eyebrow" data-key="eyebrow-contact">Vamos conversar</p>
+                    <h2 class="section-title" data-key="contact-title" data-i18n-html>
+                        Entre em <span class="highlight">Contato</span>
+                    </h2>
 
                     <div class="contact-content">
                         <div class="contact-info">
@@ -895,31 +1139,31 @@
 
                             <div class="contact-methods">
                                 <a href="mailto:freitas.lucasaf@gmail.com" class="contact-method">
-                                    <i class="fas fa-envelope"></i>
+                                    <i class="fas fa-envelope" aria-hidden="true"></i>
                                     <div>
                                         <h4 data-key="email">E-mail</h4>
                                         <p>freitas.lucasaf@gmail.com</p>
                                     </div>
                                 </a>
 
-                                <a href="https://github.com/devlucasaf" target="_blank" class="contact-method">
-                                    <i class="fab fa-github"></i>
+                                <a href="https://github.com/devlucasaf" target="_blank" rel="noopener noreferrer" class="contact-method">
+                                    <i class="fab fa-github" aria-hidden="true"></i>
                                     <div>
                                         <h4 data-key="github">GitHub</h4>
                                         <p>github.com/devlucasaf</p>
                                     </div>
                                 </a>
 
-                                <a href="https://gitlab.com/devlucasaf" target="_blank" class="contact-method">
-                                    <i class="fab fa-gitlab"></i>
+                                <a href="https://gitlab.com/devlucasaf" target="_blank" rel="noopener noreferrer" class="contact-method">
+                                    <i class="fab fa-gitlab" aria-hidden="true"></i>
                                     <div>
-                                        <h4 data-key="github">GitLab</h4>
+                                        <h4 data-key="gitlab">GitLab</h4>
                                         <p>gitlab.com/devlucasaf</p>
                                     </div>
                                 </a>
 
                                 <div class="contact-method">
-                                    <i class="fas fa-map-marker-alt"></i>
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                     <div>
                                         <h4 data-key="location">Localização</h4>
                                         <p data-key="brazil">Brasília - DF</p>
@@ -928,30 +1172,32 @@
                             </div>
 
                             <div class="social-links">
-                                <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-link">
-                                    <i class="fab fa-linkedin"></i>
+                                <a href="https://www.linkedin.com/in/lucasfr3itas/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                                    <i class="fab fa-linkedin" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8" class="social-link">
-                                    <i class="fab fa-spotify"></i>
+                                <a href="https://open.spotify.com/user/6atv4j3yoivc7yidi4tf3e00h?si=a7882472f98742e8" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Spotify" title="Spotify">
+                                    <i class="fab fa-spotify" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://www.instagram.com/__.fr3it4s.__/" class="social-link">
-                                    <i class="fab fa-instagram"></i>
+                                <a href="https://www.instagram.com/__.fr3it4s.__/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+                                    <i class="fab fa-instagram" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://www.threads.com/__.fr3it4s.__/" class="social-link">
-                                    <i class="fab fa-threads"></i>
+                                <a href="https://www.threads.com/__.fr3it4s.__/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Threads" title="Threads">
+                                    <i class="fab fa-threads" aria-hidden="true"></i>
                                 </a>
-                                <a href="https://discord.com/users/1043680764140736612" class="social-link">
-                                    <i class="fab fa-discord"></i>
+                                <a href="https://discord.com/users/1043680764140736612" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Discord" title="Discord">
+                                    <i class="fab fa-discord" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
 
-                        <form class="contact-form" id="contact-form">
+                        <form class="contact-form" id="contact-form" novalidate>
                             <div class="form-group">
                                 <label for="name" data-key="name-label">Nome</label>
                                 <input 
                                     type="text" 
                                     id="name" 
+                                    name="name" 
+                                    autocomplete="name" 
                                     required 
                                 />
                             </div>
@@ -961,14 +1207,19 @@
                                 <input 
                                     type="email" 
                                     id="email" 
+                                    name="email" 
+                                    autocomplete="email" 
                                     required 
                                 />
                             </div>
 
                             <div class="form-group">
                                 <label for="message" data-key="message-label">Mensagem</label>
-                                <textarea id="message" rows="5" required></textarea>
+                                <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
+
+                            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+
                             <button type="submit" class="btn btn-primary" data-key="send-message">Enviar Mensagem</button>
                         </form>
                     </div>
@@ -980,13 +1231,15 @@
         <footer class="footer">
             <div class="container">
                 <div class="footer-content">
-                    <div class="footer-divider">
+                    <div class="footer-divider" aria-hidden="true">
                         <span class="divider-line"></span>
-                        <span class="divider-icon"><i class="fas fa-code"></i></span>
+                        <span class="divider-icon">
+                            <i class="fas fa-code"></i>
+                        </span>
                         <span class="divider-line"></span>
                     </div>
                     <div class="footer-brand">
-                        <span class="logo">L</span>
+                        <span class="logo" aria-hidden="true">L</span>
                         <span class="logo-text">LUCAS</span>
                     </div>
                     <p class="footer-text" data-key="footer-text">
@@ -995,11 +1248,10 @@
                     <p class="copyright" data-key="copyright">
                         &copy; 2026 LUCAS. TODOS OS DIREITOS RESERVADOS.
                     </p>
-                    <p style="margin-top: 1rem;">
-                        <a href="pages/licenca.html" style="color: var(--roxo-neon); text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseover="this.style.color='#C77DFF'" onmouseout="this.style.color='var(--roxo-neon)'">
-                            <i class="fas fa-balance-scale"></i> Licença MIT
-                        </a>
-                    </p>
+                    <a href="pages/licenca.html" class="footer-link">
+                        <i class="fas fa-balance-scale" aria-hidden="true"></i>
+                        <span data-key="license-link">Licença MIT</span>
+                    </a>
                 </div>
             </div>
         </footer>
@@ -1016,7 +1268,16 @@
                 </div>
 
                 <div class="modal-body">
-                    <div class="modal-image-wrapper" id="modal-image-wrapper" hidden></div>
+                    <div class="modal-image-wrapper" id="modal-image-wrapper" hidden>
+                        <img 
+                            id="modal-image" 
+                            class="modal-image" 
+                            src="" 
+                            alt="" 
+                            loading="lazy" 
+                            decoding="async" 
+                        />
+                    </div>
                     <p id="modal-description" class="modal-description"></p>
                     <div class="modal-meta">
                         <span class="modal-status" id="modal-status"></span>
@@ -1065,6 +1326,5 @@
         <script type="module" src="js/translations.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
         <script src="js/script.js"></script>
-        <script src="js/spotify-loader.js"></script>
     </body>
 </html>
