@@ -293,7 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const campoNome = document.getElementById("name");
             const campoEmail = document.getElementById("email");
             const campoMensagem = document.getElementById("message");
-            const botaoEnviar = formularioContato.querySelector('button[type="submit"]');
+            const botaoEnviar = formularioContato.querySelector("button[type='submit']");
 
             if (!campoNome.value.trim() || !campoEmail.value.trim() || !campoMensagem.value.trim()) {
                 mostrarStatus("Por favor, preencha todos os campos.", "is-error");
@@ -495,9 +495,9 @@ const projetos = {
         repositorio: "https://github.com/devlucasaf/Football-Games-11",
         demonstracao: ""
     },
-    "naka-tattos": {
-        titulo: "Naka Tattos",
-        descricao: "Site profissional para o tatuador Naka Tattos, com portfólio, informações de contato, agendamento e apresentação dos trabalhos.",
+    "naka-tattoos": {
+        titulo: "Naka Tattoos",
+        descricao: "Site profissional para o tatuador Naka Tattoos, com portfólio, informações de contato, agendamento e apresentação dos trabalhos.",
         status: "Concluído",
         tipo: "Projeto profissional",
         funcionalidades: [
@@ -510,7 +510,7 @@ const projetos = {
         desafios: "Garantir carregamento rápido da galeria de imagens e navegação intuitiva, otimizando ativos e organizando o CSS.",
         tecnologias: ["HTML", "CSS", "JavaScript"],
         imagem: "",
-        repositorio: "https://github.com/devlucasaf/naka-tattos",
+        repositorio: "https://github.com/devlucasaf/naka-tattoos",
         demonstracao: ""
     },
     "money-tracker-control": {
@@ -530,8 +530,8 @@ const projetos = {
         imagem: "",
         repositorio: "https://github.com/devlucasaf/money-tracker-control",
     },
-    "erp-academic": {
-        titulo: "ERP Academic – Sistema Acadêmico",
+    "uniaura": {
+        titulo: "UniAura",
         descricao: "Sistema de gestão acadêmica para administrar alunos, professores, turmas, disciplinas e matrículas, com controle de notas e frequência, visando otimizar a rotina de instituições de ensino.",
         status: "Em desenvolvimento",
         tipo: "Projeto acadêmico",
@@ -545,10 +545,10 @@ const projetos = {
         participacao: "Desenvolvimento do back-end com Spring Boot, criação das entidades, endpoints REST, modelagem relacional e lógica de matrícula.",
         desafios: "Implementar lógica de matrícula validando conflitos de horário e pré-requisitos, utilizando transações robustas no banco.",
         tecnologias: ["Spring Boot", "SQL Server", "JavaScript"],
-        repositorio: "https://github.com/devlucasaf/ERP-Academic-School-System",
+        repositorio: "https://github.com/devlucasaf/UniAura",
     },
-    "liveevents-ticket": {
-        titulo: "LiveEvents Ticket",
+    "liveevents": {
+        titulo: "LiveEvents",
         descricao: "Sistema de gerenciamento de eventos e venda de ingressos online, com funcionalidades para criação de eventos, controle de lotes, pagamentos e emissão de ingressos digitais.",
         status: "Concluído",
         tipo: "Projeto pessoal",
@@ -562,7 +562,7 @@ const projetos = {
         participacao: "Desenvolvimento do back-end com .NET e integração com React, focando na lógica de eventos, lotes e reservas.",
         desafios: "Implementar controle de concorrência para evitar compra duplicada de ingressos, utilizando bloqueios otimistas no banco.",
         tecnologias: [".NET", "React", "SQL Server"],
-        repositorio: "https://github.com/devlucasaf/LiveEvents-Ticket",
+        repositorio: "https://github.com/devlucasaf/LiveEvents",
     }
 };
 
@@ -583,18 +583,18 @@ function abrirModalProjeto(projectId) {
     }
 
     // --- REFERÊNCIAS DOS ELEMENTOS DO MODAL ---
-    const titulo        = document.getElementById("modal-title");
-    const descricao     = document.getElementById("modal-description");
-    const status        = document.getElementById("modal-status");
-    const tipo          = document.getElementById("modal-type");
-    const features      = document.getElementById("modal-features");
+    const titulo = document.getElementById("modal-title");
+    const descricao = document.getElementById("modal-description");
+    const status = document.getElementById("modal-status");
+    const tipo = document.getElementById("modal-type");
+    const features = document.getElementById("modal-features");
     const participation = document.getElementById("modal-participation");
-    const challenges    = document.getElementById("modal-challenges");
+    const challenges = document.getElementById("modal-challenges");
     const techContainer = document.getElementById("modal-tech");
-    const repoLink      = document.getElementById("modal-repo-link");
-    const demoLink      = document.getElementById("modal-demo-link");
-    const imageWrapper  = document.getElementById("modal-image-wrapper");
-    const image         = document.getElementById("modal-image");
+    const repoLink = document.getElementById("modal-repo-link");
+    const demoLink = document.getElementById("modal-demo-link");
+    const imageWrapper = document.getElementById("modal-image-wrapper");
+    const image = document.getElementById("modal-image");
 
     // --- TÍTULO, DESCRIÇÃO, STATUS E TIPO ---
     titulo.textContent = projeto.titulo;
@@ -734,50 +734,50 @@ function configurarBotoesProjetos() {
 // --- ALTERNA ENTRE OS TEMAS CLARO E ESCURO ---
 function toggleTheme() {
     const body = document.body;
-    const isLight = body.classList.contains('light-theme');
-    const newTheme = isLight ? 'dark' : 'light';
+    const isLight = body.classList.contains("light-theme");
+    const newTheme = isLight ? "dark" : "light";
     
-    body.classList.toggle('light-theme');
+    body.classList.toggle("light-theme");
     
-    const btn = document.getElementById('theme-toggle');
+    const btn = document.getElementById("theme-toggle");
     if (btn) {
-        const icon = btn.querySelector('i');
-        if (newTheme === 'light') {
-            icon.className = 'fas fa-sun';
+        const icon = btn.querySelector("i");
+        if (newTheme === "light") {
+            icon.className = "fas fa-sun";
         } else {
-            icon.className = 'fas fa-moon';
+            icon.className = "fas fa-moon";
         }
     }
     
-    localStorage.setItem('theme', newTheme);
+    localStorage.setItem("theme", newTheme);
 }
 
 // --- CARREGA O TEMA SALVO NO NAVEGADOR ---
 function loadTheme() {
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem("theme");
     const body = document.body;
-    const btn = document.getElementById('theme-toggle');
+    const btn = document.getElementById("theme-toggle");
     
-    if (savedTheme === 'light') {
-        body.classList.add('light-theme');
+    if (savedTheme === "light") {
+        body.classList.add("light-theme");
         if (btn) {
-            const icon = btn.querySelector('i');
-            icon.className = 'fas fa-sun';
+            const icon = btn.querySelector("i");
+            icon.className = "fas fa-sun";
         }
     } else {
-        body.classList.remove('light-theme');
+        body.classList.remove("light-theme");
         if (btn) {
-            const icon = btn.querySelector('i');
-            icon.className = 'fas fa-moon';
+            const icon = btn.querySelector("i");
+            icon.className = "fas fa-moon";
         }
     }
 }
 
 // --- CONFIGURA O BOTÃO DE ALTERNAR TEMA ---
-document.addEventListener('DOMContentLoaded', function() {
-    const themeToggle = document.getElementById('theme-toggle');
+document.addEventListener("DOMContentLoaded", function() {
+    const themeToggle = document.getElementById("theme-toggle");
     if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
+        themeToggle.addEventListener("click", toggleTheme);
     }
     
     loadTheme();
@@ -794,14 +794,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const icone = botaoMenu.querySelector("i");
 
-    // --- APLICA O ESTADO (ABERTO OU FECHADO) AO MENU ---
+    // --- APLICA O ESTADO AO MENU ---
     function definirEstadoMenu(aberto) {
         menu.classList.toggle("active", aberto);
         botaoMenu.setAttribute("aria-expanded", String(aberto));
         botaoMenu.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
 
         if (icone) {
-            icone.className = aberto ? "fas fa-xmark" : "fas fa-bars";
+            if (aberto) {
+                icone.className = "fas fa-xmark";
+            } else {
+                icone.className = "fas fa-bars";
+            }
         }
     }
 
@@ -855,7 +859,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (progresso) {
             const alturaRolavel = document.documentElement.scrollHeight - window.innerHeight;
-            const razao = alturaRolavel > 0 ? Math.min(topo / alturaRolavel, 1) : 0;
+            let razao;
+
+            if (alturaRolavel > 0) {
+                razao = Math.min(topo / alturaRolavel, 1);
+            } else {
+                razao = 0;
+            }
+
             progresso.style.transform = `scaleX(${razao})`;
         }
 
@@ -974,7 +985,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    const seletorFocavel = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+    const seletorFocavel = "a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex='-1'])";
 
     // --- MANTÉM A TECLA TAB CIRCULANDO DENTRO DO MODAL ---
     modal.addEventListener("keydown", (e) => {
@@ -1000,4 +1011,203 @@ document.addEventListener("DOMContentLoaded", () => {
             primeiro.focus();
         }
     });
+});
+
+// --- ANIMAÇÃO DE CÓDIGO INTERATIVA ---
+document.addEventListener("DOMContentLoaded", () => {
+    const janela = document.getElementById("codeAnimation");
+    const corpo = document.getElementById("codeAnimationBody");
+
+    if (!janela || !corpo) {
+        return;
+    }
+
+    const linhas = [
+        [{ texto: "public class", classe: "code-keyword" }, { texto: " DevLucasaf {" }],
+        [{ texto: "  " }, { texto: "public static void", classe: "code-keyword" }, { texto: " main() {" }],
+        [{ texto: "    " }, { texto: "System.out.println('Hello World!');", classe: "code-function" }],
+        [{ texto: "  }" }],
+        [{ texto: "}" }],
+    ];
+
+    const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let execucaoAtual = 0;
+
+    function renderizarEstatico() {
+        corpo.innerHTML = "";
+        linhas.forEach(segmentos => {
+            const linha = document.createElement("div");
+            linha.className = "code-line";
+            segmentos.forEach(segmento => {
+                const span = document.createElement("span");
+                if (segmento.classe) {
+                    span.className = segmento.classe;
+                }
+                span.textContent = segmento.texto;
+                linha.appendChild(span);
+            });
+            corpo.appendChild(linha);
+        });
+    }
+
+    function pausa(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function digitar(minhaExecucao) {
+        corpo.innerHTML = "";
+
+        for (const segmentos of linhas) {
+            if (minhaExecucao !== execucaoAtual) {
+                return;
+            }
+
+            const linha = document.createElement("div");
+            linha.className = "code-line";
+            corpo.appendChild(linha);
+
+            const cursor = document.createElement("span");
+            cursor.className = "code-cursor";
+            linha.appendChild(cursor);
+
+            for (const segmento of segmentos) {
+                const span = document.createElement("span");
+                if (segmento.classe) {
+                    span.className = segmento.classe;
+                }
+                linha.insertBefore(span, cursor);
+
+                for (const caractere of segmento.texto) {
+                    if (minhaExecucao !== execucaoAtual) {
+                        return;
+                    }
+                    span.textContent += caractere;
+                    await pausa(22 + Math.random() * 28);
+                }
+            }
+
+            cursor.remove();
+            await pausa(120);
+        }
+
+        const ultimaLinha = corpo.lastElementChild;
+        if (ultimaLinha) {
+            const cursorFinal = document.createElement("span");
+            cursorFinal.className = "code-cursor";
+            ultimaLinha.appendChild(cursorFinal);
+        }
+
+        await pausa(2400);
+        if (minhaExecucao !== execucaoAtual) {
+            return;
+        }
+
+        digitar(execucaoAtual);
+    }
+
+    function iniciarAnimacao() {
+        if (reduzMovimento) {
+            renderizarEstatico();
+            return;
+        }
+
+        execucaoAtual += 1;
+        digitar(execucaoAtual);
+    }
+
+    if (reduzMovimento) {
+        renderizarEstatico();
+    } else {
+        const observador = new IntersectionObserver((entradas, obs) => {
+            entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    iniciarAnimacao();
+                    obs.unobserve(entrada.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observador.observe(janela);
+
+        // --- TERMINAL ACOMPANHA O MOUSE ---
+        const limitar = (valor, min, max) => Math.min(max, Math.max(min, valor));
+        const estado = { rotX: 0, rotY: 0, escala: 1, brilho: 0, mx: 50, my: 50, bx: 0, by: 0 };
+        const alvo = { rotX: 0, rotY: 0, escala: 1, brilho: 0, mx: 50, my: 50, bx: 0, by: 0 };
+        let rodando = false;
+
+        function quadro() {
+            let ativo = false;
+
+            for (const chave in estado) {
+                const fator = chave === "mx" || chave === "my" ? 0.25 : 0.14;
+                estado[chave] += (alvo[chave] - estado[chave]) * fator;
+                if (Math.abs(alvo[chave] - estado[chave]) > 0.01) {
+                    ativo = true;
+                }
+            }
+
+            janela.style.setProperty("--rot-x", estado.rotX.toFixed(2) + "deg");
+            janela.style.setProperty("--rot-y", estado.rotY.toFixed(2) + "deg");
+            janela.style.setProperty("--escala", estado.escala.toFixed(3));
+            janela.style.setProperty("--brilho", estado.brilho.toFixed(3));
+            janela.style.setProperty("--mx", estado.mx.toFixed(1) + "%");
+            janela.style.setProperty("--my", estado.my.toFixed(1) + "%");
+            janela.style.setProperty("--body-x", estado.bx.toFixed(2) + "px");
+            janela.style.setProperty("--body-y", estado.by.toFixed(2) + "px");
+
+            if (ativo) {
+                requestAnimationFrame(quadro);
+            } else {
+                rodando = false;
+            }
+        }
+
+        function animar() {
+            if (!rodando) {
+                rodando = true;
+                requestAnimationFrame(quadro);
+            }
+        }
+
+        janela.addEventListener("pointermove", (e) => {
+            if (e.pointerType === "touch") {
+                return;
+            }
+
+            const caixa = janela.getBoundingClientRect();
+            const x = limitar((e.clientX - caixa.left) / caixa.width, 0, 1);
+            const y = limitar((e.clientY - caixa.top) / caixa.height, 0, 1);
+
+            alvo.rotY = (x - 0.5) * 16;
+            alvo.rotX = (0.5 - y) * 12;
+            alvo.escala = 1.03;
+            alvo.brilho = 0.22;
+            alvo.mx = x * 100;
+            alvo.my = y * 100;
+            alvo.bx = (x - 0.5) * 8;
+            alvo.by = (y - 0.5) * 6;
+
+            janela.classList.add("is-tracking");
+            animar();
+        });
+
+        janela.addEventListener("pointerleave", () => {
+            Object.assign(alvo, { rotX: 0, rotY: 0, escala: 1, brilho: 0, bx: 0, by: 0 });
+            janela.classList.remove("is-tracking");
+            animar();
+        });
+
+        // --- REINICIA A DIGITAÇÃO AO CLICAR/TOCAR NA JANELA ---
+        const reiniciar = () => {
+            iniciarAnimacao();
+        };
+
+        janela.addEventListener("click", reiniciar);
+        janela.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                reiniciar();
+            }
+        });
+    }
 });

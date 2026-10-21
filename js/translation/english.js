@@ -63,6 +63,7 @@ const translationsEnUs = {
 
     "frontend-title": "Frontend",
     "html": "HTML",
+    "xhtml": "XHTML",
     "css": "CSS",
 
     "database-title": "Database",
@@ -118,7 +119,7 @@ const translationsEnUs = {
     "naka-tattos-project-desc": "Professional website for the tattoo artist Naka Tattos.",
     "money-tracker-project-title": "Money Tracker Control",
     "money-tracker-project-desc": "Personal finance control project.",
-    "academico-project-title": "ERP-Academic",
+    "academico-project-title": "UniAura",
     "academico-project-desc": "Academic Management System ERP",
     "liveevents-project-desc": "Event management and online ticket sales system.",
     "liveevents-project-title": "LiveEvents-Ticket",

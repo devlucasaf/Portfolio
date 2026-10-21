@@ -889,18 +889,6 @@ body.light-theme .background-animated::after {
     }
 }
 
-@keyframes typeWriter {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 @keyframes brilhoCard {
     100% {
         left: 125%;
