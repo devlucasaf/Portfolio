@@ -122,7 +122,7 @@ const translationsPtBr = {
     "academico-project-title": "UniAura",
     "academico-project-desc": "ERP de um Sistema Acadêmico Universitário",
     "liveevents-project-desc": "Sistema de gerenciamento de eventos e venda de ingressos online.",
-    "liveevents-project-title": "LiveEvents-Ticket",
+    "liveevents-project-title": "LiveEvents",
     "coming-soon-desc": "Novo projeto em desenvolvimento utilizando tecnologias modernas e melhores práticas de desenvolvimento.",
     "coming-soon-title": "Em Breve",
     "view-project": "Ver Projeto",
