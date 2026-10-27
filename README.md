@@ -17,14 +17,20 @@ Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
 /Portifolio
  ├── index.html
  ├── css/
- │   └── style.css
+ │   ├── components.css
+ │   ├── global.css
+ │   ├── layout.css
+ │   └── responsive.css
  ├── js/
- │   ├── translation
+ │   ├── translation/
  │   │   ├── portuguese.js
  │   │   └── english.js
- │   ├── translations.js
- │   ├── spotify-loader.js
- │   └── script.js
+ │   ├── faq.js
+ │   ├── script.js
+ │   └── translations.js
+ ├── pages/
+ │   ├── faq.html/
+ │   └── licenca.html/
  ├── assets/
  │   ├── flags/
  │   └── imgs/
@@ -35,7 +41,7 @@ Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
 
 - **Home:** Minha apresentação.
 - **Sobre mim:** abordo uma pequena apresentação sobre mim e a minha trajetória.
-- **Música:** minhas principais playlist e o que escuto agora.
+- **Trajetória:** Abordo minha trajetória.
 - **Skills:** liguagens e ferramentas que eu utilizo.
 - **Certificados:** certificados dos cursos que concluí.
 - **Meus Projetos:** alguns projetos desenvolvidos recentemente por mim.
