@@ -1211,3 +1211,160 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// --- INICIALIZAÇÃO DA SEÇÃO MINHA TRAJETÓRIA ---
+document.addEventListener("DOMContentLoaded", () => {
+    const secaoTrajetoria = document.getElementById("trajectory-section");
+    if (!secaoTrajetoria) {
+        return;
+    }
+
+    const botoesFiltro = secaoTrajetoria.querySelectorAll(".timeline-filter-btn");
+    const itensTimeline = secaoTrajetoria.querySelectorAll(".timeline-item");
+    const itensScrubber = secaoTrajetoria.querySelectorAll(".scrubber-item");
+    const botoesExpandir = secaoTrajetoria.querySelectorAll(".timeline-expand-btn");
+    const preenchimentoEspinha = secaoTrajetoria.querySelector(".timeline-spine-fill");
+    const espinha = secaoTrajetoria.querySelector(".timeline-spine");
+
+    // 1. FILTRAGEM POR CATEGORIA
+    botoesFiltro.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const filtro = btn.dataset.filter;
+
+            botoesFiltro.forEach(b => {
+                b.classList.remove("active");
+                b.setAttribute("aria-selected", "false");
+            });
+            btn.classList.add("active");
+            btn.setAttribute("aria-selected", "true");
+
+            itensTimeline.forEach(item => {
+                const categoria = item.dataset.category;
+                const deveExibir = filtro === "all" || categoria === filtro;
+
+                if (deveExibir) {
+                    item.classList.remove("is-filtered-out");
+                } else {
+                    item.classList.add("is-filtered-out");
+                }
+            });
+
+            atualizarPreenchimentoEspinha();
+        });
+    });
+
+    // 2. NAVEGAÇÃO RÁPIDA PELOS MARCOS (SCRUBBER BAR)
+    itensScrubber.forEach(scrubber => {
+        scrubber.addEventListener("click", () => {
+            const targetId = scrubber.dataset.target;
+            const targetEl = document.getElementById(targetId);
+
+            if (!targetEl) {
+                return;
+            }
+
+            if (targetEl.classList.contains("is-filtered-out")) {
+                const btnTodos = secaoTrajetoria.querySelector('.timeline-filter-btn[data-filter="all"]');
+                if (btnTodos) {
+                    btnTodos.click();
+                }
+            }
+
+            itensScrubber.forEach(s => s.classList.remove("active"));
+            scrubber.classList.add("active");
+
+            targetEl.scrollIntoView({ behavior: "smooth", block: "center" });
+
+            const card = targetEl.querySelector(".timeline-card");
+            if (card) {
+                card.classList.remove("highlight-pulse");
+                void card.offsetWidth; 
+                card.classList.add("highlight-pulse");
+            }
+        });
+    });
+
+    // 3. EXPANSÃO DE DETALHES DE CADA MARCO
+    botoesExpandir.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const card = btn.closest(".timeline-card");
+            if (!card) {
+                return;
+            }
+
+            const detalhes = card.querySelector(".timeline-details");
+            const btnText = btn.querySelector(".btn-text");
+            if (!detalhes || !btnText) {
+                return;
+            }
+
+            const estaExpandido = btn.getAttribute("aria-expanded") === "true";
+            const novoEstado = !estaExpandido;
+
+            btn.setAttribute("aria-expanded", String(novoEstado));
+
+            const idioma = localStorage.getItem("preferredLanguage") || "pt-br";
+            const dict = (window.translations && window.translations[idioma]) || {};
+
+            if (novoEstado) {
+                detalhes.hidden = false;
+                btnText.setAttribute("data-key", "btn-hide-details");
+                btnText.textContent = dict["btn-hide-details"] || (idioma === "en-us" ? "Hide details" : "Ocultar detalhes");
+            } else {
+                detalhes.hidden = true;
+                btnText.setAttribute("data-key", "btn-view-details");
+                btnText.textContent = dict["btn-view-details"] || (idioma === "en-us" ? "View details" : "Ver detalhes");
+            }
+
+            atualizarPreenchimentoEspinha();
+        });
+    });
+
+    // 4. ATUALIZAÇÃO DO PREENCHIMENTO DA ESPINHA DURANTE O SCROLL
+    function atualizarPreenchimentoEspinha() {
+        if (!espinha || !preenchimentoEspinha) {
+            return;
+        }
+
+        const retanguloSecao = secaoTrajetoria.getBoundingClientRect();
+        const alturaJanela = window.innerHeight;
+
+        const topo = retanguloSecao.top;
+        const altura = retanguloSecao.height;
+
+        if (topo > alturaJanela) {
+            preenchimentoEspinha.style.height = "0%";
+            return;
+        }
+
+        const progresso = Math.min(Math.max((alturaJanela * 0.6 - topo) / (altura * 0.8), 0), 1);
+        preenchimentoEspinha.style.height = `${progresso * 100}%`;
+    }
+
+    // 5. OBSERVADOR PARA DESTACAR O MARCO NO SCRUBBER CONFORME A ROLAGEM
+    const observadorMarcos = new IntersectionObserver(
+        (entradas) => {
+            entradas.forEach(entrada => {
+                if (entrada.isIntersecting) {
+                    const idMarco = entrada.target.id;
+                    const scrubberCorrespondente = secaoTrajetoria.querySelector(`.scrubber-item[data-target="${idMarco}"]`);
+                    if (scrubberCorrespondente) {
+                        itensScrubber.forEach(s => s.classList.remove("active"));
+                        scrubberCorrespondente.classList.add("active");
+                    }
+                }
+            });
+        },
+        {
+            root: null,
+            threshold: 0.35,
+            rootMargin: "-80px 0px -80px 0px"
+        }
+    );
+
+    itensTimeline.forEach(item => observadorMarcos.observe(item));
+
+    window.addEventListener("scroll", atualizarPreenchimentoEspinha, { passive: true });
+    window.addEventListener("resize", atualizarPreenchimentoEspinha, { passive: true });
+    setTimeout(atualizarPreenchimentoEspinha, 400);
+});

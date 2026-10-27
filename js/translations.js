@@ -63,6 +63,7 @@ function atualizarElementosPorClasse(idioma) {
     const classesNavegacao = [
         "nav-home",
         "nav-sobre",
+        "nav-trajetoria",
         "nav-musica",
         "nav-skills",
         "nav-certifications",

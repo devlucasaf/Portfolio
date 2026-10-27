@@ -67,6 +67,7 @@
                 <ul class="nav-menu" id="nav-menu">
                     <li><a href="#home-section" class="nav-link nav-home" data-key="nav-home">Home</a></li>
                     <li><a href="#about-section" class="nav-link nav-sobre" data-key="nav-sobre">Sobre Mim</a></li>
+                    <li><a href="#trajectory-section" class="nav-link nav-trajetoria" data-key="nav-trajetoria">Trajetória</a></li>
                     <li><a href="#skills-section" class="nav-link nav-skills" data-key="nav-skills">Skills</a></li>
                     <li><a href="#certifications-section" class="nav-link nav-certifications" data-key="nav-certifications">Certificados</a></li>
                     <li><a href="#projects-section" class="nav-link nav-projetos" data-key="nav-projetos">Meus Projetos</a></li>
@@ -239,6 +240,329 @@
                 </div>
             </section>
 
+            <!-- --- TRAJECTORY --- -->
+            <section id="trajectory-section" class="section trajectory reveal">
+                <div class="container">
+                    <p class="section-eyebrow" data-key="eyebrow-trajectory">Minha Jornada</p>
+                    <h2 class="section-title" data-key="trajectory-title" data-i18n-html>Minha <span class="highlight">Trajetória</span></h2>
+
+                    <div class="timeline-controls">
+                        <div class="timeline-filters" role="tablist" aria-label="Filtrar marcos da trajetória">
+                            <button type="button" class="timeline-filter-btn active" data-filter="all" role="tab" aria-selected="true" data-key="timeline-filter-all">
+                                <i class="fas fa-layer-group" aria-hidden="true"></i>
+                                <span>Todos os Marcos</span>
+                            </button>
+                            <button type="button" class="timeline-filter-btn" data-filter="education" role="tab" aria-selected="false" data-key="timeline-filter-edu">
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                                <span>Educação</span>
+                            </button>
+                            <button type="button" class="timeline-filter-btn" data-filter="certifications" role="tab" aria-selected="false" data-key="timeline-filter-cert">
+                                <i class="fas fa-certificate" aria-hidden="true"></i>
+                                <span>Certificações & Cursos</span>
+                            </button>
+                            <button type="button" class="timeline-filter-btn" data-filter="career" role="tab" aria-selected="false" data-key="timeline-filter-career">
+                                <i class="fas fa-briefcase" aria-hidden="true"></i>
+                                <span>Experiência / Estágio</span>
+                            </button>
+                        </div>
+
+                        <div class="timeline-scrubber" aria-label="Navegação rápida pelos marcos">
+                            <button type="button" class="scrubber-item" data-target="milestone-dez2023" aria-label="Ir para Dezembro de 2023">
+                                <span class="scrubber-dot"></span>
+                                <span class="scrubber-label">Dez/2023</span>
+                            </button>
+                            <span class="scrubber-divider" aria-hidden="true"></span>
+                            <button type="button" class="scrubber-item" data-target="milestone-fev2024" aria-label="Ir para Fevereiro de 2024">
+                                <span class="scrubber-dot"></span>
+                                <span class="scrubber-label">Fev/2024</span>
+                            </button>
+                            <span class="scrubber-divider" aria-hidden="true"></span>
+                            <button type="button" class="scrubber-item" data-target="milestone-set2024" aria-label="Ir para Setembro de 2024">
+                                <span class="scrubber-dot"></span>
+                                <span class="scrubber-label">Set/2024</span>
+                            </button>
+                            <span class="scrubber-divider" aria-hidden="true"></span>
+                            <button type="button" class="scrubber-item" data-target="milestone-ini2025" aria-label="Ir para Final 2024 / Início 2025">
+                                <span class="scrubber-dot"></span>
+                                <span class="scrubber-label">Início/2025</span>
+                            </button>
+                            <span class="scrubber-divider" aria-hidden="true"></span>
+                            <button type="button" class="scrubber-item active" data-target="milestone-set2025" aria-label="Ir para Setembro de 2025 (Estágio CAESB)">
+                                <span class="scrubber-dot pulse"></span>
+                                <span class="scrubber-label">Set/2025 ★</span>
+                            </button>
+                            <span class="scrubber-divider" aria-hidden="true"></span>
+                            <button type="button" class="scrubber-item" data-target="milestone-hoje" aria-label="Ir para 2026 - Presente">
+                                <span class="scrubber-dot"></span>
+                                <span class="scrubber-label">Hoje</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="timeline-tree">
+                        <div class="timeline-spine" aria-hidden="true">
+                            <div class="timeline-spine-fill"></div>
+                        </div>
+
+                        <!-- Marco 1: Dezembro de 2023 -->
+                        <div class="timeline-item" id="milestone-dez2023" data-category="education">
+                            <div class="timeline-node" aria-hidden="true">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span class="node-ripple"></span>
+                            </div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-header">
+                                    <div class="timeline-date-badge">
+                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                        <span data-key="time-dez2023">Dezembro de 2023</span>
+                                    </div>
+                                    <span class="timeline-category-tag tag-education" data-key="cat-education">Educação</span>
+                                </div>
+                                <h3 class="timeline-title" data-key="milestone-1-title">Finalização do Ensino Médio</h3>
+                                <p class="timeline-institution">
+                                    <i class="fas fa-school" aria-hidden="true"></i>
+                                    <span data-key="milestone-1-inst">Educação Básica Concluída — Brasília, DF</span>
+                                </p>
+                                <p class="timeline-desc" data-key="milestone-1-desc">
+                                    Conclusão do ciclo da educação básica com forte dedicação e afinidade pelas áreas de exatas e raciocínio lógico, decidindo direcionar a carreira profissional para a tecnologia e o desenvolvimento de software.
+                                </p>
+                                <div class="timeline-tags">
+                                    <span class="timeline-pill">Ensino Médio</span>
+                                    <span class="timeline-pill">Raciocínio Lógico</span>
+                                    <span class="timeline-pill">Foco em TI</span>
+                                </div>
+                                <button type="button" class="timeline-expand-btn" aria-expanded="false">
+                                    <span class="btn-text" data-key="btn-view-details">Ver detalhes</span>
+                                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="timeline-details" hidden>
+                                    <ul class="timeline-highlights">
+                                        <li data-key="milestone-1-d1">Conclusão regular com excelência e foco acadêmico.</li>
+                                        <li data-key="milestone-1-d2">Decisão estratégica por ingressar no bacharelado em Ciência da Computação.</li>
+                                        <li data-key="milestone-1-d3">Primeiros estudos autodidatas de lógica de programação e tecnologia.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Marco 2: Fevereiro de 2024 -->
+                        <div class="timeline-item" id="milestone-fev2024" data-category="education">
+                            <div class="timeline-node" aria-hidden="true">
+                                <i class="fas fa-university"></i>
+                                <span class="node-ripple"></span>
+                            </div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-header">
+                                    <div class="timeline-date-badge">
+                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                        <span data-key="time-fev2024">Fevereiro de 2024</span>
+                                    </div>
+                                    <span class="timeline-category-tag tag-education" data-key="cat-education">Educação</span>
+                                </div>
+                                <h3 class="timeline-title" data-key="milestone-2-title">Início do Ensino Superior no CEUB</h3>
+                                <p class="timeline-institution">
+                                    <i class="fas fa-university" aria-hidden="true"></i>
+                                    <span data-key="milestone-2-inst">CEUB — Centro Universitário de Brasília</span>
+                                </p>
+                                <p class="timeline-desc" data-key="milestone-2-desc">
+                                    Ingresso no bacharelado em Ciência da Computação no CEUB. Início da formação sólida em algoritmos estruturados, arquitetura de sistemas, estruturas de dados e paradigmas de computação.
+                                </p>
+                                <div class="timeline-tags">
+                                    <span class="timeline-pill">Ciência da Computação</span>
+                                    <span class="timeline-pill">CEUB</span>
+                                    <span class="timeline-pill">Algoritmos</span>
+                                    <span class="timeline-pill">Estruturas de Dados</span>
+                                </div>
+                                <button type="button" class="timeline-expand-btn" aria-expanded="false">
+                                    <span class="btn-text" data-key="btn-view-details">Ver detalhes</span>
+                                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="timeline-details" hidden>
+                                    <ul class="timeline-highlights">
+                                        <li data-key="milestone-2-d1">Desenvolvimento de raciocínio algorítmico rigoroso e análise de complexidade.</li>
+                                        <li data-key="milestone-2-d2">Fundamentos de arquitetura de computadores, redes e sistemas operacionais.</li>
+                                        <li data-key="milestone-2-d3">Projetos acadêmicos colaborativos e fortalecimento de soft skills.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Marco 3: Setembro de 2024 -->
+                        <div class="timeline-item" id="milestone-set2024" data-category="certifications">
+                            <div class="timeline-node" aria-hidden="true">
+                                <i class="fab fa-windows"></i>
+                                <span class="node-ripple"></span>
+                            </div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-header">
+                                    <div class="timeline-date-badge">
+                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                        <span data-key="time-set2024">Setembro de 2024</span>
+                                    </div>
+                                    <span class="timeline-category-tag tag-cert" data-key="cat-cert">Certificação</span>
+                                </div>
+                                <h3 class="timeline-title" data-key="milestone-3-title">Primeiro Certificado: Curso de Informática & Pacote Office</h3>
+                                <p class="timeline-institution">
+                                    <i class="fas fa-award" aria-hidden="true"></i>
+                                    <span data-key="milestone-3-inst">Escola BestMinds</span>
+                                </p>
+                                <p class="timeline-desc" data-key="milestone-3-desc">
+                                    Conquista da primeira certificação profissional. Domínio do ecossistema Office (Excel avançado, Word, PowerPoint), ambiente Windows e primeiros relatórios visuais com Power BI.
+                                </p>
+                                <div class="timeline-tags">
+                                    <span class="timeline-pill">Pacote Office</span>
+                                    <span class="timeline-pill">Excel Avançado</span>
+                                    <span class="timeline-pill">Power BI</span>
+                                    <span class="timeline-pill">Windows</span>
+                                    <span class="timeline-pill">BestMinds</span>
+                                </div>
+                                <button type="button" class="timeline-expand-btn" aria-expanded="false">
+                                    <span class="btn-text" data-key="btn-view-details">Ver detalhes</span>
+                                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="timeline-details" hidden>
+                                    <ul class="timeline-highlights">
+                                        <li data-key="milestone-3-d1">Elaboração de planilhas complexas com fórmulas, tabelas dinâmicas e automações em Excel.</li>
+                                        <li data-key="milestone-3-d2">Criação de relatórios e painéis dinâmicos utilizando Power BI.</li>
+                                        <li data-key="milestone-3-d3">Produtividade corporativa e padronização em sistemas Windows.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Marco 4: Final de 2024 / Início de 2025 -->
+                        <div class="timeline-item" id="milestone-ini2025" data-category="certifications">
+                            <div class="timeline-node" aria-hidden="true">
+                                <i class="fas fa-laptop-code"></i>
+                                <span class="node-ripple"></span>
+                            </div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-header">
+                                    <div class="timeline-date-badge">
+                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                        <span data-key="time-ini2025">Final de 2024 — Início de 2025</span>
+                                    </div>
+                                    <span class="timeline-category-tag tag-cert" data-key="cat-cert">Certificação</span>
+                                </div>
+                                <h3 class="timeline-title" data-key="milestone-4-title">Especialização em Python, Java & Banco de Dados</h3>
+                                <p class="timeline-institution">
+                                    <i class="fas fa-award" aria-hidden="true"></i>
+                                    <span data-key="milestone-4-inst">Escola BestMinds & Udemy</span>
+                                </p>
+                                <p class="timeline-desc" data-key="milestone-4-desc">
+                                    Evolução acelerada na formação técnica com certificações em Programação Python, Programação Java e Modelagem de Dados Relacionais em MySQL Workbench, desenvolvendo os primeiros projetos de backend.
+                                </p>
+                                <div class="timeline-tags">
+                                    <span class="timeline-pill">Python</span>
+                                    <span class="timeline-pill">Java</span>
+                                    <span class="timeline-pill">MySQL Workbench</span>
+                                    <span class="timeline-pill">Modelagem de Dados</span>
+                                    <span class="timeline-pill">Git / GitHub</span>
+                                </div>
+                                <button type="button" class="timeline-expand-btn" aria-expanded="false">
+                                    <span class="btn-text" data-key="btn-view-details">Ver detalhes</span>
+                                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="timeline-details" hidden>
+                                    <ul class="timeline-highlights">
+                                        <li data-key="milestone-4-d1">Aprofundamento em POO (Programação Orientada a Objetos) e boas práticas em Java.</li>
+                                        <li data-key="milestone-4-d2">Construção de algoritmos e scripts de automação em Python.</li>
+                                        <li data-key="milestone-4-d3">Modelagem de dados relacionais, diagramas ER e normalização no MySQL Workbench.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Marco 5: Setembro de 2025 — Estágio CAESB (Destaque Principal) -->
+                        <div class="timeline-item active-milestone" id="milestone-set2025" data-category="career">
+                            <div class="timeline-node" aria-hidden="true">
+                                <i class="fas fa-briefcase"></i>
+                                <span class="node-ripple pulse-always"></span>
+                            </div>
+                            <div class="timeline-card card-spotlight">
+                                <div class="timeline-card-header">
+                                    <div class="timeline-date-badge highlight-date">
+                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                        <span data-key="time-set2025">Setembro de 2025</span>
+                                    </div>
+                                    <span class="timeline-category-tag tag-career" data-key="cat-career">
+                                        <span class="status-indicator"></span> Estágio Atual
+                                    </span>
+                                </div>
+                                <h3 class="timeline-title" data-key="milestone-5-title">Entrada no Estágio na CAESB</h3>
+                                <p class="timeline-institution">
+                                    <i class="fas fa-building" aria-hidden="true"></i>
+                                    <span data-key="milestone-5-inst">CAESB — Companhia de Saneamento Ambiental do DF</span>
+                                </p>
+                                <p class="timeline-desc" data-key="milestone-5-desc">
+                                    Ingresso como estagiário na área de Tecnologia da Informação / Desenvolvimento de Software na CAESB. Atuação prática em desenvolvimento de sistemas corporativos, manutenção de rotinas e bancos de dados em uma empresa pública de grande porte.
+                                </p>
+                                <div class="timeline-tags">
+                                    <span class="timeline-pill highlight-pill">CAESB</span>
+                                    <span class="timeline-pill highlight-pill">Desenvolvimento de Software</span>
+                                    <span class="timeline-pill">Banco de Dados</span>
+                                    <span class="timeline-pill">Ambiente Corporativo</span>
+                                    <span class="timeline-pill">Trabalho em Equipe</span>
+                                </div>
+                                <button type="button" class="timeline-expand-btn" aria-expanded="false">
+                                    <span class="btn-text" data-key="btn-view-details">Ver detalhes</span>
+                                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="timeline-details" hidden>
+                                    <ul class="timeline-highlights">
+                                        <li data-key="milestone-5-d1">Aplicação de código e arquitetura de software em sistemas reais de produção.</li>
+                                        <li data-key="milestone-5-d2">Experiência prática com bancos de dados relacionais corporativos e rotinas ágeis.</li>
+                                        <li data-key="milestone-5-d3">Trabalho em equipe multidisciplinar e aprendizado diário com desenvolvedores sêniores.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Marco 6: 2026 — Presente e Futuro -->
+                        <div class="timeline-item" id="milestone-hoje" data-category="career">
+                            <div class="timeline-node" aria-hidden="true">
+                                <i class="fas fa-rocket"></i>
+                                <span class="node-ripple"></span>
+                            </div>
+                            <div class="timeline-card">
+                                <div class="timeline-card-header">
+                                    <div class="timeline-date-badge">
+                                        <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                        <span data-key="time-hoje">2026 — Presente</span>
+                                    </div>
+                                    <span class="timeline-category-tag tag-future" data-key="cat-future">Próximos Passos</span>
+                                </div>
+                                <h3 class="timeline-title" data-key="milestone-6-title">Evolução Contínua & Foco em Back-End</h3>
+                                <p class="timeline-institution">
+                                    <i class="fas fa-compass" aria-hidden="true"></i>
+                                    <span data-key="milestone-6-inst">Projetos Pessoais & Carreira Profissional</span>
+                                </p>
+                                <p class="timeline-desc" data-key="milestone-6-desc">
+                                    Desenvolvimento de projetos robustos com Java (Spring Boot), C# (.NET), APIs REST, integração de bancos relacionais e constante aperfeiçoamento com foco em arquitetura limpa e novas tecnologias.
+                                </p>
+                                <div class="timeline-tags">
+                                    <span class="timeline-pill">Java / Spring Boot</span>
+                                    <span class="timeline-pill">C# / .NET</span>
+                                    <span class="timeline-pill">APIs REST</span>
+                                    <span class="timeline-pill">Arquitetura Limpa</span>
+                                </div>
+                                <button type="button" class="timeline-expand-btn" aria-expanded="false">
+                                    <span class="btn-text" data-key="btn-view-details">Ver detalhes</span>
+                                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                                </button>
+                                <div class="timeline-details" hidden>
+                                    <ul class="timeline-highlights">
+                                        <li data-key="milestone-6-d1">Criação de projetos práticos e sistemas de gestão (SGC, UniAura, APIs).</li>
+                                        <li data-key="milestone-6-d2">Preparação para certificações técnicas avançadas de mercado.</li>
+                                        <li data-key="milestone-6-d3">Foco permanente em performance, segurança e código limpo.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- --- SKILLS --- -->
             <section id="skills-section" class="section skills reveal">
                 <div class="container">
@@ -260,7 +584,7 @@
                                     <div class="skill-card" data-tech="python">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/3840px-Python-logo-notext.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" 
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -270,10 +594,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="python">Python</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="java">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" 
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -283,10 +608,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="java">Java</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="csharp">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/C_Sharp_Logo_2023.svg/250px-C_Sharp_Logo_2023.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" 
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -296,10 +622,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="csharp">C#</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="ruby">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://images.vexels.com/media/users/3/166485/isolated/preview/d4061b653e6ba02ad0afdc79e0315a25-icone-da-linguagem-de-programacao-ruby.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -309,10 +636,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="ruby">Ruby</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="javascript">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://img.icons8.com/color/512/javascript.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" 
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -334,7 +662,7 @@
                                     <div class="skill-card" data-tech="html">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://images.icon-icons.com/171/PNG/512/html5_23329.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -344,6 +672,7 @@
                                         </div>
                                         <h4 class="skill-name" data-key="html">HTML</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="xhtml">
                                         <div class="skill-icon">
                                             <img
@@ -357,10 +686,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="xhtml">XHTML</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="css">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/css-icon.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" 
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -382,7 +712,7 @@
                                     <div class="skill-card" data-tech="sql">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://cdn-icons-png.flaticon.com/512/528/528260.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -392,10 +722,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="sql">SQL</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="sqlserver">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Microsoft_SQL_Server_2025_icon.svg/3840px-Microsoft_SQL_Server_2025_icon.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -405,10 +736,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="sqlserver">SQL Server</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="sqlite">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/3840px-SQLite370.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" 
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -430,7 +762,7 @@
                                     <div class="skill-card" data-tech="spring-boot">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Spring_Boot.svg/960px-Spring_Boot.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -440,10 +772,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="spring-boot">Spring Boot</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="dotnet">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://user-images.githubusercontent.com/42860908/106164530-120e5680-61b0-11eb-954c-969c7031ffd4.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -453,10 +786,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="dotnet">.NET</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="rails">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://download.logo.wine/logo/Ruby_on_Rails/Ruby_on_Rails-Logo.wine.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rails/rails-plain.svg" 
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -466,10 +800,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="rails">Rails</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="django">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/django.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -479,10 +814,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="django">Django</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="nodejs">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://cdn.iconscout.com/icon/free/png-256/free-node-js-icon-svg-download-png-1174935.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -492,10 +828,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="nodejs">Node.js</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="react">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/960px-React-icon.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -505,10 +842,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="react">React</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="vite">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/500px-Vitejs-logo.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" 
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -518,10 +856,11 @@
                                         </div>
                                         <h4 class="skill-name" data-key="vite">Vite</h4>
                                     </div>
+
                                     <div class="skill-card" data-tech="nextjs">
                                         <div class="skill-icon">
                                             <img 
-                                                src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nextjs.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -548,7 +887,7 @@
                                     <div class="tool-card" data-tool="jet-brains">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://img.icons8.com/color/600/jetbrains.png" 
+                                                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jetbrains/jetbrains-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -558,10 +897,11 @@
                                         </div>
                                         <span class="tool-name" data-key="jet-brains">JetBrains</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="pycharm">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/JetBrains_PyCharm_Product_Icon.svg/3840px-JetBrains_PyCharm_Product_Icon.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pycharm/pycharm-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -571,10 +911,11 @@
                                         </div>
                                         <span class="tool-name" data-key="pycharm">PyCharm</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="intellij">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/960px-IntelliJ_IDEA_Icon.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -584,10 +925,11 @@
                                         </div>
                                         <span class="tool-name" data-key="intellij">IntelliJ</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="rubymine">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/RubyMine_Icon.svg/960px-RubyMine_Icon.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rubymine/rubymine-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -597,10 +939,11 @@
                                         </div>
                                         <span class="tool-name" data-key="rubymine">RubyMine</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="rider">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/JetBrains_Rider_Icon.svg/1280px-JetBrains_Rider_Icon.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rider/rider-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -610,10 +953,11 @@
                                         </div>
                                         <span class="tool-name" data-key="rider">Rider</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="data-grip">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/DataGrip.svg/1280px-DataGrip.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/datagrip/datagrip-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -623,10 +967,11 @@
                                         </div>
                                         <span class="tool-name" data-key="data-grip">DataGrip</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="android-studio">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/android-studio-icon.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -636,10 +981,11 @@
                                         </div>
                                         <span class="tool-name" data-key="android-studio">Android Studio</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="antigravity">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://cdn.jsdelivr.net/gh/selfhst/icons/png/google-antigravity.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/antigravity/antigravity-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -649,10 +995,11 @@
                                         </div>
                                         <span class="tool-name" data-key="antigravity">Antigravity</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="vs-code">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/960px-Visual_Studio_Code_1.35_icon.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" 
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -662,10 +1009,11 @@
                                         </div>
                                         <span class="tool-name" data-key="vs-code">VS Code</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="visual-studio">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/250px-Visual_Studio_Icon_2022.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -675,6 +1023,7 @@
                                         </div>
                                         <span class="tool-name" data-key="visual-studio">Visual Studio</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="ssms">
                                         <div class="tool-icon">
                                             <img 
@@ -688,10 +1037,11 @@
                                         </div>
                                         <span class="tool-name" data-key="ssms">SSMS</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="pgadmin4">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/pgadmin.svg" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" 
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -713,7 +1063,7 @@
                                     <div class="tool-card" data-tool="git">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/3840px-Git_icon.svg.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -723,10 +1073,11 @@
                                         </div>
                                         <span class="tool-name" data-key="git">Git</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="github">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://cdn-icons-png.flaticon.com/512/25/25231.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -736,10 +1087,11 @@
                                         </div>
                                         <span class="tool-name" data-key="github">GitHub</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="gitlab">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://cdn-icons-png.flaticon.com/512/5968/5968853.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg" 
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -749,10 +1101,11 @@
                                         </div>
                                         <span class="tool-name" data-key="gitlab">GitLab</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="subversion">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://cdn.iconscout.com/icon/free/png-256/free-subversion-logo-icon-svg-download-png-2945192.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/subversion/subversion-original.svg" 
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -762,10 +1115,11 @@
                                         </div>
                                         <span class="tool-name" data-key="subversion">Subversion</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="tortoisesvn">
                                         <div class="tool-icon">
                                             <img 
-                                                src="https://tortoisesvn.net/assets/img/logo-256x256.png" 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tortoisegit/tortoisegit-original.svg"
                                                 alt="" 
                                                 loading="lazy" 
                                                 decoding="async" 
@@ -797,6 +1151,7 @@
                                         </div>
                                         <span class="tool-name" data-key="word">Word</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="power-point">
                                         <div class="tool-icon">
                                             <img 
@@ -810,6 +1165,7 @@
                                         </div>
                                         <span class="tool-name" data-key="power-point">PowerPoint</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="excel">
                                         <div class="tool-icon">
                                             <img 
@@ -823,6 +1179,7 @@
                                         </div>
                                         <span class="tool-name" data-key="excel">Excel</span>
                                     </div>
+
                                     <div class="tool-card" data-tool="power-bi">
                                         <div class="tool-icon">
                                             <img 
@@ -847,7 +1204,14 @@
                                 <div class="skills-grid compact stagger">
                                     <div class="tool-card" data-tool="windows">
                                         <div class="tool-icon">
-                                            <i class="fab fa-windows tool-icon-fa" aria-hidden="true"></i>
+                                            <img 
+                                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg"
+                                                alt="" 
+                                                loading="lazy" 
+                                                decoding="async" 
+                                                width="40" 
+                                                height="40" 
+                                            />
                                         </div>
                                         <span class="tool-name" data-key="windows">Windows</span>
                                     </div>
@@ -1277,10 +1641,17 @@
                     <p class="copyright" data-key="copyright">
                         &copy; 2026 LUCAS. TODOS OS DIREITOS RESERVADOS.
                     </p>
-                    <a href="pages/licenca.html" class="footer-link">
-                        <i class="fas fa-balance-scale" aria-hidden="true"></i>
-                        <span data-key="license-link">Licença MIT</span>
-                    </a>
+                    <div class="footer-links">
+                        <a href="pages/faq.html" class="footer-link">
+                            <i class="fas fa-circle-question" aria-hidden="true"></i>
+                            <span data-key="faq-link">Perguntas Frequentes (FAQ)</span>
+                        </a>
+                        <span class="footer-link-divider" aria-hidden="true">•</span>
+                        <a href="pages/licenca.html" class="footer-link">
+                            <i class="fas fa-balance-scale" aria-hidden="true"></i>
+                            <span data-key="license-link">Licença MIT</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>
