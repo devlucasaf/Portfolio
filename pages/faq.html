@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="color-scheme" content="dark light" />
+        <meta name="theme-color" content="#08070D" />
+        <meta name="description" content="Perguntas Frequentes (FAQ) sobre Lucas Freitas — Desenvolvedor Back-End, estágio na CAESB e graduação no CEUB." />
+        <meta name="author" content="Lucas Freitas" />
+        <title>Perguntas Frequentes (FAQ) - Lucas</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="../css/global.css" />
+        <link rel="stylesheet" href="../css/layout.css" />
+        <link rel="stylesheet" href="../css/components.css" />
+        <link rel="stylesheet" href="../css/responsive.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    </head>
+
+    <body>
+        <div class="background-animated" aria-hidden="true">
+            <div class="bg-layer bg-gradient"></div>
+            <div class="bg-layer bg-stars"></div>
+            <div class="bg-layer bg-particles">
+                <div class="particle" data-speed="0.2"></div>
+                <div class="particle" data-speed="0.5"></div>
+                <div class="particle" data-speed="0.8"></div>
+                <div class="particle" data-speed="0.3"></div>
+                <div class="particle" data-speed="0.6"></div>
+                <div class="particle" data-speed="0.9"></div>
+                <div class="particle" data-speed="0.4"></div>
+                <div class="particle" data-speed="0.7"></div>
+            </div>
+            <div class="bg-layer bg-shooting">
+                <span class="shooting-star"></span>
+                <span class="shooting-star"></span>
+                <span class="shooting-star"></span>
+            </div>
+        </div>
+
+        <main class="faq-page">
+            <div class="container faq-container">
+                <!-- Top Navigation Bar -->
+                <header class="faq-top-nav">
+                    <a href="../index.html" class="nav-brand" aria-label="Lucas — início">
+                        <span class="logo" aria-hidden="true">L</span>
+                        <span class="logo-text">Lucas</span>
+                    </a>
+
+                    <a href="../index.html" class="btn btn-secondary faq-back-btn">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                        <span>Voltar ao Portfólio</span>
+                    </a>
+                </header>
+
+                <!-- Hero Section Card -->
+                <div class="faq-hero-card">
+                    <div class="faq-hero-header">
+                        <span class="faq-hero-icon" aria-hidden="true">
+                            <i class="fas fa-circle-question"></i>
+                        </span>
+                        <div>
+                            <p class="section-eyebrow">Central de Dúvidas</p>
+                            <h1 class="section-title faq-title">
+                                Perguntas <span class="highlight">Frequentes</span> (FAQ)
+                            </h1>
+                        </div>
+                    </div>
+                    <p class="faq-hero-subtitle">
+                        Respostas transparentes e objetivas sobre minha disponibilidade profissional, foco técnico em back-end, estágio na CAESB e formação acadêmica no CEUB.
+                    </p>
+
+                    <!-- Interactive Search Bar -->
+                    <div class="faq-search-wrapper">
+                        <i class="fas fa-search faq-search-icon" aria-hidden="true"></i>
+                        <input 
+                            type="text" 
+                            id="faq-search-input" 
+                            class="faq-search-input" 
+                            placeholder="Buscar dúvida por palavra-chave (ex: estágio, Java, horário, CEUB, remoto)..." 
+                            aria-label="Buscar perguntas frequentes"
+                        />
+                        <button type="button" id="faq-search-clear" class="faq-search-clear" aria-label="Limpar busca" hidden>
+                            <i class="fas fa-times" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <!-- Category Filter Buttons -->
+                    <div class="faq-categories" role="tablist" aria-label="Filtrar perguntas por categoria">
+                        <button type="button" class="faq-category-btn active" data-category="all" role="tab" aria-selected="true">
+                            <i class="fas fa-layer-group" aria-hidden="true"></i> Todas
+                        </button>
+                        <button type="button" class="faq-category-btn" data-category="carreira" role="tab" aria-selected="false">
+                            <i class="fas fa-briefcase" aria-hidden="true"></i> Carreira & Estágio
+                        </button>
+                        <button type="button" class="faq-category-btn" data-category="tecnologia" role="tab" aria-selected="false">
+                            <i class="fas fa-laptop-code" aria-hidden="true"></i> Tecnologias & Back-End
+                        </button>
+                        <button type="button" class="faq-category-btn" data-category="formacao" role="tab" aria-selected="false">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i> Formação & Cursos
+                        </button>
+                        <button type="button" class="faq-category-btn" data-category="contato" role="tab" aria-selected="false">
+                            <i class="fas fa-comments" aria-hidden="true"></i> Contato
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Accordion List -->
+                <div class="faq-accordion" id="faq-accordion">
+                    <!-- Pergunta 1 -->
+                    <div class="faq-item" data-category="carreira">
+                        <button type="button" class="faq-question" aria-expanded="false" id="faq-q1" aria-controls="faq-a1">
+                            <span class="faq-q-left">
+                                <span class="faq-badge badge-carreira">Carreira</span>
+                                <span class="faq-q-text">Qual é a sua disponibilidade de horário para estágio ou posições profissionais?</span>
+                            </span>
+                            <span class="faq-toggle-icon" aria-hidden="true">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Atualmente atuo como estagiário na <strong>CAESB</strong> (Companhia de Saneamento Ambiental do Distrito Federal) e curso Ciência da Computação no <strong>CEUB</strong> no período noturno.
+                                </p>
+                                <p>
+                                    Tenho disponibilidade para cargas horárias compatíveis de estágio (4h a 6h diárias) ou novas propostas de evolução de carreira, sempre mantendo alto padrão de pontualidade, disciplina e dedicação constante.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 2 -->
+                    <div class="faq-item" data-category="carreira">
+                        <button type="button" class="faq-question" aria-expanded="false" id="faq-q2" aria-controls="faq-a2">
+                            <span class="faq-q-left">
+                                <span class="faq-badge badge-carreira">Modelo</span>
+                                <span class="faq-q-text">Você prefere modelo de trabalho presencial, híbrido ou remoto?</span>
+                            </span>
+                            <span class="faq-toggle-icon" aria-hidden="true">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Resido em <strong>Brasília — DF</strong>. Tenho total facilidade de deslocamento e disponibilidade para atuar nos formatos <strong>presencial ou híbrido</strong> em Brasília e regiões administrativas.
+                                </p>
+                                <p>
+                                    Além disso, possuo ambiente próprio e excelente infraestrutura técnica para atuar no modelo <strong>100% remoto</strong> com times de qualquer estado do Brasil ou do exterior, com comunicação ágil via Slack, Teams, Discord e GitHub.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 3 -->
+                    <div class="faq-item" data-category="tecnologia">
+                        <button type="button" class="faq-question" aria-expanded="false" id="faq-q3" aria-controls="faq-a3">
+                            <span class="faq-q-left">
+                                <span class="faq-badge badge-tecnologia">Back-End</span>
+                                <span class="faq-q-text">Qual é o seu foco técnico principal e tecnologias mais dominadas?</span>
+                            </span>
+                            <span class="faq-toggle-icon" aria-hidden="true">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Meu foco central é a <strong>engenharia de software Back-End</strong>, especialmente com os ecossistemas:
+                                </p>
+                                <ul class="faq-points">
+                                    <li><strong>Java & Spring Boot:</strong> criação de APIs RESTful, POO avançada, injeção de dependências e regras de negócio robustas.</li>
+                                    <li><strong>C# & .NET:</strong> desenvolvimento estruturado em ambientes corporativos.</li>
+                                    <li><strong>Bancos de Dados Relacionais:</strong> modelagem e consultas em SQL Server, MySQL Workbench e PostgreSQL (normalização, queries e integridade).</li>
+                                    <li><strong>Linguagens de apoio:</strong> Python, JavaScript, HTML5/CSS3 e controle de versão rigoroso com Git e GitHub.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 4 -->
+                    <div class="faq-item" data-category="carreira">
+                        <button type="button" class="faq-question" aria-expanded="false" id="faq-q4" aria-controls="faq-a4">
+                            <span class="faq-q-left">
+                                <span class="faq-badge badge-carreira">Experiência</span>
+                                <span class="faq-q-text">Como tem sido a sua atuação prática no estágio na CAESB?</span>
+                            </span>
+                            <span class="faq-toggle-icon" aria-hidden="true">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Iniciei meu estágio na <strong>CAESB</strong> em setembro de 2025. Na empresa, vivencio a rotina do time de Tecnologia da Informação / Desenvolvimento de Software.
+                                </p>
+                                <p>
+                                    Essa experiência tem sido essencial para compreender fluxos de trabalho corporativos de grande escala, resolução de problemas reais de negócios, manutenção de sistemas internos, contato com bases de dados corporativas e aprendizado colaborativo com desenvolvedores sêniores.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 5 -->
+                    <div class="faq-item" data-category="tecnologia">
+                        <button type="button" class="faq-question" aria-expanded="false" id="faq-q5" aria-controls="faq-a5">
+                            <span class="faq-q-left">
+                                <span class="faq-badge badge-tecnologia">Projetos</span>
+                                <span class="faq-q-text">Quais projetos práticos autorais você já desenvolveu?</span>
+                            </span>
+                            <span class="faq-toggle-icon" aria-hidden="true">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Desenvolvi projetos práticos completos, acessíveis no meu portfólio e no GitHub:
+                                </p>
+                                <ul class="faq-points">
+                                    <li><strong>SGC (Sistema de Gestão Condominial):</strong> Software em Java para gestão de condomínios, dados de moradores, controle de unidades e finanças.</li>
+                                    <li><strong>UniAura:</strong> ERP acadêmico para gestão de estudantes, matrículas e notas.</li>
+                                    <li><strong>Money Tracker Control:</strong> Aplicação para controle e inteligência de finanças pessoais.</li>
+                                    <li><strong>Football Games 11 & Naka Tattos:</strong> Projetos web modernos interativos com JavaScript e CSS avançado.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 6 -->
+                    <div class="faq-item" data-category="formacao">
+                        <button type="button" class="faq-question" aria-expanded="false" id="faq-q6" aria-controls="faq-a6">
+                            <span class="faq-q-left">
+                                <span class="faq-badge badge-formacao">Graduação</span>
+                                <span class="faq-q-text">Qual a previsão de conclusão da graduação no CEUB?</span>
+                            </span>
+                            <span class="faq-toggle-icon" aria-hidden="true">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden>
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Ingressei no bacharelado em <strong>Ciência da Computação</strong> no <strong>CEUB</strong> (Centro Universitário de Brasília) em <strong>fevereiro de 2024</strong>.
+                                </p>
+                                <p>
+                                    A previsão de formatura é para o final de <strong>2027</strong>. A formação abrange estruturas de dados, análise de algoritmos, redes de computadores, arquitetura de sistemas operacionais e engenharia de software.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 7 -->
+                    <div class="faq-item" data-category="formacao">
+                        <button type="button" class="faq-question" aria-expanded="false" id="faq-q7" aria-controls="faq-a7">
+                            <span class="faq-q-left">
+                                <span class="faq-badge badge-formacao">Certificações</span>
+                                <span class="faq-q-text">Quais certificações e cursos extracurriculares você possui?</span>
+                            </span>
+                            <span class="faq-toggle-icon" aria-hidden="true">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-a7" role="region" aria-labelledby="faq-q7" hidden>
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Possuo certificações formais que atestam competências técnicas:
+                                </p>
+                                <ul class="faq-points">
+                                    <li><strong>Curso de Informática & Pacote Office (2024):</strong> Escola BestMinds — Excel avançado, Word, PowerPoint, Windows e Power BI.</li>
+                                    <li><strong>Programação Python (2024):</strong> Escola BestMinds — lógica estruturada, manipulação de dados e automação.</li>
+                                    <li><strong>Programação Java (2025):</strong> Escola BestMinds — POO, coleções e arquitetura orientada a objetos.</li>
+                                    <li><strong>Modelagem de Dados em Banco de Dados (2025):</strong> Udemy — MySQL Workbench, diagramação ER e normalização relacional.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 8 -->
+                    <div class="faq-item" data-category="contato">
+                        <button type="button" class="faq-question" aria-expanded="false" id="faq-q8" aria-controls="faq-a8">
+                            <span class="faq-q-left">
+                                <span class="faq-badge badge-contato">Contato</span>
+                                <span class="faq-q-text">Como posso agendar uma entrevista técnica ou entrar em contato direto?</span>
+                            </span>
+                            <span class="faq-toggle-icon" aria-hidden="true">
+                                <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </button>
+                        <div class="faq-answer" id="faq-a8" role="region" aria-labelledby="faq-q8" hidden>
+                            <div class="faq-answer-inner">
+                                <p>
+                                    Estou sempre aberto a bater um papo sobre projetos, vagas de estágio e desenvolvimento de software. Você pode falar comigo através de:
+                                </p>
+                                <ul class="faq-points">
+                                    <li><strong>Formulário Web:</strong> Na seção de contatos da página inicial do portfólio.</li>
+                                    <li><strong>E-mail Direto:</strong> <a href="mailto:lucasfreitas.contatopro@gmail.com" class="faq-link">lucasfreitas.contatopro@gmail.com</a></li>
+                                    <li><strong>GitHub:</strong> <a href="https://github.com/devlucasaf" target="_blank" rel="noopener noreferrer" class="faq-link">github.com/devlucasaf</a></li>
+                                    <li><strong>Localização:</strong> Brasília, DF — Brasil.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mensagem quando não houver resultado na busca -->
+                    <div id="faq-empty-state" class="faq-empty-state" hidden>
+                        <i class="fas fa-search-minus" aria-hidden="true"></i>
+                        <h3>Nenhuma pergunta encontrada</h3>
+                        <p>Tente buscar por termos mais genéricos como "estágio", "Java", "CAESB" ou "CEUB".</p>
+                    </div>
+                </div>
+
+                <!-- Call To Action Card -->
+                <div class="faq-cta-card">
+                    <div class="faq-cta-content">
+                        <h3>Ainda ficou com alguma dúvida?</h3>
+                        <p>Ficarei feliz em responder qualquer pergunta técnica ou sobre minha trajetória profissional.</p>
+                    </div>
+                    <div class="faq-cta-actions">
+                        <a href="../index.html#contact-section" class="btn btn-primary">
+                            <i class="fas fa-envelope" aria-hidden="true"></i> Fale Comigo
+                        </a>
+                        <a href="../index.html#trajectory-section" class="btn btn-secondary">
+                            <i class="fas fa-route" aria-hidden="true"></i> Ver Minha Trajetória
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer license-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-divider" aria-hidden="true">
+                        <span class="divider-line"></span>
+                        <span class="divider-icon">
+                            <i class="fas fa-code"></i>
+                        </span>
+                        <span class="divider-line"></span>
+                    </div>
+                    <div class="footer-brand">
+                        <span class="logo" aria-hidden="true">L</span>
+                        <span class="logo-text">LUCAS</span>
+                    </div>
+                    <p class="footer-text">Portfólio de Lucas Freitas — Ciência da Computação</p>
+                    <p class="copyright">&copy; 2026 LUCAS. TODOS OS DIREITOS RESERVADOS.</p>
+                    <div class="footer-links">
+                        <a href="../index.html" class="footer-link">
+                            <i class="fas fa-home" aria-hidden="true"></i> Início
+                        </a>
+                        <span class="footer-link-divider">•</span>
+                        <a href="licenca.html" class="footer-link">
+                            <i class="fas fa-balance-scale" aria-hidden="true"></i> Licença MIT
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- FAQ Interactive Script -->
+        <script src="../js/faq.js"></script>
+    </body>
+</html>
