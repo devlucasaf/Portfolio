@@ -84,6 +84,14 @@ Projeto feito no intuito de me apresentar, como desenvolvedor back-end.
     />
     <img
         align="center"
+        alt="Antigravity"
+        tittle="Antigravity"
+        height="40" 
+        style="padding-right: 10px;" 
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/antigravity/antigravity-original.svg"
+    />
+    <img
+        align="center"
         alt="Git"
         tittle="Git"
         height="40" 
